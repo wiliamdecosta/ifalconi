@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>NewPage1</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="javascript">
+function runLOG(qs,qs1){
+        //var log = getElementById("V_T_JOB_CONTROLJOB_CONTROL_ID").value;
+                //alert(qs);
+        parent.location.href = "log_job_control.php?JOB_CONTROL_ID="+qs+"&INPUT_DATA_CONTROL_ID="+qs1;
+}
+</script>
+</head>
+<body>
+<!-- BEGIN Record V_T_JOB_CONTROL -->
+<form id="V_T_JOB_CONTROL" method="post" name="{HTMLFormName}" action="{Action}">
+  <table cellspacing="0" cellpadding="0" align="center" border="0">
+    <tr>
+      <td valign="top">
+        <table class="Header" cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td> 
+            <td class="th"><strong>SELECTED JOB&nbsp;</strong></td> 
+            <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/images/Spacer.gif"></td>
+          </tr>
+        </table>
+ 
+        <table class="Record" cellspacing="0" cellpadding="0">
+          <!-- BEGIN Error -->
+          <tr class="Error">
+            <td colspan="4">{Error}</td>
+          </tr>
+          <!-- END Error -->
+          <tr class="Controls">
+            <td class="th">&nbsp;BATCH CONTROL ID</td> 
+            <td>{INPUT_DATA_CONTROL_ID2}<input id="V_T_JOB_CONTROLINPUT_DATA_CONTROL_ID" type="hidden" value="{INPUT_DATA_CONTROL_ID}" name="{INPUT_DATA_CONTROL_ID_Name}"></td> 
+            <td>VERIFICATION DATE&nbsp;</td> 
+            <td>{VERIFIED_DATE}&nbsp;</td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th">&nbsp;JOB CODE</td> 
+            <td>{JOB_CODE}<label for="V_T_JOB_CONTROLJOB_CONTROL_ID" style="display: none;">&nbsp;</label><input id="V_T_JOB_CONTROLJOB_CONTROL_ID" type="hidden" value="{JOB_CONTROL_ID}" name="{JOB_CONTROL_ID_Name}"></td> 
+            <td>INPUT TABLE NAME</td> 
+            <td>{INPUT_TABLE_NAME}&nbsp;</td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th">&nbsp;P JOB ID</td> 
+            <td>{P_JOB_ID}&nbsp;</td> 
+            <td>INPUT TTL RECORD</td> 
+            <td>{INPUT_TTL_RECORD}&nbsp;</td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th">&nbsp;CANCEL COUNT</td> 
+            <td>{CANCEL_COUNT}</td> 
+            <td>INPUT TTL CHARGE</td> 
+            <td>{INPUT_TTL_CHARGE}&nbsp;</td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th">&nbsp;STATUS LIST ID</td> 
+            <td>{P_STATUS_LIST_ID}</td> 
+            <td>PARENT ID</td> 
+            <td>{PARENT_ID}&nbsp;</td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th">&nbsp;START PROCESS DATE</td> 
+            <td>{START_PROCESS_DATE}&nbsp;</td> 
+            <td>IS READY BILLED?</td> 
+            <td>{IS_READY_BILLED}&nbsp;</td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th">&nbsp;END PROCESS DATE</td> 
+            <td>{END_PROCESS_DATE}&nbsp;</td> 
+            <td>SET BILL DATE</td> 
+            <td>{SET_BILL_DATE}&nbsp;</td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th">&nbsp;IS VERIFIED?</td> 
+            <td>{IS_VERIFIED}</td> 
+            <td>SET BILL BY</td> 
+            <td>{OUTPUT_MONEY_AMT}&nbsp;</td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th">&nbsp;IS VALID?</td> 
+            <td>{IS_VALID}</td> 
+            <td>JOB STATUS CODE</td> 
+            <td>{JOB_STATUS_CODE}&nbsp;</td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th">&nbsp;IS CANCELLED?</td> 
+            <td>{IS_CANCELLED}</td> 
+            <td>PARENT JOB CODE</td> 
+            <td>{PARENT_JOB_CODE}&nbsp;</td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th">&nbsp;VERIFIED BY</td> 
+            <td>{VERIFIED_BY}&nbsp;</td> 
+            <td>CREATED BY</td> 
+            <td>{OPERATOR_ID}&nbsp;</td>
+          </tr>
+ 
+          <tr class="Bottom">
+            <td colspan="4" align="right">{lblLOG}{btnSubmit}&nbsp;{btnCancel}&nbsp;{btnForce}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END Record V_T_JOB_CONTROL --><br>
+<script language="javascript">
+
+function runfs() {
+
+var benar = window.confirm("Anda ingin menjalankan scheduler ?");
+                if (benar) {
+                                document.location.href = 'accrue_job_ctl_main.php?runfs=Y&BATCH_CONTROL_ID='+document.V_T_JOB_CONTROL.BATCH_CONTROL_ID.value;
+
+        };
+}
+
+function runjob() {
+
+var benar = window.confirm("Anda yakin ingin proses load invoice ?");
+                if (benar) {
+                                document.location.href = 'accrue_job_ctl_main.php?runjob=Y&BATCH_CONTROL_ID='+document.V_T_JOB_CONTROL.BATCH_CONTROL_ID.value;
+        }; 
+
+}
+
+function runcancel() {
+
+var benar = window.confirm("Anda ingin membatalkan proses load invoice ?");
+                if (benar) {
+                                document.location.href = 'accrue_job_ctl_main.php?runcancel=Y&BATCH_CONTROL_ID='+document.V_T_JOB_CONTROL.BATCH_CONTROL_ID.value +'&JOB_CONTROL_ID='+document.V_T_JOB_CONTROL.JOB_CONTROL_ID.value ;
+        }; 
+
+}
+
+
+
+//document.V_T_JOB_CONTROL.BATCH_CONTROL_ID.value = parent.document.frm.BATCH_CONTROL_ID.value;
+
+
+
+</script>
+&nbsp; 
+</body>
+</html>

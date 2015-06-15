@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>T_BUDGET</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.1.00.031">
+<!--#include File="../include/sessi.inc"-->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+    //view_LOV(formName,fieldList,LOV_NM)
+        arrLOV = LOV_NM.split("?");
+        window.open("../bil_lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+
+function lovFinance()
+{
+        classname = "BATCH1";
+        fieldname = "P_FINANCE_PERIOD_ID,FINANCE_PERIOD_CODE";
+        filename = "lov_p_finance_period.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+function lovCycle()
+{
+                classname = "BATCH1";
+        fieldname = "P_BILL_CYCLE_ID,BILL_CYCLE_CODE";
+        filename = "lov_p_bill_cycle.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//BATCH1Button_Insert_OnClick @20-13781375
+function BATCH1Button_Insert_OnClick()
+{
+    var result = true;
+//End BATCH1Button_Insert_OnClick
+
+//Close BATCH1Button_Insert_OnClick @20-BC33A33A
+    return result;
+}
+//End Close BATCH1Button_Insert_OnClick
+
+//BATCH1Button_Update_OnClick @21-844AA32D
+function BATCH1Button_Update_OnClick()
+{
+    var result = true;
+//End BATCH1Button_Update_OnClick
+
+//Close BATCH1Button_Update_OnClick @21-BC33A33A
+    return result;
+}
+//End Close BATCH1Button_Update_OnClick
+
+//BATCH1Button_Delete_OnClick @22-DCD7723B
+function BATCH1Button_Delete_OnClick()
+{
+    var result = true;
+//End BATCH1Button_Delete_OnClick
+
+//Close BATCH1Button_Delete_OnClick @22-BC33A33A
+    return result;
+}
+//End Close BATCH1Button_Delete_OnClick
+
+//BATCH1Button_Cancel_OnClick @24-00993465
+function BATCH1Button_Cancel_OnClick()
+{
+    var result = true;
+//End BATCH1Button_Cancel_OnClick
+
+//Close BATCH1Button_Cancel_OnClick @24-AEF500E0
+    disableValidation = true;
+    return result;
+}
+//End Close BATCH1Button_Cancel_OnClick
+
+//_OnLoad @1-9C4F01C0
+function _OnLoad()
+{
+    var result = true;
+//End _OnLoad
+
+//Close _OnLoad @1-BC33A33A
+    return result;
+}
+//End Close _OnLoad
+
+//bind_events @1-84884E41
+function bind_events() {
+    addEventHandler("BATCH1Button_Insert", "click", BATCH1Button_Insert_OnClick);
+    addEventHandler("BATCH1Button_Update", "click", BATCH1Button_Update_OnClick);
+    addEventHandler("BATCH1Button_Delete", "click", BATCH1Button_Delete_OnClick);
+    addEventHandler("BATCH1Button_Cancel", "click", BATCH1Button_Cancel_OnClick);
+    addEventHandler("", "load", _OnLoad);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+
+function toJobAcc(){
+    var idIDC = document.getElementById("BATCH1INPUT_DATA_CONTROL_ID").value;
+    location.href = "control_job_idc.php?INPUT_DATA_CONTROL_ID="+idIDC;
+}
+
+function toJobProLog(){
+        alert("Job Control is required!!");
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="../Styles/{CCS_Style}/Style_doctype.css" />
+</head>
+<body style="MARGIN: 0px" marginwidth="0" marginheight="0">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tr>
+    <td><img border="0" src="../images/tab_s_on.gif"></td> 
+    <td class="th" background="../images/tab_on.gif" nowrap align="center">BATCH CONTROL</td> 
+    <td><img border="0" src="../images/tab_e_on.gif"></td> 
+    <td><img border="0" src="../images/tab_s_off.gif"></td> 
+    <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toJobAcc()">JOB CONTROL</label></td> 
+    <td><img border="0" src="../images/tab_e_off.gif" width="16" height="24"></td> 
+    <td background="../images/tab_back.gif" width="100%"></td> 
+  </tr>
+</table>
+<br>
+<table align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record BATCHSearch -->
+      <form id="BATCHSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="BATCHSearchs_keyword">&nbsp;</label><input id="BATCHSearchs_keyword" class="ControlsIN" style="TEXT-TRANSFORM: uppercase" maxlength="32" size="32" value="{s_keyword}" name="{s_keyword_Name}">
+                    <!-- BEGIN Button Button_DoSearch --><input id="BATCHSearchButton_DoSearch" class="Button" alt="Search" type="submit" value="Search" name="{Button_Name}"><!-- END Button Button_DoSearch --></td> 
+                </tr>
+ 
+              </table>
+ </td> 
+          </tr>
+ 
+        </table>
+ 
+      </form>
+ <!-- END Record BATCHSearch --><br>
+      <!-- BEGIN Grid V_INPUT_DATA_CONTROL_BILL -->
+      <table cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/{CCS_Style}/Images/Spacer.gif"></td> 
+                <td class="th"><strong>BILLING&nbsp;PERIOD LIST </strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/{CCS_Style}/Images/Spacer.gif"></td> 
+              </tr>
+ 
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">BATCH&nbsp;ID</th>
+ 
+                <th scope="col">BATCH TYPE</th>
+ 
+                <th scope="col">FINANCE PERIOD CODE</th>
+ 
+                <th scope="col">INVOICE DATE</th>
+ 
+                <th scope="col">BILL CYCLE CODE</th>
+ 
+                <th scope="col">BILL STATUS</th>
+ 
+                <th scope="col">TOTAL BILL AMOUNT</th>
+ 
+                <th scope="col">CLOSING DATE</th>
+ 
+                <th scope="col">CLOSED BY</th>
+ 
+                <th scope="col">CREATION DATE</th>
+ 
+                <th scope="col">CREATED BY</th>
+ 
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {V_INPUT_DATA_CONTROL_BILL:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="V_INPUT_DATA_CONTROL_BILLDLink_{BATCH:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="V_INPUT_DATA_CONTROL_BILLADLink_{BATCH:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td style="TEXT-ALIGN: right">{INPUT_DATA_CONTROL_ID}&nbsp;</td> 
+                <td>{BATCH_TYPE}&nbsp;</td> 
+                <td>{FINANCE_PERIOD_CODE}&nbsp;</td> 
+                <td>{INVOICE_DATE}&nbsp;</td> 
+                <td>{BILL_CYCLE_CODE}&nbsp;</td> 
+                <td>{BILL_STATUS}&nbsp;</td> 
+                <td style="TEXT-ALIGN: right">{BILL_AMT}&nbsp;</td> 
+                <td>{CLOSING_DATE}&nbsp;</td> 
+                <td>{CLOSED_BY}&nbsp;</td> 
+                <td>{CREATION_DATE}&nbsp;</td> 
+                <td>{OPERATOR_ID}&nbsp;</td> 
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="12">Data not found</td> 
+              </tr>
+ <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="BORDER-RIGHT: 0px"><a href="{BATCH_Insert1_Src}" id="V_INPUT_DATA_CONTROL_BILLBATCH_Insert1"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a> </td> 
+                <td colspan="12">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/{CCS_Style}/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/{CCS_Style}/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/{CCS_Style}/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/{CCS_Style}/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td> 
+              </tr>
+ 
+            </table>
+ </td> 
+        </tr>
+ 
+      </table>
+ <!-- END Grid V_INPUT_DATA_CONTROL_BILL --><br>
+      <br>
+      <!-- BEGIN Record BATCH1 -->
+      <form id="BATCH1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/sip/images/Spacer.gif"></td> 
+                  <td class="th"><strong>ADD / EDIT&nbsp;BILLING PERIOD</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/sip/images/Spacer.gif"></td> 
+                </tr>
+ 
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="5">{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th">Batch&nbsp;Type</td> 
+                  <td colspan="4">
+                    <select id="BATCH1P_BATCH_TYPE_ID" class="ControlsRQ" name="{P_BATCH_TYPE_ID_Name}">
+                      {P_BATCH_TYPE_ID_Options} 
+                    </select>
+ <label for="BATCH1INPUT_FILE_NAME" style="display: none;">&nbsp;</label><input type="hidden" name="{INPUT_FILE_NAME_Name}" value="{INPUT_FILE_NAME}" id="BATCH1INPUT_FILE_NAME">&nbsp;<input id="BATCH1IS_FINISH_PROCESSED" type="hidden" value="{IS_FINISH_PROCESSED}" name="{IS_FINISH_PROCESSED_Name}"><input id="BATCH1FILE_DATE" type="hidden" value="{FILE_DATE}" name="{FILE_DATE_Name}"><input id="BATCH1FILE_SIZE" type="hidden" value="{FILE_SIZE}" name="{FILE_SIZE_Name}"><input id="BATCH1IS_CLOSED" type="hidden" value="{IS_CLOSED}" name="{IS_CLOSED_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Finance Period</td> 
+                  <td colspan="4"><input id="BATCH1FINANCE_PERIOD_CODE" class="ControlsRQ" style="TEXT-TRANSFORM: uppercase" readonly maxlength="32" size="32" value="{FINANCE_PERIOD_CODE}" name="{FINANCE_PERIOD_CODE_Name}">&nbsp;<img onclick="lovFinance()" id="LOV_COL1" border="0" name="LOV_BUM" src="../images/folder.gif" width="16" height="16">&nbsp;<input id="BATCH1P_FINANCE_PERIOD_ID" type="hidden" value="{P_FINANCE_PERIOD_ID}" name="{P_FINANCE_PERIOD_ID_Name}">&nbsp;<input id="BATCH1INVOICE_AMT" type="hidden" value="{INVOICE_AMT}" name="{INVOICE_AMT_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Invoice Date</td> 
+                  <td colspan="4"><input id="BATCH1INVOICE_DATE" class="ControlsRQ" maxlength="12" size="12" value="{INVOICE_DATE}" name="{INVOICE_DATE_Name}">&nbsp;<img onclick="scwShow(document.getElementById('BATCH1INVOICE_DATE'),event);" id="imgCalendar" name="imgCalendar" alt="" src="../Styles/trb/Images/DatePicker.gif">&nbsp;&nbsp;<input id="BATCH1INPUT_DATA_CONTROL_ID" type="hidden" value="{INPUT_DATA_CONTROL_ID}" name="{INPUT_DATA_CONTROL_ID_Name}">&nbsp;<input id="BATCH1BILLING_CENTER_ID_{T_BUDGET:rowNumber}" type="hidden" value="{BILLING_CENTER_ID}" name="{BILLING_CENTER_ID_Name}"><input id="BATCH1IS_BACKUP" type="hidden" value="{IS_BACKUP}" name="{IS_BACKUP_Name}"><input id="BATCH1RELEASED_BY" type="hidden" value="{RELEASED_BY}" name="{RELEASED_BY_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Bill Cycle</td> 
+                  <td colspan="4"><input id="BATCH1BILL_CYCLE_CODE" class="ControlsRQ" maxlength="32" size="32" value="{BILL_CYCLE_CODE}" name="{BILL_CYCLE_CODE_Name}">&nbsp;<img onclick="lovCycle()" id="LOV_COL1" border="0" name="LOV_BUM" src="../images/folder.gif" width="16" height="16"><input id="BATCH1P_BILL_CYCLE_ID" type="hidden" value="{P_BILL_CYCLE_ID}" name="{P_BILL_CYCLE_ID_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Bill Status</td> 
+                  <td colspan="4"><input id="BATCH1BILL_STATUS" class="ControlsIN" value="{BILL_STATUS}" name="{BILL_STATUS_Name}">&nbsp;<input id="BATCH1DATA_STATUS_ID" type="hidden" value="{DATA_STATUS_ID}" name="{DATA_STATUS_ID_Name}"><input id="BATCH1FILE_DIRECTORY" type="hidden" value="{FILE_DIRECTORY}" name="{FILE_DIRECTORY_Name}"><input id="BATCH1BACKUP_DATE" type="hidden" value="{BACKUP_DATE}" name="{BACKUP_DATE_Name}"><input id="BATCH1RELEASED_DATE" type="hidden" value="{RELEASED_DATE}" name="{RELEASED_DATE_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Total Bill Amount</td> 
+                  <td colspan="4"><input id="BATCH1BILL_AMT" class="ControlsRO" readonly value="{BILL_AMT}" name="{BILL_AMT_Name}">&nbsp;<input id="BATCH1BACKUP_BY" type="hidden" value="{BACKUP_BY}" name="{BACKUP_BY_Name}"><input id="BATCH1BACKUP_FILE" type="hidden" value="{BACKUP_FILE}" name="{BACKUP_FILE_Name}"><input id="BATCH1BACKUP_DIR" type="hidden" value="{BACKUP_DIR}" name="{BACKUP_DIR_Name}"><input id="BATCH1IS_RELEASED" type="hidden" value="{IS_RELEASED}" name="{IS_RELEASED_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Closing Date</td> 
+                  <td><input id="BATCH1CLOSING_DATE" class="ControlsRO" language="Jscript" style="TEXT-TRANSFORM: uppercase" readonly maxlength="12" size="12" value="{CLOSING_DATE}" name="{CLOSING_DATE_Name}"></td> 
+                  <td class="th">&nbsp;Closed By</td> 
+                  <td colspan="2">&nbsp;<input id="BATCH1CLOSED_BY" class="ControlsRO" style="TEXT-TRANSFORM: uppercase" readonly maxlength="12" size="12" value="{CLOSED_BY}" name="{CLOSED_BY_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="P_APP_ROLE1CREATED_BY">Creation Date</label></td> 
+                  <td><input id="BATCH1CREATION_DATE" class="ControlsRO" style="TEXT-TRANSFORM: uppercase" readonly maxlength="12" size="12" value="{CREATION_DATE}" name="{CREATION_DATE_Name}"></td> 
+                  <td class="th">&nbsp;Creted By</td> 
+                  <td colspan="2">&nbsp;<input id="BATCH1OPERATOR_ID" class="ControlsRO" style="TEXT-TRANSFORM: uppercase" readonly maxlength="12" size="12" value="{OPERATOR_ID}" name="{OPERATOR_ID_Name}"></td> 
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="5" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="BATCH1Button_Insert" class="Button" alt="Add" type="submit" value="SAVE" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="BATCH1Button_Update" class="Button" alt="Submit" type="submit" value="SAVE" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="BATCH1Button_Delete" class="Button" alt="Delete" type="submit" value="DELETE" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="BATCH1Button_Cancel" class="Button" alt="Cancel" type="submit" value="CANCEL" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+                </tr>
+ 
+              </table>
+ </td> 
+          </tr>
+ 
+        </table>
+ 
+      </form>
+ <!-- END Record BATCH1 --><br>
+    </td> 
+  </tr>
+</table>
+<!--#include File="../include/function.inc"-->
+<script language="JavaScript">
+// === FUNGSI ANGKA ===
+function checkIt(evt) {
+var charCode = (evt.which) ? evt.which : event.keyCode
+if (charCode > 31 && (charCode < 40 || charCode > 57)) {
+return false
+}
+return true
+}
+</script>
+</body>
+</html>

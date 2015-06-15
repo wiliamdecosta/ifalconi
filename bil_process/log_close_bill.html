@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>P_SPECIAL_DAY</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.1.00.031">
+<!--#include File="../include/sessi.inc"-->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery.datepick.js"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//_OnLoad @1-9C4F01C0
+function _OnLoad()
+{
+    var result = true;
+//End _OnLoad
+
+//Custom Code @57-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close _OnLoad @1-BC33A33A
+    return result;
+}
+//End Close _OnLoad
+
+//bind_events @1-B4BAE7CE
+function bind_events() {
+    addEventHandler("", "load", _OnLoad);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+
+function toJobCon(){
+        var idc = document.getElementById("LOG_BACKGROUND_JOBINPUT_DATA_CONTROL").value;
+                var job = document.getElementById("LOG_BACKGROUND_JOBJOB_CONTROL_ID").value;
+        location.href = "control_job_idc.php?INPUT_DATA_CONTROL_ID="+idc+"&JOB_CONTROL_ID="+job;
+}
+
+function toBatch(){
+        location.href = "closing_billing.php";
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+</head>
+<body style="MARGIN: 0px" marginheight="0" marginwidth="0">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tr>
+    <td><img border="0" src="../images/tab_s_off.gif" width="16" height="24"></td> 
+    <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toBatch()">BATCH CONTROL</label></td> 
+    <td><img border="0" src="../images/tab_e_off.gif" width="16" height="24"></td> 
+    <td><img border="0" src="../images/tab_s_on.gif" width="16" height="24"></td> 
+    <td id=" style=" class="th" background="../images/tab_on.gif" nowrap align="center">PROCESS LOG</td> 
+    <td><img style="FONT-SIZE: 12px; COLOR: #ffffff" border="0" src="../images/tab_e_on.gif" width="16" height="24"></td> 
+    <td background="../images/tab_back.gif" width="100%"></td>
+  </tr>
+</table>
+<br>
+<table align="center">
+  <tr>
+    <td></span></span>
+      <!-- BEGIN Grid LOG_PROSES -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/sip/images/Spacer.gif"></td> 
+                <td class="th"><strong>LOG PROSES</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/sip/images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th scope="col">Counter</th>
+ 
+                <th scope="col">Tgl Log</th>
+ 
+                <th scope="col">Log</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {LOG_PROSES:rowStyle}>
+                <td>{COUNTER_NO}</td> 
+                <td>{LOG_DATE}<input id="LOG_PROSESINVOICE_DATE" type="hidden" value="{INVOICE_DATE}" name="{INVOICE_DATE_Name}"></td> 
+                <td>{LOG_MESSAGE}&nbsp;<input id="LOG_PROSESJOB_CONTROL_ID" type="hidden" value="{JOB_CONTROL_ID}" name="{JOB_CONTROL_ID_Name}"></td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="3">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: left" colspan="3">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid LOG_PROSES --><br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
