@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>module</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+</head>
+<body style="BACKGROUND-IMAGE: url(../Styles/trb/Images/PageBgd.gif)" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<table style="COLOR: #000040" border="0" cellspacing="0" cellpadding="0" width="100%" background="../images/tab_back_mod.gif">
+  <tr>
+    <td nowrap>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+    <td nowrap><input style="BACKGROUND-COLOR: #005782; COLOR: #e0e9f1; FONT-SIZE: 10pt" class="Button" onclick="change_password()" value="» Change Password «" alt="Ubah Password" type="button"><label onclick="javascript:change_password()" style="display:none"><b>» Ubah Password « </b></label></td> 
+    <td width="100%">&nbsp;</td> 
+    <td><img border="0" src="../images/tab_back.gif"></td>
+  </tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- BEGIN Grid ModulGrid -->
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td valign="top">
+      <table  cellspacing="0" cellpadding="0">
+        <!-- BEGIN Row -->
+        <!-- BEGIN Panel RowOpenTag -->
+        <tr class="Row">
+          <!-- END Panel RowOpenTag -->
+          <td nowrap style="BORDER:0px; TEXT-ALIGN: center; BACKGROUND-COLOR: transparent;">
+            <!-- BEGIN Panel RowComponents --><br><a href="{module_image}" id="ModulGridRowComponentsmodule_image_{ModulGrid:rowNumber}"><img border="0" alt="MODUL {code}" src="{module_image_Src}" width="120"></a><br><br>
+            <label style="color:#ffffff"><b>{code}</b></label> 
+            </td><td nowrap style="BORDER:0px; TEXT-ALIGN: center; BACKGROUND-COLOR: transparent;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- END Panel RowComponents -->
+          </td>
+          <!-- BEGIN Panel RowCloseTag -->
+        </tr>
+ <!-- END Panel RowCloseTag --><!-- END Row -->
+        <!-- BEGIN NoRecords -->
+        <tr class="NoRecords">
+          <td colspan="{ModulGrid:numberOfColumns}">-</td>
+        </tr>
+        <!-- END NoRecords -->
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END Grid ModulGrid --><br>
+<script language="JavaScript" type="text/javascript">
+
+function change_password()
+{
+    location.href="../adm_sistem/user_password_self.php"
+}
+
+</script>
+</body>
+</html>
