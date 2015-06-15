@@ -1,0 +1,420 @@
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:30:36
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:30:36
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:30:36
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:30:36
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:30:49
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:30:49
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:02
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:02
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:14
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:14
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:21
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:21
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:32
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:32
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:47
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:47
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:57
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:31:57
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:32:15
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:32:15
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:32:26
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:32:26
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:32:42
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:32:42
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:32:47
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:32:47
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:32:57
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:32:57
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:33:22
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:33:22
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:33:40
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:33:40
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:33:40
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:33:40
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:44:03
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:44:03
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:44:22
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:44:22
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:45:15
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 05-JUN-2015 10:45:15
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.3)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 10-JUN-2015 11:19:12
+  Tracing not turned on.
+
+
+***********************************************************************
+Fatal NI connect error 6413, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oraclewiliam)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')))(CONNECT_DATA=(SID=wiliam)(CID=(PROGRAM=C:\Program Files (x86)\CodeChargeStudio4\CCS.exe)(HOST=TOSHIBA-PC)(USER=toshiba))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 10-JUN-2015 11:19:12
+  Tracing not turned on.
