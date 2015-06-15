@@ -1,0 +1,1195 @@
+<?php
+//Include Common Files @1-07C4DB1F
+define("RelativePath", "..");
+define("PathToCurrentPage", "/pay_param/");
+define("FileName", "P_BANK_OPERATION.php");
+include_once(RelativePath . "/Common.php");
+include_once(RelativePath . "/Template.php");
+include_once(RelativePath . "/Sorter.php");
+include_once(RelativePath . "/Navigator.php");
+//End Include Common Files
+
+class clsGridP_BANK_OPERATIONGrid { //P_BANK_OPERATIONGrid class @2-6896BD8E
+
+//Variables @2-AC1EDBB9
+
+    // Public variables
+    var $ComponentType = "Grid";
+    var $ComponentName;
+    var $Visible;
+    var $Errors;
+    var $ErrorBlock;
+    var $ds;
+    var $DataSource;
+    var $PageSize;
+    var $IsEmpty;
+    var $ForceIteration = false;
+    var $HasRecord = false;
+    var $SorterName = "";
+    var $SorterDirection = "";
+    var $PageNumber;
+    var $RowNumber;
+    var $ControlsVisible = array();
+
+    var $CCSEvents = "";
+    var $CCSEventResult;
+
+    var $RelativePath = "";
+    var $Attributes;
+
+    // Grid Controls
+    var $StaticControls;
+    var $RowControls;
+//End Variables
+
+//Class_Initialize Event @2-FDF1577E
+    function clsGridP_BANK_OPERATIONGrid($RelativePath, & $Parent)
+    {
+        global $FileName;
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->ComponentName = "P_BANK_OPERATIONGrid";
+        $this->Visible = True;
+        $this->Parent = & $Parent;
+        $this->RelativePath = $RelativePath;
+        $this->Errors = new clsErrors();
+        $this->ErrorBlock = "Grid P_BANK_OPERATIONGrid";
+        $this->Attributes = new clsAttributes($this->ComponentName . ":");
+        $this->DataSource = new clsP_BANK_OPERATIONGridDataSource($this);
+        $this->ds = & $this->DataSource;
+        $this->PageSize = CCGetParam($this->ComponentName . "PageSize", "");
+        if(!is_numeric($this->PageSize) || !strlen($this->PageSize))
+            $this->PageSize = 2;
+        else
+            $this->PageSize = intval($this->PageSize);
+        if ($this->PageSize > 100)
+            $this->PageSize = 100;
+        if($this->PageSize == 0)
+            $this->Errors->addError("<p>Form: Grid " . $this->ComponentName . "<br>Error: (CCS06) Invalid page size.</p>");
+        $this->PageNumber = intval(CCGetParam($this->ComponentName . "Page", 1));
+        if ($this->PageNumber <= 0) $this->PageNumber = 1;
+
+        $this->CODE = & new clsControl(ccsLabel, "CODE", "CODE", ccsText, "", CCGetRequestParam("CODE", ccsGet, NULL), $this);
+        $this->P_BANK_OPERATION_ID = & new clsControl(ccsHidden, "P_BANK_OPERATION_ID", "P_BANK_OPERATION_ID", ccsText, "", CCGetRequestParam("P_BANK_OPERATION_ID", ccsGet, NULL), $this);
+        $this->DLink = & new clsControl(ccsLink, "DLink", "DLink", ccsText, "", CCGetRequestParam("DLink", ccsGet, NULL), $this);
+        $this->DLink->HTML = true;
+        $this->DLink->Page = "P_BANK_OPERATION.php";
+        $this->DESCRIPTION = & new clsControl(ccsLabel, "DESCRIPTION", "DESCRIPTION", ccsText, "", CCGetRequestParam("DESCRIPTION", ccsGet, NULL), $this);
+        $this->UPDATE_DATE = & new clsControl(ccsLabel, "UPDATE_DATE", "UPDATE_DATE", ccsText, "", CCGetRequestParam("UPDATE_DATE", ccsGet, NULL), $this);
+        $this->UPDATE_BY = & new clsControl(ccsLabel, "UPDATE_BY", "UPDATE_BY", ccsText, "", CCGetRequestParam("UPDATE_BY", ccsGet, NULL), $this);
+        $this->ACCOUNT_NUMBER = & new clsControl(ccsLabel, "ACCOUNT_NUMBER", "ACCOUNT_NUMBER", ccsText, "", CCGetRequestParam("ACCOUNT_NUMBER", ccsGet, NULL), $this);
+        $this->Navigator = & new clsNavigator($this->ComponentName, "Navigator", $FileName, 5, tpCentered, $this);
+        $this->Navigator->PageSizes = array("1", "5", "10", "25", "50");
+        $this->Link_Add = & new clsControl(ccsLink, "Link_Add", "Link_Add", ccsText, "", CCGetRequestParam("Link_Add", ccsGet, NULL), $this);
+        $this->Link_Add->HTML = true;
+        $this->Link_Add->Page = "P_BANK_OPERATION.php";
+    }
+//End Class_Initialize Event
+
+//Initialize Method @2-90E704C5
+    function Initialize()
+    {
+        if(!$this->Visible) return;
+
+        $this->DataSource->PageSize = & $this->PageSize;
+        $this->DataSource->AbsolutePage = & $this->PageNumber;
+        $this->DataSource->SetOrder($this->SorterName, $this->SorterDirection);
+    }
+//End Initialize Method
+
+//Show Method @2-207DABE6
+    function Show()
+    {
+        global $Tpl;
+        global $CCSLocales;
+        if(!$this->Visible) return;
+
+        $this->RowNumber = 0;
+
+        $this->DataSource->Parameters["urls_keyword"] = CCGetFromGet("s_keyword", NULL);
+
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeSelect", $this);
+
+
+        $this->DataSource->Prepare();
+        $this->DataSource->Open();
+        $this->HasRecord = $this->DataSource->has_next_record();
+        $this->IsEmpty = ! $this->HasRecord;
+        $this->Attributes->Show();
+
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeShow", $this);
+        if(!$this->Visible) return;
+
+        $GridBlock = "Grid " . $this->ComponentName;
+        $ParentPath = $Tpl->block_path;
+        $Tpl->block_path = $ParentPath . "/" . $GridBlock;
+
+
+        if (!$this->IsEmpty) {
+            $this->ControlsVisible["CODE"] = $this->CODE->Visible;
+            $this->ControlsVisible["P_BANK_OPERATION_ID"] = $this->P_BANK_OPERATION_ID->Visible;
+            $this->ControlsVisible["DLink"] = $this->DLink->Visible;
+            $this->ControlsVisible["DESCRIPTION"] = $this->DESCRIPTION->Visible;
+            $this->ControlsVisible["UPDATE_DATE"] = $this->UPDATE_DATE->Visible;
+            $this->ControlsVisible["UPDATE_BY"] = $this->UPDATE_BY->Visible;
+            $this->ControlsVisible["ACCOUNT_NUMBER"] = $this->ACCOUNT_NUMBER->Visible;
+            while ($this->ForceIteration || (($this->RowNumber < $this->PageSize) &&  ($this->HasRecord = $this->DataSource->has_next_record()))) {
+                $this->RowNumber++;
+                if ($this->HasRecord) {
+                    $this->DataSource->next_record();
+                    $this->DataSource->SetValues();
+                }
+                $Tpl->block_path = $ParentPath . "/" . $GridBlock . "/Row";
+                $this->CODE->SetValue($this->DataSource->CODE->GetValue());
+                $this->P_BANK_OPERATION_ID->SetValue($this->DataSource->P_BANK_OPERATION_ID->GetValue());
+                $this->DLink->Parameters = CCGetQueryString("QueryString", array("FLAG", "ccsForm"));
+                $this->DLink->Parameters = CCAddParam($this->DLink->Parameters, "P_BANK_OPERATION_ID", $this->DataSource->f("P_BANK_OPERATION_ID"));
+                $this->DESCRIPTION->SetValue($this->DataSource->DESCRIPTION->GetValue());
+                $this->UPDATE_DATE->SetValue($this->DataSource->UPDATE_DATE->GetValue());
+                $this->UPDATE_BY->SetValue($this->DataSource->UPDATE_BY->GetValue());
+                $this->ACCOUNT_NUMBER->SetValue($this->DataSource->ACCOUNT_NUMBER->GetValue());
+                $this->Attributes->SetValue("rowNumber", $this->RowNumber);
+                $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeShowRow", $this);
+                $this->Attributes->Show();
+                $this->CODE->Show();
+                $this->P_BANK_OPERATION_ID->Show();
+                $this->DLink->Show();
+                $this->DESCRIPTION->Show();
+                $this->UPDATE_DATE->Show();
+                $this->UPDATE_BY->Show();
+                $this->ACCOUNT_NUMBER->Show();
+                $Tpl->block_path = $ParentPath . "/" . $GridBlock;
+                $Tpl->parse("Row", true);
+            }
+        }
+        else { // Show NoRecords block if no records are found
+            $this->Attributes->Show();
+            $Tpl->parse("NoRecords", false);
+        }
+
+        $errors = $this->GetErrors();
+        if(strlen($errors))
+        {
+            $Tpl->replaceblock("", $errors);
+            $Tpl->block_path = $ParentPath;
+            return;
+        }
+        $this->Navigator->PageNumber = $this->DataSource->AbsolutePage;
+        $this->Navigator->PageSize = $this->PageSize;
+        if ($this->DataSource->RecordsCount == "CCS not counted")
+            $this->Navigator->TotalPages = $this->DataSource->AbsolutePage + ($this->DataSource->next_record() ? 1 : 0);
+        else
+            $this->Navigator->TotalPages = $this->DataSource->PageCount();
+        if ($this->Navigator->TotalPages <= 1) {
+            $this->Navigator->Visible = false;
+        }
+        $this->Link_Add->Parameters = CCGetQueryString("QueryString", array("P_USER_STATUS_ID", "ccsForm"));
+        $this->Link_Add->Parameters = CCAddParam($this->Link_Add->Parameters, "FLAG", "ADD");
+        $this->Navigator->Show();
+        $this->Link_Add->Show();
+        $Tpl->parse();
+        $Tpl->block_path = $ParentPath;
+        $this->DataSource->close();
+    }
+//End Show Method
+
+//GetErrors Method @2-C1905369
+    function GetErrors()
+    {
+        $errors = "";
+        $errors = ComposeStrings($errors, $this->CODE->Errors->ToString());
+        $errors = ComposeStrings($errors, $this->P_BANK_OPERATION_ID->Errors->ToString());
+        $errors = ComposeStrings($errors, $this->DLink->Errors->ToString());
+        $errors = ComposeStrings($errors, $this->DESCRIPTION->Errors->ToString());
+        $errors = ComposeStrings($errors, $this->UPDATE_DATE->Errors->ToString());
+        $errors = ComposeStrings($errors, $this->UPDATE_BY->Errors->ToString());
+        $errors = ComposeStrings($errors, $this->ACCOUNT_NUMBER->Errors->ToString());
+        $errors = ComposeStrings($errors, $this->Errors->ToString());
+        $errors = ComposeStrings($errors, $this->DataSource->Errors->ToString());
+        return $errors;
+    }
+//End GetErrors Method
+
+} //End P_BANK_OPERATIONGrid Class @2-FCB6E20C
+
+class clsP_BANK_OPERATIONGridDataSource extends clsDBConn_Pay {  //P_BANK_OPERATIONGridDataSource Class @2-52E37C25
+
+//DataSource Variables @2-684D61C1
+    var $Parent = "";
+    var $CCSEvents = "";
+    var $CCSEventResult;
+    var $ErrorBlock;
+    var $CmdExecution;
+
+    var $CountSQL;
+    var $wp;
+
+
+    // Datasource fields
+    var $CODE;
+    var $P_BANK_OPERATION_ID;
+    var $DESCRIPTION;
+    var $UPDATE_DATE;
+    var $UPDATE_BY;
+    var $ACCOUNT_NUMBER;
+//End DataSource Variables
+
+//DataSourceClass_Initialize Event @2-EFFD460B
+    function clsP_BANK_OPERATIONGridDataSource(& $Parent)
+    {
+        $this->Parent = & $Parent;
+        $this->ErrorBlock = "Grid P_BANK_OPERATIONGrid";
+        $this->Initialize();
+        $this->CODE = new clsField("CODE", ccsText, "");
+        
+        $this->P_BANK_OPERATION_ID = new clsField("P_BANK_OPERATION_ID", ccsText, "");
+        
+        $this->DESCRIPTION = new clsField("DESCRIPTION", ccsText, "");
+        
+        $this->UPDATE_DATE = new clsField("UPDATE_DATE", ccsText, "");
+        
+        $this->UPDATE_BY = new clsField("UPDATE_BY", ccsText, "");
+        
+        $this->ACCOUNT_NUMBER = new clsField("ACCOUNT_NUMBER", ccsText, "");
+        
+
+    }
+//End DataSourceClass_Initialize Event
+
+//SetOrder Method @2-9E1383D1
+    function SetOrder($SorterName, $SorterDirection)
+    {
+        $this->Order = "";
+        $this->Order = CCGetOrder($this->Order, $SorterName, $SorterDirection, 
+            "");
+    }
+//End SetOrder Method
+
+//Prepare Method @2-25AA94A2
+    function Prepare()
+    {
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->wp = new clsSQLParameters($this->ErrorBlock);
+        $this->wp->AddParameter("1", "urls_keyword", ccsText, "", "", $this->Parameters["urls_keyword"], "", false);
+    }
+//End Prepare Method
+
+//Open Method @2-11C76AAD
+    function Open()
+    {
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildSelect", $this->Parent);
+        $this->CountSQL = "SELECT COUNT(*) FROM (SELECT * \n" .
+        "FROM P_BANK_OPERATION) cnt";
+        $this->SQL = "SELECT * \n" .
+        "FROM P_BANK_OPERATION";
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteSelect", $this->Parent);
+        if ($this->CountSQL) 
+            $this->RecordsCount = CCGetDBValue(CCBuildSQL($this->CountSQL, $this->Where, ""), $this);
+        else
+            $this->RecordsCount = "CCS not counted";
+        $this->query(CCBuildSQL($this->SQL, $this->Where, $this->Order));
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteSelect", $this->Parent);
+        $this->MoveToPage($this->AbsolutePage);
+    }
+//End Open Method
+
+//SetValues Method @2-058DB627
+    function SetValues()
+    {
+        $this->CODE->SetDBValue($this->f("CODE"));
+        $this->P_BANK_OPERATION_ID->SetDBValue($this->f("P_BANK_OPERATION_ID"));
+        $this->DESCRIPTION->SetDBValue($this->f("DESCRIPTION"));
+        $this->UPDATE_DATE->SetDBValue($this->f("UPDATE_DATE"));
+        $this->UPDATE_BY->SetDBValue($this->f("UPDATE_BY"));
+        $this->ACCOUNT_NUMBER->SetDBValue($this->f("ACCOUNT_NUMBER"));
+    }
+//End SetValues Method
+
+} //End P_BANK_OPERATIONGridDataSource Class @2-FCB6E20C
+
+class clsRecordP_FILTER_LISTSearch { //P_FILTER_LISTSearch Class @3-B0C3BD77
+
+//Variables @3-D6FF3E86
+
+    // Public variables
+    var $ComponentType = "Record";
+    var $ComponentName;
+    var $Parent;
+    var $HTMLFormAction;
+    var $PressedButton;
+    var $Errors;
+    var $ErrorBlock;
+    var $FormSubmitted;
+    var $FormEnctype;
+    var $Visible;
+    var $IsEmpty;
+
+    var $CCSEvents = "";
+    var $CCSEventResult;
+
+    var $RelativePath = "";
+
+    var $InsertAllowed = false;
+    var $UpdateAllowed = false;
+    var $DeleteAllowed = false;
+    var $ReadAllowed   = false;
+    var $EditMode      = false;
+    var $ds;
+    var $DataSource;
+    var $ValidatingControls;
+    var $Controls;
+    var $Attributes;
+
+    // Class variables
+//End Variables
+
+//Class_Initialize Event @3-1A21F297
+    function clsRecordP_FILTER_LISTSearch($RelativePath, & $Parent)
+    {
+
+        global $FileName;
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->Visible = true;
+        $this->Parent = & $Parent;
+        $this->RelativePath = $RelativePath;
+        $this->Errors = new clsErrors();
+        $this->ErrorBlock = "Record P_FILTER_LISTSearch/Error";
+        $this->ReadAllowed = true;
+        if($this->Visible)
+        {
+            $this->ComponentName = "P_FILTER_LISTSearch";
+            $this->Attributes = new clsAttributes($this->ComponentName . ":");
+            $CCSForm = explode(":", CCGetFromGet("ccsForm", ""), 2);
+            if(sizeof($CCSForm) == 1)
+                $CCSForm[1] = "";
+            list($FormName, $FormMethod) = $CCSForm;
+            $this->FormEnctype = "application/x-www-form-urlencoded";
+            $this->FormSubmitted = ($FormName == $this->ComponentName);
+            $Method = $this->FormSubmitted ? ccsPost : ccsGet;
+            $this->s_keyword = & new clsControl(ccsTextBox, "s_keyword", "s_keyword", ccsText, "", CCGetRequestParam("s_keyword", $Method, NULL), $this);
+            $this->Button_DoSearch = & new clsButton("Button_DoSearch", $Method, $this);
+        }
+    }
+//End Class_Initialize Event
+
+//Validate Method @3-A144A629
+    function Validate()
+    {
+        global $CCSLocales;
+        $Validation = true;
+        $Where = "";
+        $Validation = ($this->s_keyword->Validate() && $Validation);
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "OnValidate", $this);
+        $Validation =  $Validation && ($this->s_keyword->Errors->Count() == 0);
+        return (($this->Errors->Count() == 0) && $Validation);
+    }
+//End Validate Method
+
+//CheckErrors Method @3-D6729123
+    function CheckErrors()
+    {
+        $errors = false;
+        $errors = ($errors || $this->s_keyword->Errors->Count());
+        $errors = ($errors || $this->Errors->Count());
+        return $errors;
+    }
+//End CheckErrors Method
+
+//MasterDetail @3-ED598703
+function SetPrimaryKeys($keyArray)
+{
+    $this->PrimaryKeys = $keyArray;
+}
+function GetPrimaryKeys()
+{
+    return $this->PrimaryKeys;
+}
+function GetPrimaryKey($keyName)
+{
+    return $this->PrimaryKeys[$keyName];
+}
+//End MasterDetail
+
+//Operation Method @3-7087E8AA
+    function Operation()
+    {
+        if(!$this->Visible)
+            return;
+
+        global $Redirect;
+        global $FileName;
+
+        if(!$this->FormSubmitted) {
+            return;
+        }
+
+        if($this->FormSubmitted) {
+            $this->PressedButton = "Button_DoSearch";
+            if($this->Button_DoSearch->Pressed) {
+                $this->PressedButton = "Button_DoSearch";
+            }
+        }
+        $Redirect = "P_BANK_OPERATION.php";
+        if($this->Validate()) {
+            if($this->PressedButton == "Button_DoSearch") {
+                $Redirect = "P_BANK_OPERATION.php" . "?" . CCMergeQueryStrings(CCGetQueryString("Form", array("Button_DoSearch", "Button_DoSearch_x", "Button_DoSearch_y")));
+                if(!CCGetEvent($this->Button_DoSearch->CCSEvents, "OnClick", $this->Button_DoSearch)) {
+                    $Redirect = "";
+                }
+            }
+        } else {
+            $Redirect = "";
+        }
+    }
+//End Operation Method
+
+//Show Method @3-7913FA87
+    function Show()
+    {
+        global $CCSUseAmp;
+        global $Tpl;
+        global $FileName;
+        global $CCSLocales;
+        $Error = "";
+
+        if(!$this->Visible)
+            return;
+
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeSelect", $this);
+
+
+        $RecordBlock = "Record " . $this->ComponentName;
+        $ParentPath = $Tpl->block_path;
+        $Tpl->block_path = $ParentPath . "/" . $RecordBlock;
+        $this->EditMode = $this->EditMode && $this->ReadAllowed;
+        if (!$this->FormSubmitted) {
+        }
+
+        if($this->FormSubmitted || $this->CheckErrors()) {
+            $Error = "";
+            $Error = ComposeStrings($Error, $this->s_keyword->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->Errors->ToString());
+            $Tpl->SetVar("Error", $Error);
+            $Tpl->Parse("Error", false);
+        }
+        $CCSForm = $this->EditMode ? $this->ComponentName . ":" . "Edit" : $this->ComponentName;
+        $this->HTMLFormAction = $FileName . "?" . CCAddParam(CCGetQueryString("QueryString", ""), "ccsForm", $CCSForm);
+        $Tpl->SetVar("Action", !$CCSUseAmp ? $this->HTMLFormAction : str_replace("&", "&amp;", $this->HTMLFormAction));
+        $Tpl->SetVar("HTMLFormName", $this->ComponentName);
+        $Tpl->SetVar("HTMLFormEnctype", $this->FormEnctype);
+
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeShow", $this);
+        $this->Attributes->Show();
+        if(!$this->Visible) {
+            $Tpl->block_path = $ParentPath;
+            return;
+        }
+
+        $this->s_keyword->Show();
+        $this->Button_DoSearch->Show();
+        $Tpl->parse();
+        $Tpl->block_path = $ParentPath;
+    }
+//End Show Method
+
+} //End P_FILTER_LISTSearch Class @3-FCB6E20C
+
+class clsRecordP_BANK_OPERATIONForm { //P_BANK_OPERATIONForm Class @19-1CAE975B
+
+//Variables @19-D6FF3E86
+
+    // Public variables
+    var $ComponentType = "Record";
+    var $ComponentName;
+    var $Parent;
+    var $HTMLFormAction;
+    var $PressedButton;
+    var $Errors;
+    var $ErrorBlock;
+    var $FormSubmitted;
+    var $FormEnctype;
+    var $Visible;
+    var $IsEmpty;
+
+    var $CCSEvents = "";
+    var $CCSEventResult;
+
+    var $RelativePath = "";
+
+    var $InsertAllowed = false;
+    var $UpdateAllowed = false;
+    var $DeleteAllowed = false;
+    var $ReadAllowed   = false;
+    var $EditMode      = false;
+    var $ds;
+    var $DataSource;
+    var $ValidatingControls;
+    var $Controls;
+    var $Attributes;
+
+    // Class variables
+//End Variables
+
+//Class_Initialize Event @19-BC3FAA43
+    function clsRecordP_BANK_OPERATIONForm($RelativePath, & $Parent)
+    {
+
+        global $FileName;
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->Visible = true;
+        $this->Parent = & $Parent;
+        $this->RelativePath = $RelativePath;
+        $this->Errors = new clsErrors();
+        $this->ErrorBlock = "Record P_BANK_OPERATIONForm/Error";
+        $this->DataSource = new clsP_BANK_OPERATIONFormDataSource($this);
+        $this->ds = & $this->DataSource;
+        $this->InsertAllowed = true;
+        $this->UpdateAllowed = true;
+        $this->DeleteAllowed = true;
+        $this->ReadAllowed = true;
+        if($this->Visible)
+        {
+            $this->ComponentName = "P_BANK_OPERATIONForm";
+            $this->Attributes = new clsAttributes($this->ComponentName . ":");
+            $CCSForm = explode(":", CCGetFromGet("ccsForm", ""), 2);
+            if(sizeof($CCSForm) == 1)
+                $CCSForm[1] = "";
+            list($FormName, $FormMethod) = $CCSForm;
+            $this->EditMode = ($FormMethod == "Edit");
+            $this->FormEnctype = "application/x-www-form-urlencoded";
+            $this->FormSubmitted = ($FormName == $this->ComponentName);
+            $Method = $this->FormSubmitted ? ccsPost : ccsGet;
+            $this->Button_Insert = & new clsButton("Button_Insert", $Method, $this);
+            $this->Button_Update = & new clsButton("Button_Update", $Method, $this);
+            $this->Button_Delete = & new clsButton("Button_Delete", $Method, $this);
+            $this->Button_Cancel = & new clsButton("Button_Cancel", $Method, $this);
+            $this->DESCRIPTION = & new clsControl(ccsTextArea, "DESCRIPTION", "Keterangan", ccsText, "", CCGetRequestParam("DESCRIPTION", $Method, NULL), $this);
+            $this->CREATION_DATE = & new clsControl(ccsTextBox, "CREATION_DATE", "CREATION DATE", ccsText, "", CCGetRequestParam("CREATION_DATE", $Method, NULL), $this);
+            $this->CREATION_DATE->Required = true;
+            $this->P_FILTER_LIST_ID = & new clsControl(ccsHidden, "P_FILTER_LIST_ID", "P_FILTER_LIST_ID", ccsText, "", CCGetRequestParam("P_FILTER_LIST_ID", $Method, NULL), $this);
+            $this->CREATED_BY = & new clsControl(ccsTextBox, "CREATED_BY", "CREATED BY", ccsText, "", CCGetRequestParam("CREATED_BY", $Method, NULL), $this);
+            $this->CREATED_BY->Required = true;
+            $this->UPDATED_BY = & new clsControl(ccsTextBox, "UPDATED_BY", "UPDATED BY", ccsText, "", CCGetRequestParam("UPDATED_BY", $Method, NULL), $this);
+            $this->UPDATED_BY->Required = true;
+            $this->UPDATED_DATE = & new clsControl(ccsTextBox, "UPDATED_DATE", "UPDATED DATE", ccsText, "", CCGetRequestParam("UPDATED_DATE", $Method, NULL), $this);
+            $this->UPDATED_DATE->Required = true;
+            $this->VALID_FROM = & new clsControl(ccsTextBox, "VALID_FROM", "VALID_FROM", ccsText, "", CCGetRequestParam("VALID_FROM", $Method, NULL), $this);
+            $this->FILTER_NAME = & new clsControl(ccsTextBox, "FILTER_NAME", "FILTER_NAME", ccsText, "", CCGetRequestParam("FILTER_NAME", $Method, NULL), $this);
+            $this->DatePicker_VALID_FROM1 = & new clsDatePicker("DatePicker_VALID_FROM1", "P_BANK_OPERATIONForm", "VALID_FROM", $this);
+            $this->VALID_TO = & new clsControl(ccsTextBox, "VALID_TO", "VALID_TO", ccsText, "", CCGetRequestParam("VALID_TO", $Method, NULL), $this);
+            $this->DatePicker_VALID_TO1 = & new clsDatePicker("DatePicker_VALID_TO1", "P_BANK_OPERATIONForm", "VALID_TO", $this);
+            if(!$this->FormSubmitted) {
+                if(!is_array($this->CREATION_DATE->Value) && !strlen($this->CREATION_DATE->Value) && $this->CREATION_DATE->Value !== false)
+                    $this->CREATION_DATE->SetText(date("d-M-Y"));
+                if(!is_array($this->CREATED_BY->Value) && !strlen($this->CREATED_BY->Value) && $this->CREATED_BY->Value !== false)
+                    $this->CREATED_BY->SetText(CCGetUserLogin());
+                if(!is_array($this->UPDATED_BY->Value) && !strlen($this->UPDATED_BY->Value) && $this->UPDATED_BY->Value !== false)
+                    $this->UPDATED_BY->SetText(CCGetUserLogin());
+                if(!is_array($this->UPDATED_DATE->Value) && !strlen($this->UPDATED_DATE->Value) && $this->UPDATED_DATE->Value !== false)
+                    $this->UPDATED_DATE->SetText(date("d-M-Y"));
+            }
+        }
+    }
+//End Class_Initialize Event
+
+//Initialize Method @19-68F80B0C
+    function Initialize()
+    {
+
+        if(!$this->Visible)
+            return;
+
+        $this->DataSource->Parameters["urlP_FILTER_LIST_ID"] = CCGetFromGet("P_FILTER_LIST_ID", NULL);
+    }
+//End Initialize Method
+
+//Validate Method @19-1CD1721F
+    function Validate()
+    {
+        global $CCSLocales;
+        $Validation = true;
+        $Where = "";
+        $Validation = ($this->DESCRIPTION->Validate() && $Validation);
+        $Validation = ($this->CREATION_DATE->Validate() && $Validation);
+        $Validation = ($this->P_FILTER_LIST_ID->Validate() && $Validation);
+        $Validation = ($this->CREATED_BY->Validate() && $Validation);
+        $Validation = ($this->UPDATED_BY->Validate() && $Validation);
+        $Validation = ($this->UPDATED_DATE->Validate() && $Validation);
+        $Validation = ($this->VALID_FROM->Validate() && $Validation);
+        $Validation = ($this->FILTER_NAME->Validate() && $Validation);
+        $Validation = ($this->VALID_TO->Validate() && $Validation);
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "OnValidate", $this);
+        $Validation =  $Validation && ($this->DESCRIPTION->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->CREATION_DATE->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->P_FILTER_LIST_ID->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->CREATED_BY->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->UPDATED_BY->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->UPDATED_DATE->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->VALID_FROM->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->FILTER_NAME->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->VALID_TO->Errors->Count() == 0);
+        return (($this->Errors->Count() == 0) && $Validation);
+    }
+//End Validate Method
+
+//CheckErrors Method @19-9975C031
+    function CheckErrors()
+    {
+        $errors = false;
+        $errors = ($errors || $this->DESCRIPTION->Errors->Count());
+        $errors = ($errors || $this->CREATION_DATE->Errors->Count());
+        $errors = ($errors || $this->P_FILTER_LIST_ID->Errors->Count());
+        $errors = ($errors || $this->CREATED_BY->Errors->Count());
+        $errors = ($errors || $this->UPDATED_BY->Errors->Count());
+        $errors = ($errors || $this->UPDATED_DATE->Errors->Count());
+        $errors = ($errors || $this->VALID_FROM->Errors->Count());
+        $errors = ($errors || $this->FILTER_NAME->Errors->Count());
+        $errors = ($errors || $this->DatePicker_VALID_FROM1->Errors->Count());
+        $errors = ($errors || $this->VALID_TO->Errors->Count());
+        $errors = ($errors || $this->DatePicker_VALID_TO1->Errors->Count());
+        $errors = ($errors || $this->Errors->Count());
+        $errors = ($errors || $this->DataSource->Errors->Count());
+        return $errors;
+    }
+//End CheckErrors Method
+
+//MasterDetail @19-ED598703
+function SetPrimaryKeys($keyArray)
+{
+    $this->PrimaryKeys = $keyArray;
+}
+function GetPrimaryKeys()
+{
+    return $this->PrimaryKeys;
+}
+function GetPrimaryKey($keyName)
+{
+    return $this->PrimaryKeys[$keyName];
+}
+//End MasterDetail
+
+//Operation Method @19-8B073B58
+    function Operation()
+    {
+        if(!$this->Visible)
+            return;
+
+        global $Redirect;
+        global $FileName;
+
+        $this->DataSource->Prepare();
+        if(!$this->FormSubmitted) {
+            $this->EditMode = $this->DataSource->AllParametersSet;
+            return;
+        }
+
+        if($this->FormSubmitted) {
+            $this->PressedButton = $this->EditMode ? "Button_Update" : "Button_Insert";
+            if($this->Button_Insert->Pressed) {
+                $this->PressedButton = "Button_Insert";
+            } else if($this->Button_Update->Pressed) {
+                $this->PressedButton = "Button_Update";
+            } else if($this->Button_Delete->Pressed) {
+                $this->PressedButton = "Button_Delete";
+            } else if($this->Button_Cancel->Pressed) {
+                $this->PressedButton = "Button_Cancel";
+            }
+        }
+        $Redirect = $FileName . "?" . CCGetQueryString("QueryString", array("ccsForm"));
+        if($this->PressedButton == "Button_Delete") {
+            $Redirect = "P_BANK_OPERATION.php" . "?" . CCGetQueryString("QueryString", array("ccsForm", "P_USER_STATUS_ID", "FLAG"));
+            if(!CCGetEvent($this->Button_Delete->CCSEvents, "OnClick", $this->Button_Delete) || !$this->DeleteRow()) {
+                $Redirect = "";
+            }
+        } else if($this->PressedButton == "Button_Cancel") {
+            $Redirect = $FileName . "?" . CCGetQueryString("QueryString", array("ccsForm", "FLAG"));
+            if(!CCGetEvent($this->Button_Cancel->CCSEvents, "OnClick", $this->Button_Cancel)) {
+                $Redirect = "";
+            }
+        } else if($this->Validate()) {
+            if($this->PressedButton == "Button_Insert") {
+                $Redirect = $FileName . "?" . CCGetQueryString("QueryString", array("ccsForm", "FLAG"));
+                if(!CCGetEvent($this->Button_Insert->CCSEvents, "OnClick", $this->Button_Insert) || !$this->InsertRow()) {
+                    $Redirect = "";
+                }
+            } else if($this->PressedButton == "Button_Update") {
+                $Redirect = $FileName . "?" . CCGetQueryString("QueryString", array("ccsForm", "FLAG"));
+                if(!CCGetEvent($this->Button_Update->CCSEvents, "OnClick", $this->Button_Update) || !$this->UpdateRow()) {
+                    $Redirect = "";
+                }
+            }
+        } else {
+            $Redirect = "";
+        }
+        if ($Redirect)
+            $this->DataSource->close();
+    }
+//End Operation Method
+
+//InsertRow Method @19-27F94DE1
+    function InsertRow()
+    {
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeInsert", $this);
+        if(!$this->InsertAllowed) return false;
+        $this->DataSource->CODE->SetValue($this->CODE->GetValue(true));
+        $this->DataSource->DESCRIPTION->SetValue($this->DESCRIPTION->GetValue(true));
+        $this->DataSource->CREATION_DATE->SetValue($this->CREATION_DATE->GetValue(true));
+        $this->DataSource->CREATED_BY->SetValue($this->CREATED_BY->GetValue(true));
+        $this->DataSource->UPDATED_BY->SetValue($this->UPDATED_BY->GetValue(true));
+        $this->DataSource->UPDATED_DATE->SetValue($this->UPDATED_DATE->GetValue(true));
+        $this->DataSource->Insert();
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterInsert", $this);
+        return (!$this->CheckErrors());
+    }
+//End InsertRow Method
+
+//UpdateRow Method @19-25E92473
+    function UpdateRow()
+    {
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeUpdate", $this);
+        if(!$this->UpdateAllowed) return false;
+        $this->DataSource->CODE->SetValue($this->CODE->GetValue(true));
+        $this->DataSource->DESCRIPTION->SetValue($this->DESCRIPTION->GetValue(true));
+        $this->DataSource->P_USER_STATUS_ID->SetValue($this->P_USER_STATUS_ID->GetValue(true));
+        $this->DataSource->Update();
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterUpdate", $this);
+        return (!$this->CheckErrors());
+    }
+//End UpdateRow Method
+
+//DeleteRow Method @19-B28C3AC2
+    function DeleteRow()
+    {
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeDelete", $this);
+        if(!$this->DeleteAllowed) return false;
+        $this->DataSource->P_USER_STATUS_ID->SetValue($this->P_USER_STATUS_ID->GetValue(true));
+        $this->DataSource->Delete();
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterDelete", $this);
+        return (!$this->CheckErrors());
+    }
+//End DeleteRow Method
+
+//Show Method @19-30711D62
+    function Show()
+    {
+        global $CCSUseAmp;
+        global $Tpl;
+        global $FileName;
+        global $CCSLocales;
+        $Error = "";
+
+        if(!$this->Visible)
+            return;
+
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeSelect", $this);
+
+
+        $RecordBlock = "Record " . $this->ComponentName;
+        $ParentPath = $Tpl->block_path;
+        $Tpl->block_path = $ParentPath . "/" . $RecordBlock;
+        $this->EditMode = $this->EditMode && $this->ReadAllowed;
+        if($this->EditMode) {
+            if($this->DataSource->Errors->Count()){
+                $this->Errors->AddErrors($this->DataSource->Errors);
+                $this->DataSource->Errors->clear();
+            }
+            $this->DataSource->Open();
+            if($this->DataSource->Errors->Count() == 0 && $this->DataSource->next_record()) {
+                $this->DataSource->SetValues();
+                if(!$this->FormSubmitted){
+                    $this->DESCRIPTION->SetValue($this->DataSource->DESCRIPTION->GetValue());
+                    $this->CREATION_DATE->SetValue($this->DataSource->CREATION_DATE->GetValue());
+                    $this->P_FILTER_LIST_ID->SetValue($this->DataSource->P_FILTER_LIST_ID->GetValue());
+                    $this->CREATED_BY->SetValue($this->DataSource->CREATED_BY->GetValue());
+                    $this->UPDATED_BY->SetValue($this->DataSource->UPDATED_BY->GetValue());
+                    $this->UPDATED_DATE->SetValue($this->DataSource->UPDATED_DATE->GetValue());
+                    $this->VALID_FROM->SetValue($this->DataSource->VALID_FROM->GetValue());
+                    $this->FILTER_NAME->SetValue($this->DataSource->FILTER_NAME->GetValue());
+                    $this->VALID_TO->SetValue($this->DataSource->VALID_TO->GetValue());
+                }
+            } else {
+                $this->EditMode = false;
+            }
+        }
+
+        if($this->FormSubmitted || $this->CheckErrors()) {
+            $Error = "";
+            $Error = ComposeStrings($Error, $this->DESCRIPTION->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->CREATION_DATE->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->P_FILTER_LIST_ID->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->CREATED_BY->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->UPDATED_BY->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->UPDATED_DATE->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->VALID_FROM->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->FILTER_NAME->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->DatePicker_VALID_FROM1->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->VALID_TO->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->DatePicker_VALID_TO1->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->DataSource->Errors->ToString());
+            $Tpl->SetVar("Error", $Error);
+            $Tpl->Parse("Error", false);
+        }
+        $CCSForm = $this->EditMode ? $this->ComponentName . ":" . "Edit" : $this->ComponentName;
+        $this->HTMLFormAction = $FileName . "?" . CCAddParam(CCGetQueryString("QueryString", ""), "ccsForm", $CCSForm);
+        $Tpl->SetVar("Action", !$CCSUseAmp ? $this->HTMLFormAction : str_replace("&", "&amp;", $this->HTMLFormAction));
+        $Tpl->SetVar("HTMLFormName", $this->ComponentName);
+        $Tpl->SetVar("HTMLFormEnctype", $this->FormEnctype);
+        $this->Button_Insert->Visible = !$this->EditMode && $this->InsertAllowed;
+        $this->Button_Update->Visible = $this->EditMode && $this->UpdateAllowed;
+        $this->Button_Delete->Visible = $this->EditMode && $this->DeleteAllowed;
+
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeShow", $this);
+        $this->Attributes->Show();
+        if(!$this->Visible) {
+            $Tpl->block_path = $ParentPath;
+            return;
+        }
+
+        $this->Button_Insert->Show();
+        $this->Button_Update->Show();
+        $this->Button_Delete->Show();
+        $this->Button_Cancel->Show();
+        $this->DESCRIPTION->Show();
+        $this->CREATION_DATE->Show();
+        $this->P_FILTER_LIST_ID->Show();
+        $this->CREATED_BY->Show();
+        $this->UPDATED_BY->Show();
+        $this->UPDATED_DATE->Show();
+        $this->VALID_FROM->Show();
+        $this->FILTER_NAME->Show();
+        $this->DatePicker_VALID_FROM1->Show();
+        $this->VALID_TO->Show();
+        $this->DatePicker_VALID_TO1->Show();
+        $Tpl->parse();
+        $Tpl->block_path = $ParentPath;
+        $this->DataSource->close();
+    }
+//End Show Method
+
+} //End P_BANK_OPERATIONForm Class @19-FCB6E20C
+
+class clsP_BANK_OPERATIONFormDataSource extends clsDBConn {  //P_BANK_OPERATIONFormDataSource Class @19-9D98D121
+
+//DataSource Variables @19-308AD3C7
+    var $Parent = "";
+    var $CCSEvents = "";
+    var $CCSEventResult;
+    var $ErrorBlock;
+    var $CmdExecution;
+
+    var $InsertParameters;
+    var $UpdateParameters;
+    var $DeleteParameters;
+    var $wp;
+    var $AllParametersSet;
+
+
+    // Datasource fields
+    var $DESCRIPTION;
+    var $CREATION_DATE;
+    var $P_FILTER_LIST_ID;
+    var $CREATED_BY;
+    var $UPDATED_BY;
+    var $UPDATED_DATE;
+    var $VALID_FROM;
+    var $FILTER_NAME;
+    var $VALID_TO;
+//End DataSource Variables
+
+//DataSourceClass_Initialize Event @19-E5BFC566
+    function clsP_BANK_OPERATIONFormDataSource(& $Parent)
+    {
+        $this->Parent = & $Parent;
+        $this->ErrorBlock = "Record P_BANK_OPERATIONForm/Error";
+        $this->Initialize();
+        $this->DESCRIPTION = new clsField("DESCRIPTION", ccsText, "");
+        
+        $this->CREATION_DATE = new clsField("CREATION_DATE", ccsText, "");
+        
+        $this->P_FILTER_LIST_ID = new clsField("P_FILTER_LIST_ID", ccsText, "");
+        
+        $this->CREATED_BY = new clsField("CREATED_BY", ccsText, "");
+        
+        $this->UPDATED_BY = new clsField("UPDATED_BY", ccsText, "");
+        
+        $this->UPDATED_DATE = new clsField("UPDATED_DATE", ccsText, "");
+        
+        $this->VALID_FROM = new clsField("VALID_FROM", ccsText, "");
+        
+        $this->FILTER_NAME = new clsField("FILTER_NAME", ccsText, "");
+        
+        $this->VALID_TO = new clsField("VALID_TO", ccsText, "");
+        
+
+    }
+//End DataSourceClass_Initialize Event
+
+//Prepare Method @19-88D01DF1
+    function Prepare()
+    {
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->wp = new clsSQLParameters($this->ErrorBlock);
+        $this->wp->AddParameter("1", "urlP_FILTER_LIST_ID", ccsFloat, "", "", $this->Parameters["urlP_FILTER_LIST_ID"], 0, false);
+        $this->AllParametersSet = $this->wp->AllParamsSet();
+    }
+//End Prepare Method
+
+//Open Method @19-D0DDC0AF
+    function Open()
+    {
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildSelect", $this->Parent);
+        $this->SQL = "SELECT P_FILTER_LIST_ID, FILTER_NAME, DESCRIPTION, \n" .
+        "TO_CHAR(VALID_FROM, 'DD-MON-YYYY')AS VALID_FROM,\n" .
+        "TO_CHAR(VALID_TO, 'DD-MON-YYYY')AS VALID_TO,\n" .
+        "TO_CHAR(CREATION_DATE, 'DD-MON-YYYY')AS CREATION_DATE, CREATED_BY, \n" .
+        "TO_CHAR(UPDATED_DATE, 'DD-MON-YYYY')AS UPDATED_DATE, UPDATED_BY\n" .
+        "FROM P_FILTER_LIST\n" .
+        "WHERE P_FILTER_LIST_ID = " . $this->SQLValue($this->wp->GetDBValue("1"), ccsFloat) . "";
+        $this->Order = "";
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteSelect", $this->Parent);
+        $this->query(CCBuildSQL($this->SQL, $this->Where, $this->Order));
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteSelect", $this->Parent);
+    }
+//End Open Method
+
+//SetValues Method @19-7FEBC0E6
+    function SetValues()
+    {
+        $this->DESCRIPTION->SetDBValue($this->f("DESCRIPTION"));
+        $this->CREATION_DATE->SetDBValue($this->f("CREATION_DATE"));
+        $this->P_FILTER_LIST_ID->SetDBValue($this->f("P_FILTER_LIST_ID"));
+        $this->CREATED_BY->SetDBValue($this->f("CREATED_BY"));
+        $this->UPDATED_BY->SetDBValue($this->f("UPDATED_BY"));
+        $this->UPDATED_DATE->SetDBValue($this->f("UPDATED_DATE"));
+        $this->VALID_FROM->SetDBValue($this->f("VALID_FROM"));
+        $this->FILTER_NAME->SetDBValue($this->f("FILTER_NAME"));
+        $this->VALID_TO->SetDBValue($this->f("VALID_TO"));
+    }
+//End SetValues Method
+
+//Insert Method @19-06ED3F98
+    function Insert()
+    {
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->CmdExecution = true;
+        $this->cp["CODE"] = new clsSQLParameter("ctrlCODE", ccsText, "", "", $this->CODE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["DESCRIPTION"] = new clsSQLParameter("ctrlDESCRIPTION", ccsText, "", "", $this->DESCRIPTION->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["CREATION_DATE"] = new clsSQLParameter("ctrlCREATION_DATE", ccsDate, array("dd", "-", "mmm", "-", "yyyy"), $this->DateFormat, $this->CREATION_DATE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["CREATED_BY"] = new clsSQLParameter("ctrlCREATED_BY", ccsText, "", "", $this->CREATED_BY->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["UPDATED_BY"] = new clsSQLParameter("ctrlUPDATED_BY", ccsText, "", "", $this->UPDATED_BY->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["UPDATED_DATE"] = new clsSQLParameter("ctrlUPDATED_DATE", ccsDate, array("dd", "-", "mmm", "-", "yyyy"), $this->DateFormat, $this->UPDATED_DATE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildInsert", $this->Parent);
+        if (!is_null($this->cp["CODE"]->GetValue()) and !strlen($this->cp["CODE"]->GetText()) and !is_bool($this->cp["CODE"]->GetValue())) 
+            $this->cp["CODE"]->SetValue($this->CODE->GetValue(true));
+        if (!is_null($this->cp["DESCRIPTION"]->GetValue()) and !strlen($this->cp["DESCRIPTION"]->GetText()) and !is_bool($this->cp["DESCRIPTION"]->GetValue())) 
+            $this->cp["DESCRIPTION"]->SetValue($this->DESCRIPTION->GetValue(true));
+        if (!is_null($this->cp["CREATION_DATE"]->GetValue()) and !strlen($this->cp["CREATION_DATE"]->GetText()) and !is_bool($this->cp["CREATION_DATE"]->GetValue())) 
+            $this->cp["CREATION_DATE"]->SetValue($this->CREATION_DATE->GetValue(true));
+        if (!is_null($this->cp["CREATED_BY"]->GetValue()) and !strlen($this->cp["CREATED_BY"]->GetText()) and !is_bool($this->cp["CREATED_BY"]->GetValue())) 
+            $this->cp["CREATED_BY"]->SetValue($this->CREATED_BY->GetValue(true));
+        if (!is_null($this->cp["UPDATED_BY"]->GetValue()) and !strlen($this->cp["UPDATED_BY"]->GetText()) and !is_bool($this->cp["UPDATED_BY"]->GetValue())) 
+            $this->cp["UPDATED_BY"]->SetValue($this->UPDATED_BY->GetValue(true));
+        if (!is_null($this->cp["UPDATED_DATE"]->GetValue()) and !strlen($this->cp["UPDATED_DATE"]->GetText()) and !is_bool($this->cp["UPDATED_DATE"]->GetValue())) 
+            $this->cp["UPDATED_DATE"]->SetValue($this->UPDATED_DATE->GetValue(true));
+        $this->SQL = "INSERT INTO P_USER_STATUS(\n" .
+        "P_USER_STATUS_ID,\n" .
+        "CODE, \n" .
+        "DESCRIPTION, \n" .
+        "CREATION_DATE, \n" .
+        "CREATED_BY, \n" .
+        "UPDATED_BY, \n" .
+        "UPDATED_DATE) \n" .
+        "VALUES(\n" .
+        "GENERATE_ID('PNOSA','P_USER_STATUS','P_USER_STATUS_ID'),\n" .
+        "UPPER(TRIM('" . $this->SQLValue($this->cp["CODE"]->GetDBValue(), ccsText) . "')), \n" .
+        "INITCAP(TRIM('" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "')), \n" .
+        "SYSDATE, \n" .
+        "'" . $this->SQLValue($this->cp["CREATED_BY"]->GetDBValue(), ccsText) . "', \n" .
+        "'" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "', \n" .
+        "SYSDATE)";
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteInsert", $this->Parent);
+        if($this->Errors->Count() == 0 && $this->CmdExecution) {
+            $this->query($this->SQL);
+            $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteInsert", $this->Parent);
+        }
+    }
+//End Insert Method
+
+//Update Method @19-1C12CADB
+    function Update()
+    {
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->CmdExecution = true;
+        $this->cp["CODE"] = new clsSQLParameter("ctrlCODE", ccsText, "", "", $this->CODE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["DESCRIPTION"] = new clsSQLParameter("ctrlDESCRIPTION", ccsText, "", "", $this->DESCRIPTION->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["P_USER_STATUS_ID"] = new clsSQLParameter("ctrlP_USER_STATUS_ID", ccsFloat, "", "", $this->P_USER_STATUS_ID->GetValue(true), null, false, $this->ErrorBlock);
+        $this->cp["UPDATED_BY"] = new clsSQLParameter("expr100", ccsText, "", "", CCGetUserLogin(), "", false, $this->ErrorBlock);
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildUpdate", $this->Parent);
+        if (!is_null($this->cp["CODE"]->GetValue()) and !strlen($this->cp["CODE"]->GetText()) and !is_bool($this->cp["CODE"]->GetValue())) 
+            $this->cp["CODE"]->SetValue($this->CODE->GetValue(true));
+        if (!is_null($this->cp["DESCRIPTION"]->GetValue()) and !strlen($this->cp["DESCRIPTION"]->GetText()) and !is_bool($this->cp["DESCRIPTION"]->GetValue())) 
+            $this->cp["DESCRIPTION"]->SetValue($this->DESCRIPTION->GetValue(true));
+        if (!is_null($this->cp["P_USER_STATUS_ID"]->GetValue()) and !strlen($this->cp["P_USER_STATUS_ID"]->GetText()) and !is_bool($this->cp["P_USER_STATUS_ID"]->GetValue())) 
+            $this->cp["P_USER_STATUS_ID"]->SetValue($this->P_USER_STATUS_ID->GetValue(true));
+        if (!strlen($this->cp["P_USER_STATUS_ID"]->GetText()) and !is_bool($this->cp["P_USER_STATUS_ID"]->GetValue(true))) 
+            $this->cp["P_USER_STATUS_ID"]->SetText(null);
+        if (!is_null($this->cp["UPDATED_BY"]->GetValue()) and !strlen($this->cp["UPDATED_BY"]->GetText()) and !is_bool($this->cp["UPDATED_BY"]->GetValue())) 
+            $this->cp["UPDATED_BY"]->SetValue(CCGetUserLogin());
+        $this->SQL = "UPDATE P_USER_STATUS \n" .
+        "SET CODE=UPPER(TRIM('" . $this->SQLValue($this->cp["CODE"]->GetDBValue(), ccsText) . "')), \n" .
+        "DESCRIPTION=INITCAP(UPPER('" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "')),\n" .
+        "UPDATED_BY='" . $this->SQLValue($this->cp["UPDATED_BY"]->GetDBValue(), ccsText) . "', \n" .
+        "UPDATED_DATE=SYSDATE \n" .
+        "WHERE  P_USER_STATUS_ID = " . $this->SQLValue($this->cp["P_USER_STATUS_ID"]->GetDBValue(), ccsFloat) . "";
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteUpdate", $this->Parent);
+        if($this->Errors->Count() == 0 && $this->CmdExecution) {
+            $this->query($this->SQL);
+            $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteUpdate", $this->Parent);
+        }
+    }
+//End Update Method
+
+//Delete Method @19-842A75A4
+    function Delete()
+    {
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->CmdExecution = true;
+        $this->cp["P_USER_STATUS_ID"] = new clsSQLParameter("ctrlP_USER_STATUS_ID", ccsFloat, "", "", $this->P_USER_STATUS_ID->GetValue(true), NULL, false, $this->ErrorBlock);
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildDelete", $this->Parent);
+        if (!is_null($this->cp["P_USER_STATUS_ID"]->GetValue()) and !strlen($this->cp["P_USER_STATUS_ID"]->GetText()) and !is_bool($this->cp["P_USER_STATUS_ID"]->GetValue())) 
+            $this->cp["P_USER_STATUS_ID"]->SetValue($this->P_USER_STATUS_ID->GetValue(true));
+        if (!strlen($this->cp["P_USER_STATUS_ID"]->GetText()) and !is_bool($this->cp["P_USER_STATUS_ID"]->GetValue(true))) 
+            $this->cp["P_USER_STATUS_ID"]->SetText(NULL);
+        $this->SQL = "DELETE FROM P_USER_STATUS WHERE P_USER_STATUS_ID = " . $this->SQLValue($this->cp["P_USER_STATUS_ID"]->GetDBValue(), ccsFloat) . "";
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteDelete", $this->Parent);
+        if($this->Errors->Count() == 0 && $this->CmdExecution) {
+            $this->query($this->SQL);
+            $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteDelete", $this->Parent);
+        }
+    }
+//End Delete Method
+
+} //End P_BANK_OPERATIONFormDataSource Class @19-FCB6E20C
+
+//Initialize Page @1-285C375C
+// Variables
+$FileName = "";
+$Redirect = "";
+$Tpl = "";
+$TemplateFileName = "";
+$BlockToParse = "";
+$ComponentName = "";
+$Attributes = "";
+
+// Events;
+$CCSEvents = "";
+$CCSEventResult = "";
+
+$FileName = FileName;
+$Redirect = "";
+$TemplateFileName = "P_BANK_OPERATION.html";
+$BlockToParse = "main";
+$TemplateEncoding = "CP1252";
+$ContentType = "text/html";
+$PathToRoot = "../";
+$Charset = $Charset ? $Charset : "windows-1252";
+//End Initialize Page
+
+//Include events file @1-B12FFB92
+include_once("./P_BANK_OPERATION_events.php");
+//End Include events file
+
+//Before Initialize @1-E870CEBC
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
+//End Before Initialize
+
+//Initialize Objects @1-4E30635D
+$DBConn_Pay = new clsDBConn_Pay();
+$MainPage->Connections["Conn_Pay"] = & $DBConn_Pay;
+$DBConn = new clsDBConn();
+$MainPage->Connections["Conn"] = & $DBConn;
+$Attributes = new clsAttributes("page:");
+$MainPage->Attributes = & $Attributes;
+
+// Controls
+$P_BANK_OPERATIONGrid = & new clsGridP_BANK_OPERATIONGrid("", $MainPage);
+$P_FILTER_LISTSearch = & new clsRecordP_FILTER_LISTSearch("", $MainPage);
+$P_BANK_OPERATIONForm = & new clsRecordP_BANK_OPERATIONForm("", $MainPage);
+$MainPage->P_BANK_OPERATIONGrid = & $P_BANK_OPERATIONGrid;
+$MainPage->P_FILTER_LISTSearch = & $P_FILTER_LISTSearch;
+$MainPage->P_BANK_OPERATIONForm = & $P_BANK_OPERATIONForm;
+$P_BANK_OPERATIONGrid->Initialize();
+$P_BANK_OPERATIONForm->Initialize();
+
+BindEvents();
+
+$CCSEventResult = CCGetEvent($CCSEvents, "AfterInitialize", $MainPage);
+
+if ($Charset) {
+    header("Content-Type: " . $ContentType . "; charset=" . $Charset);
+} else {
+    header("Content-Type: " . $ContentType);
+}
+//End Initialize Objects
+
+//Initialize HTML Template @1-52F9C312
+$CCSEventResult = CCGetEvent($CCSEvents, "OnInitializeView", $MainPage);
+$Tpl = new clsTemplate($FileEncoding, $TemplateEncoding);
+$Tpl->LoadTemplate(PathToCurrentPage . $TemplateFileName, $BlockToParse, "CP1252");
+$Tpl->block_path = "/$BlockToParse";
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeShow", $MainPage);
+$Attributes->SetValue("pathToRoot", "../");
+$Attributes->Show();
+//End Initialize HTML Template
+
+//Execute Components @1-56CA442B
+$P_FILTER_LISTSearch->Operation();
+$P_BANK_OPERATIONForm->Operation();
+//End Execute Components
+
+//Go to destination page @1-29726AE5
+if($Redirect)
+{
+    $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
+    $DBConn_Pay->close();
+    $DBConn->close();
+    header("Location: " . $Redirect);
+    unset($P_BANK_OPERATIONGrid);
+    unset($P_FILTER_LISTSearch);
+    unset($P_BANK_OPERATIONForm);
+    unset($Tpl);
+    exit;
+}
+//End Go to destination page
+
+//Show Page @1-DD837F66
+$P_BANK_OPERATIONGrid->Show();
+$P_FILTER_LISTSearch->Show();
+$P_BANK_OPERATIONForm->Show();
+$Tpl->block_path = "";
+$Tpl->Parse($BlockToParse, false);
+if (!isset($main_block)) $main_block = $Tpl->GetVar($BlockToParse);
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeOutput", $MainPage);
+if ($CCSEventResult) echo $main_block;
+//End Show Page
+
+//Unload Page @1-A497A7B5
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
+$DBConn_Pay->close();
+$DBConn->close();
+unset($P_BANK_OPERATIONGrid);
+unset($P_FILTER_LISTSearch);
+unset($P_BANK_OPERATIONForm);
+unset($Tpl);
+//End Unload Page
+
+
+?>
