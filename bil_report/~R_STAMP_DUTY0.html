@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>T_BUDGET</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.1.00.031">
+<!--#include File="../include/sessi.inc"-->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+    //view_LOV(formName,fieldList,LOV_NM)
+        arrLOV = LOV_NM.split("?");
+        window.open("../bil_lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+
+function lovFinance()
+{
+        classname = "BATCH1";
+        fieldname = "P_FINANCE_PERIOD_ID,FINANCE_PERIOD_CODE";
+        filename = "lov_p_finance_period.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+function lovCycle()
+{
+                classname = "BATCH1";
+        fieldname = "P_BILL_CYCLE_ID,BILL_CYCLE_CODE";
+        filename = "lov_p_bill_cycle.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//_OnLoad @1-9C4F01C0
+function _OnLoad()
+{
+    var result = true;
+//End _OnLoad
+
+//Custom Code @57-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close _OnLoad @1-BC33A33A
+    return result;
+}
+//End Close _OnLoad
+
+//bind_events @1-B4BAE7CE
+function bind_events() {
+    addEventHandler("", "load", _OnLoad);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+
+function toBilling(){
+        var idIDC = document.getElementById("V_R_L13_BILLINGSearchINPUT_DATA_CONTROL_ID").value;
+    location.href = "v_input_data_control_bill_invoice.php?INPUT_DATA_CONTROL_ID="+idIDC;
+}
+
+function toJobProLog(){
+        alert("Job Control is required!!");
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="../Styles/{CCS_Style}/Style_doctype.css">
+</head>
+<body style="MARGIN: 0px" marginwidth="0" marginheight="0">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tr>
+    <td><img border="0" src="../images/tab_s_off.gif"></td> 
+    <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toBilling()">BILLING PERIOD</label></td> 
+    <td><img border="0" src="../images/tab_e_off.gif" width="16" height="24"></td> 
+    <td><img border="0" src="../images/tab_s_off.gif"></td>
+    <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toL13()">L13 INVOICE</label></td> 
+    <td><img border="0" src="../images/tab_e_off.gif" width="16" height="24"></td> 
+    <td><img border="0" src="../images/tab_s_on.gif"></td> 
+    <td class="th" background="../images/tab_on.gif" nowrap align="center">STAMP DUTY</td> 
+    <td><img border="0" src="../images/tab_e_on.gif"></td> 
+    <td><img border="0" src="../images/tab_s_off.gif"></td> 
+    <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toL13()">AR 3210 SUMMARY</label></td> 
+    <td><img border="0" src="../images/tab_e_off.gif" width="16" height="24"></td> 
+    <td background="../images/tab_back.gif" width="100%"></td>
+  </tr>
+</table>
+<br>
+<table align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record R_STAMP_DUTYSearch -->
+      <form id="R_STAMP_DUTYSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>&nbsp;{Error}</td> 
+                  <td></td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th">Invoice Period&nbsp;</td> 
+                  <td class="th">&nbsp;<input id="R_STAMP_DUTYSearchInvoice_date" class="ControlsRO" value="{Invoice_date}" name="{Invoice_date_Name}"><input id="R_STAMP_DUTYSearchbill_cycle_code" class="ControlsRO" value="{bill_cycle_code}" name="{bill_cycle_code_Name}"><input id="R_STAMP_DUTYSearchINPUT_DATA_CONTROL_ID" type="hidden" value="{INPUT_DATA_CONTROL_ID}" name="{INPUT_DATA_CONTROL_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Finance Period</td> 
+                  <td class="th">&nbsp;<input id="R_STAMP_DUTYSearchfinance_period_code" class="ControlsRO" value="{finance_period_code}" name="{finance_period_code_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Currency (LOV)</td> 
+                  <td class="th">&nbsp; 
+                    <select id="R_STAMP_DUTYSearchCURRENCY_CODE" class="ControlsRQ" name="{CURRENCY_CODE_Name}">
+                      {CURRENCY_CODE_Options}
+                    </select>
+ 
+                    <!-- BEGIN Button Button_DoSearch --><input id="R_STAMP_DUTYSearchButton_DoSearch" class="Button" alt="Search" type="submit" value="Query" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record R_STAMP_DUTYSearch --><br>
+      <!-- BEGIN Grid R_STAMP_DUTYGrid -->
+      <table cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/{CCS_Style}/Images/Spacer.gif"></td> 
+                <td class="th"><strong>STAMP DUTY FEE</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/{CCS_Style}/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th scope="col">BUSINESS AREA</th>
+ 
+                <th scope="col">DEBTOR SEGMENT</th>
+ 
+                <th scope="col">SERVICE QTY</th>
+ 
+                <th scope="col">QTY 3.000</th>
+ 
+                <th scope="col">QTY 6.000</th>
+ 
+                <th scope="col">STAMP DUTY AMOUNT</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {R_STAMP_DUTYGrid:rowStyle}>
+                <td style="TEXT-ALIGN: right">{BUSINESS_AREA_NAME}&nbsp;</td> 
+                <td>{DEBTOR_SEGMENT_CODE}&nbsp;</td> 
+                <td>{SERVICE_QTY}&nbsp;</td> 
+                <td>{STAMP_DUTY_QTY_1}&nbsp;</td> 
+                <td>{STAMP_DUTY_QTY_2}&nbsp;</td> 
+                <td>{STAMP_DUTY_AMOUNT}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="6">Data not found</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td colspan="6">&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/{CCS_Style}/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/{CCS_Style}/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/{CCS_Style}/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/{CCS_Style}/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid R_STAMP_DUTYGrid --><br>
+    </td>
+  </tr>
+</table>
+<!--#include File="../include/function.inc"-->
+<script language="JavaScript">
+// === FUNGSI ANGKA ===
+function checkIt(evt) {
+var charCode = (evt.which) ? evt.which : event.keyCode
+if (charCode > 31 && (charCode < 40 || charCode > 57)) {
+return false
+}
+return true
+}
+</script>
+</body>
+</html>

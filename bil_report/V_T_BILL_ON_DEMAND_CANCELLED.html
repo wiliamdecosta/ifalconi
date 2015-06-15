@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>T_BUDGET</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.1.00.031">
+<!--#include File="../include/sessi.inc"-->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+    //view_LOV(formName,fieldList,LOV_NM)
+        arrLOV = LOV_NM.split("?");
+        window.open("../bil_lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+
+function lovFinance()
+{
+        classname = "BATCH1";
+        fieldname = "P_FINANCE_PERIOD_ID,FINANCE_PERIOD_CODE";
+        filename = "lov_p_finance_period.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+function lovCycle()
+{
+                classname = "BATCH1";
+        fieldname = "P_BILL_CYCLE_ID,BILL_CYCLE_CODE";
+        filename = "lov_p_bill_cycle.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//_OnLoad @1-9C4F01C0
+function _OnLoad()
+{
+    var result = true;
+//End _OnLoad
+
+//Custom Code @57-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close _OnLoad @1-BC33A33A
+    return result;
+}
+//End Close _OnLoad
+
+//bind_events @1-B4BAE7CE
+function bind_events() {
+    addEventHandler("", "load", _OnLoad);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+
+function toPROCESSEDBOD(){
+        //var idIDC = document.getElementById("V_R_L13SearchINPUT_DATA_CONTROL_ID").value;
+    location.href = "V_T_BILL_ON_DEMAND_PROCESSED.php?";
+}
+
+function toCANCELLEDBOD(){
+        //var idIDC = document.getElementById("V_R_L13SearchINPUT_DATA_CONTROL_ID").value;
+        location.href = "V_T_BILL_ON_DEMAND_CANCELLED.php";
+}
+
+function toUNPROCESSEDBOD(){
+        //var idIDC = document.getElementById("V_R_L13SearchINPUT_DATA_CONTROL_ID").value;
+        location.href = "V_T_BILL_ON_DEMAND_UNPROCESSED.php";
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="../Styles/{CCS_Style}/Style_doctype.css">
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tr>
+    <td><img border="0" src="../images/tab_s_off.gif"></td> 
+    <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toUNPROCESSEDBOD()">UNPROCESSED BOD</label></td> 
+    <td><img border="0" src="../images/tab_e_off.gif"></td> 
+    <td><img border="0" src="../images/tab_s_off.gif"></td> 
+    <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toPROCESSEDBOD()">PROCESSED BOD</label></td> 
+    <td><img border="0" src="../images/tab_e_off.gif" width="16" height="24"></td> 
+    <td><img border="0" src="../images/tab_s_on.gif"></td> 
+    <td class="th" background="../images/tab_on.gif" nowrap align="center">CANCELLED BOD</td> 
+    <td><img border="0" src="../images/tab_e_on.gif" width="16" height="24"></td> 
+    <td background="../images/tab_back.gif" width="100%"></td>
+  </tr>
+</table>
+<br>
+<table align="center">
+  <tr>
+    <td><br>
+      <!-- BEGIN Grid V_T_BILL_ON_DEMAND_CANCELLEDGrid -->
+      <table cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/{CCS_Style}/Images/Spacer.gif"></td> 
+                <td class="th"><strong>CANCELLED BOD</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/{CCS_Style}/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th scope="col">SUBSCRIBER ID</th>
+ 
+                <th scope="col">SUBSCRIPTION NAME</th>
+ 
+                <th scope="col">SERVICE NO</th>
+ 
+                <th scope="col">SERVICE TYPE</th>
+ 
+                <th scope="col">&nbsp;TARIFF SCENARIO</th>
+ 
+                <th scope="col">TRANSFER DATE</th>
+ 
+                <th scope="col">&nbsp;BILL CYCLE</th>
+ 
+                <th scope="col">START BILL DATE</th>
+ 
+                <th scope="col">NEXT BILL DATE</th>
+ 
+                <th scope="col">DESCRIPTION</th>
+ 
+                <th scope="col">UPDATE DATE</th>
+ 
+                <th scope="col">UPDATED BY</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {V_T_BILL_ON_DEMAND_CANCELLEDGrid:rowStyle}>
+                <td style="TEXT-ALIGN: right">{SUBSCRIBER_ID}&nbsp;</td> 
+                <td>{SUBSCRIPTION_NAME}&nbsp;</td> 
+                <td>{SERVICE_NO}&nbsp;</td> 
+                <td>{REPORT_SEGMENT_CODE}&nbsp;</td> 
+                <td>&nbsp;{TARIFF_SCENARIO_CODE}</td> 
+                <td>{TRANSFER_DATE}&nbsp;</td> 
+                <td>&nbsp;{BILL_CYCLE_CODE}</td> 
+                <td>{START_BILL_DATE}&nbsp;</td> 
+                <td style="TEXT-ALIGN: right">{NEXT_BILL_DATE}&nbsp;</td> 
+                <td>{DESCRIPTION}&nbsp;</td> 
+                <td>{UPDATE_DATE}&nbsp;</td> 
+                <td>{UPDATE_BY}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="12">Data not found</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td colspan="12">&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/{CCS_Style}/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/{CCS_Style}/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/{CCS_Style}/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/{CCS_Style}/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid V_T_BILL_ON_DEMAND_CANCELLEDGrid --></td>
+  </tr>
+</table>
+<!--#include File="../include/function.inc"-->
+<script language="JavaScript">
+// === FUNGSI ANGKA ===
+function checkIt(evt) {
+var charCode = (evt.which) ? evt.which : event.keyCode
+if (charCode > 31 && (charCode < 40 || charCode > 57)) {
+return false
+}
+return true
+}
+
+function fnExcelReport()
+    {
+             var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
+             var textRange; var j=0;
+          tab = document.getElementById('headerTable'); // id of table
+
+
+          for(j = 0 ; j < tab.rows.length ; j++) 
+          {     
+                tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
+                //tab_text=tab_text+"</tr>";
+          }
+
+          tab_text=tab_text+"</table>";
+          tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+          tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
+                      tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+               var ua = window.navigator.userAgent;
+              var msie = ua.indexOf("MSIE "); 
+
+                 if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+                    {
+                           txtArea1.document.open("txt/html","replace");
+                           txtArea1.document.write(tab_text);
+                           txtArea1.document.close();
+                           txtArea1.focus(); 
+                            sa=txtArea1.document.execCommand("SaveAs",true,"Say Thanks to Sumit.xls");
+                          }  
+                  else                 //other browser not tested on IE 11
+                      sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
+
+
+                      return (sa);
+                            }
+
+</script>
+</body>
+</html>

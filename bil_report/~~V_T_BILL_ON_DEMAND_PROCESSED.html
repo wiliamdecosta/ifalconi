@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!CCSDOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><HEAD><TITLE>T_BUDGET</TITLE>
+<STYLE needdelete>td {border-style:dotted;border-width:1px;border-color:#aaaaaa;} table {border-style:dashed;border-width:1px;border-color:#aaaaaa;}</STYLE>
+
+<META name=GENERATOR content="MSHTML 10.00.9200.16921" ccsServiceable="true">
+<META content="text/html; charset=windows-1252" http-equiv=content-type 
+ccsServiceable="true"><!--#include File="../include/sessi.inc"-->
+<SCRIPT type=text/javascript src="../js/jquery.js"></SCRIPT>
+
+<SCRIPT language=JavaScript type=text/javascript 
+src="../js/calendarWidget.js"></SCRIPT>
+
+<SCRIPT language=JavaScript src="../js/qs.js"></SCRIPT>
+
+<SCRIPT language=JavaScript type=text/javascript>
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+    //view_LOV(formName,fieldList,LOV_NM)
+        arrLOV = LOV_NM.split("?");
+        window.open("../bil_lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+
+function lovFinance()
+{
+        classname = "BATCH1";
+        fieldname = "P_FINANCE_PERIOD_ID,FINANCE_PERIOD_CODE";
+        filename = "lov_p_finance_period.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+function lovCycle()
+{
+                classname = "BATCH1";
+        fieldname = "P_BILL_CYCLE_ID,BILL_CYCLE_CODE";
+        filename = "lov_p_bill_cycle.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+</SCRIPT>
+
+<SCRIPT language=JavaScript type=text/javascript>
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</SCRIPT>
+
+<SCRIPT language=JavaScript type=text/javascript charset=utf-8 
+src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}"></SCRIPT>
+
+<SCRIPT language=JavaScript type=text/javascript>
+//End Include Common JSFunctions
+
+//_OnLoad @1-9C4F01C0
+function _OnLoad()
+{
+    var result = true;
+//End _OnLoad
+
+//Custom Code @57-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close _OnLoad @1-BC33A33A
+    return result;
+}
+//End Close _OnLoad
+
+//bind_events @1-B4BAE7CE
+function bind_events() {
+    addEventHandler("", "load", _OnLoad);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+
+function toBilling(){
+        var idIDC = document.getElementById("V_R_L13SearchINPUT_DATA_CONTROL_ID").value;
+    location.href = "v_input_data_control_bill_invoice.php?INPUT_DATA_CONTROL_ID="+idIDC;
+}
+
+function toR_STAMP_DUTY(){
+        var idIDC = document.getElementById("V_R_L13SearchINPUT_DATA_CONTROL_ID").value;
+        location.href = "R_STAMP_DUTY.php?INPUT_DATA_CONTROL_ID="+idIDC;
+}
+
+function toV_SUM_AR3210(){
+        var idIDC = document.getElementById("V_R_L13SearchINPUT_DATA_CONTROL_ID").value;
+        location.href = "V_SUM_AR3210.php?INPUT_DATA_CONTROL_ID="+idIDC;
+}
+
+function toJobProLog(){
+        alert("Job Control is required!!");
+}
+
+</SCRIPT>
+<LINK rel=stylesheet type=text/css href="../Styles/trb/Style_doctype.css" 
+ccsServiceable="true" ccsdynamicstyle="href"></HEAD>
+<BODY>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><IMG border=0 src="../images/tab_s_off.gif" ccsServiceable="true"></TD>
+    <TD class=th background=../images/tab_off.gif noWrap align=center><SPAN 
+      ccsServiceable="true" ccsHtmlTag_onclick="javascript:toBilling()" 
+      ccsHtmlTag="label">BILLING PERIOD</SPAN></TD>
+    <TD><IMG border=0 src="../images/tab_e_off.gif" width=16 height=24 
+      ccsServiceable="true"></TD>
+    <TD><IMG border=0 src="../images/tab_s_on.gif" ccsServiceable="true"></TD>
+    <TD class=th background=../images/tab_on.gif noWrap align=center>L13 
+      INVOICE</TD>
+    <TD><IMG border=0 src="../images/tab_e_on.gif" ccsServiceable="true"></TD>
+    <TD><IMG border=0 src="../images/tab_s_off.gif" ccsServiceable="true"></TD>
+    <TD class=th background=../images/tab_off.gif noWrap align=center><SPAN 
+      ccsServiceable="true" ccsHtmlTag_onclick="javascript:toR_STAMP_DUTY()" 
+      ccsHtmlTag="label">STAMP DUTY</SPAN></TD>
+    <TD><IMG border=0 src="../images/tab_e_off.gif" width=16 height=24 
+      ccsServiceable="true"></TD>
+    <TD><IMG border=0 src="../images/tab_s_off.gif" ccsServiceable="true"></TD>
+    <TD class=th background=../images/tab_off.gif noWrap align=center><SPAN 
+      ccsServiceable="true" ccsHtmlTag_onclick="javascript:toV_SUM_AR3210()" 
+      ccsHtmlTag="label">AR 3210 SUMMARY</SPAN></TD>
+    <TD><IMG border=0 src="../images/tab_e_off.gif" width=16 height=24 
+      ccsServiceable="true"></TD>
+    <TD background=../images/tab_back.gif 
+width="100%"></TD></TR></TBODY></TABLE><BR>
+<TABLE align=center>
+  <TBODY>
+  <TR>
+    <TD><BR><SPAN contentEditable=true 
+      style="BORDER-TOP: #ff3333 thin dashed; BORDER-RIGHT: #ff3333 thin dashed; BORDER-BOTTOM: #ff3333 thin dashed; BORDER-LEFT: #ff3333 thin dashed; DISPLAY: block" 
+      ccsServiceable="true" ccsName="V_T_BILL_ON_DEMAND_UNPROCESSEDGrid" 
+      ccsId="282" ccsType="Component" 
+      ccsControlName="V_T_BILL_ON_DEMAND_PROCESSEDGrid">
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top>
+            <TABLE class=Header cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD class=HeaderLeft><IMG border=0 alt="" 
+                  src="file:///C:/xampp/htdocs/ccbs/Styles/trb/Images/Spacer.gif" 
+                  ccsServiceable="true" ccsdynamicstyle="src"></TD>
+                <TD class=th><STRONG>PROCESSED BOD</STRONG></TD>
+                <TD class=HeaderRight><IMG border=0 alt="" 
+                  src="file:///C:/xampp/htdocs/ccbs/Styles/trb/Images/Spacer.gif" 
+                  ccsServiceable="true" 
+            ccsdynamicstyle="src"></TD></TR></TBODY></TABLE>
+            <TABLE class=Grid cellSpacing=0 cellPadding=0>
+              <TBODY>
+              <TR class=Caption>
+                <TH scope=col>SUBSCRIBER ID</TH>
+                <TH scope=col>SUBSCRIPTION NAME</TH>
+                <TH scope=col>SERVICE NO</TH>
+                <TH scope=col>SERVICE TYPE</TH>
+                <TH scope=col>&nbsp;TARIFF SCENARIO</TH>
+                <TH scope=col>TRANSFER DATE</TH>
+                <TH scope=col>&nbsp;BILL CYCLE</TH>
+                <TH scope=col>START BILL DATE</TH>
+                <TH scope=col>NEXT BILL DATE</TH>
+                <TH scope=col>DESCRIPTION</TH>
+                <TH scope=col>UPDATE DATE</TH>
+                <TH scope=col>UPDATED BY</TH></TR>
+              <TR ccsServiceable="true" ccsType="Block" name="Row" 
+              isBegin="True">
+                <TD 
+                style="BORDER-TOP: 2px groove; BORDER-RIGHT: black 1px solid; BORDER-BOTTOM: black 1px solid; BORDER-LEFT: 2px groove; BACKGROUND-COLOR: #dddddd" 
+                colSpan=99 ccsServiceable="true" unselectable="on" 
+                atomicselection="true"><SPAN 
+                  style="BORDER-TOP-STYLE: none; FONT-SIZE: xx-small; BORDER-LEFT-STYLE: none; HEIGHT: 100%; FONT-FAMILY: Arial; BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; WIDTH: 100%" 
+                  ccsServiceable="true" unselectable="on">Begin Row</SPAN></TD></TR>
+              <TR class=Row {V_T_BILL_ON_DEMAND_PROCESSEDGrid:rowStyle}>
+                <TD style="TEXT-ALIGN: right"><SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="SUBSCRIBER_ID" ccsId="284" 
+                  ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">SUBSCRIBER_ID</SPAN>&nbsp;</TD>
+                <TD><SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="SUBSCRIPTION_NAME" ccsId="310" 
+                  ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">SUBSCRIPTION_NAME</SPAN>&nbsp;</TD>
+                <TD><SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="SERVICE_NO" ccsId="311" 
+                  ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">SERVICE_NO</SPAN>&nbsp;</TD>
+                <TD><SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="REPORT_SEGMENT_CODE" 
+                  ccsId="296" ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">REPORT_SEGMENT_CODE</SPAN>&nbsp;</TD>
+                <TD>&nbsp;<SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="TARIFF_SCENARIO_CODE" 
+                  ccsId="408" ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">TARIFF_SCENARIO_CODE</SPAN></TD>
+                <TD><SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="TRANSFER_DATE" ccsId="314" 
+                  ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">TRANSFER_DATE</SPAN>&nbsp;</TD>
+                <TD>&nbsp;<SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="BILL_CYCLE_CODE" ccsId="409" 
+                  ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">BILL_CYCLE_CODE</SPAN></TD>
+                <TD><SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="START_BILL_DATE" ccsId="315" 
+                  ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">START_BILL_DATE</SPAN>&nbsp;</TD>
+                <TD style="TEXT-ALIGN: right"><SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="NEXT_BILL_DATE" ccsId="297" 
+                  ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">NEXT_BILL_DATE</SPAN>&nbsp;</TD>
+                <TD><SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="DESCRIPTION" ccsId="300" 
+                  ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">DESCRIPTION</SPAN>&nbsp;</TD>
+                <TD><SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="UPDATE_DATE" ccsId="301" 
+                  ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">UPDATE_DATE</SPAN>&nbsp;</TD>
+                <TD><SPAN contentEditable=false 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="UPDATE_BY" ccsId="291" 
+                  ccsType="Component" 
+                  ccsBlockIsWhiteSpace="true">UPDATE_BY</SPAN>&nbsp;</TD></TR>
+              <TR ccsServiceable="true" ccsType="Block" name="Row" 
+              isBegin="False">
+                <TD 
+                style="BORDER-TOP: 2px groove; BORDER-RIGHT: black 1px solid; BORDER-BOTTOM: black 1px solid; BORDER-LEFT: 2px groove; BACKGROUND-COLOR: #dddddd" 
+                colSpan=99 ccsServiceable="true" unselectable="on" 
+                atomicselection="true"><SPAN 
+                  style="BORDER-TOP-STYLE: none; FONT-SIZE: xx-small; BORDER-LEFT-STYLE: none; HEIGHT: 100%; FONT-FAMILY: Arial; BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; WIDTH: 100%" 
+                  ccsServiceable="true" unselectable="on">End Row</SPAN></TD></TR><!-- BEGIN NoRecords -->
+              <TR class=NoRecords>
+                <TD colSpan=12>Data not found</TD></TR><!-- END NoRecords -->
+              <TR class=Footer>
+                <TD colSpan=12>&nbsp; <SPAN ccsServiceable="true" 
+                  ccsName="Navigator" ccsId="316" ccsType="Navigator" 
+                  atomicselection="true" ccsExtendedHtmlSpan="true" 
+                  ccsExtendedHtml="true" ccsControlName="Navigator" 
+                  ccsControlType="Navigator"><SPAN contentEditable=true 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="First_On" ccsId="" 
+                  ccsType="Block" name="First_On" ccsPreserveEndSpace="true"><A 
+                  href="file:///C:/xampp/htdocs/ccbs/bil_process/%7BFirst_URL%7D" 
+                  ccsServiceable="true"><IMG border=0 alt={First_URL} 
+                  src="file:///C:/xampp/htdocs/ccbs/Styles/trb/Images/First.gif" 
+                  ccsServiceable="true" ccsdynamicstyle="src"></A> </SPAN><SPAN 
+                  contentEditable=true 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="Prev_On" ccsId="" 
+                  ccsType="Block" name="Prev_On" ccsPreserveEndSpace="true"><A 
+                  href="file:///C:/xampp/htdocs/ccbs/bil_process/%7BPrev_URL%7D" 
+                  ccsServiceable="true"><IMG border=0 alt={Prev_URL} 
+                  src="file:///C:/xampp/htdocs/ccbs/Styles/trb/Images/Prev.gif" 
+                  ccsServiceable="true" ccsdynamicstyle="src"></A> </SPAN>&nbsp; 
+                  <SPAN contentEditable=true ccsServiceable="true" 
+                  ccsName="Pages" ccsId="" ccsType="Block" name="Pages"><SPAN 
+                  contentEditable=true 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="Page_On" ccsId="" 
+                  ccsType="Block" name="Page_On" ccsPreserveEndSpace="true"><A 
+                  href="file:///C:/xampp/htdocs/ccbs/bil_process/%7BPage_URL%7D" 
+                  ccsServiceable="true">{Page_Number}</A>&nbsp;</SPAN> <SPAN 
+                  contentEditable=true 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="Page_Off" ccsId="" 
+                  ccsType="Block" name="Page_Off" 
+                  ccsPreserveEndSpace="true">{Page_Number}&nbsp;</SPAN></SPAN>&nbsp;{Total_Pages}&nbsp; 
+                  <SPAN contentEditable=true 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="Next_On" ccsId="" 
+                  ccsType="Block" name="Next_On" ccsPreserveEndSpace="true"><A 
+                  href="file:///C:/xampp/htdocs/ccbs/bil_process/%7BNext_URL%7D" 
+                  ccsServiceable="true"><IMG border=0 alt={Next_URL} 
+                  src="file:///C:/xampp/htdocs/ccbs/Styles/trb/Images/Next.gif" 
+                  ccsServiceable="true" ccsdynamicstyle="src"></A> </SPAN><SPAN 
+                  contentEditable=true 
+                  style="BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid; WHITE-SPACE: nowrap; BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid" 
+                  ccsServiceable="true" ccsName="Last_On" ccsId="" 
+                  ccsType="Block" name="Last_On" ccsPreserveEndSpace="true"><A 
+                  href="file:///C:/xampp/htdocs/ccbs/bil_process/%7BLast_URL%7D" 
+                  ccsServiceable="true"><IMG border=0 alt={Last_URL} 
+                  src="file:///C:/xampp/htdocs/ccbs/Styles/trb/Images/Last.gif" 
+                  ccsServiceable="true" ccsdynamicstyle="src"></A> 
+                  </SPAN>&nbsp;</SPAN>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>&nbsp;</SPAN></TD></TR></TBODY></TABLE><!--#include File="../include/function.inc"-->
+<SCRIPT language=JavaScript>
+// === FUNGSI ANGKA ===
+function checkIt(evt) {
+var charCode = (evt.which) ? evt.which : event.keyCode
+if (charCode > 31 && (charCode < 40 || charCode > 57)) {
+return false
+}
+return true
+}
+
+function fnExcelReport()
+    {
+             var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
+             var textRange; var j=0;
+          tab = document.getElementById('headerTable'); // id of table
+
+
+          for(j = 0 ; j < tab.rows.length ; j++) 
+          {     
+                tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
+                //tab_text=tab_text+"</tr>";
+          }
+
+          tab_text=tab_text+"</table>";
+          tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+          tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
+                      tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+               var ua = window.navigator.userAgent;
+              var msie = ua.indexOf("MSIE "); 
+
+                 if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+                    {
+                           txtArea1.document.open("txt/html","replace");
+                           txtArea1.document.write(tab_text);
+                           txtArea1.document.close();
+                           txtArea1.focus(); 
+                            sa=txtArea1.document.execCommand("SaveAs",true,"Say Thanks to Sumit.xls");
+                          }  
+                  else                 //other browser not tested on IE 11
+                      sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
+
+
+                      return (sa);
+                            }
+
+</SCRIPT>
+</BODY></HTML>

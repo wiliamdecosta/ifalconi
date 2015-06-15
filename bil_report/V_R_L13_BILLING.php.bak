@@ -1,0 +1,109 @@
+<?php
+//Include Common Files @1-9AFACB55
+define("RelativePath", "..");
+define("PathToCurrentPage", "/bil_report/");
+define("FileName", "V_R_L13_BILLING.php");
+include_once(RelativePath . "/Common.php");
+include_once(RelativePath . "/Template.php");
+include_once(RelativePath . "/Sorter.php");
+include_once(RelativePath . "/Navigator.php");
+//End Include Common Files
+
+
+
+//Initialize Page @1-560667ED
+// Variables
+$FileName = "";
+$Redirect = "";
+$Tpl = "";
+$TemplateFileName = "";
+$BlockToParse = "";
+$ComponentName = "";
+$Attributes = "";
+
+// Events;
+$CCSEvents = "";
+$CCSEventResult = "";
+
+$FileName = FileName;
+$Redirect = "";
+$TemplateFileName = "V_R_L13_BILLING.html";
+$BlockToParse = "main";
+$TemplateEncoding = "CP1252";
+$ContentType = "text/html";
+$PathToRoot = "../";
+$Charset = $Charset ? $Charset : "windows-1252";
+//End Initialize Page
+
+//Include events file @1-06D52507
+include_once("./V_R_L13_BILLING_events.php");
+//End Include events file
+
+//Before Initialize @1-E870CEBC
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
+//End Before Initialize
+
+//Initialize Objects @1-DDEABC7D
+$Attributes = new clsAttributes("page:");
+$MainPage->Attributes = & $Attributes;
+
+// Controls
+$TextBox1 = & new clsControl(ccsTextBox, "TextBox1", "TextBox1", ccsText, "", CCGetRequestParam("TextBox1", ccsGet, NULL), $MainPage);
+$TextBox2 = & new clsControl(ccsTextBox, "TextBox2", "TextBox2", ccsText, "", CCGetRequestParam("TextBox2", ccsGet, NULL), $MainPage);
+$TextBox3 = & new clsControl(ccsTextBox, "TextBox3", "TextBox3", ccsText, "", CCGetRequestParam("TextBox3", ccsGet, NULL), $MainPage);
+$input_data_control_id = & new clsControl(ccsTextBox, "input_data_control_id", "input_data_control_id", ccsText, "", CCGetRequestParam("input_data_control_id", ccsGet, NULL), $MainPage);
+$MainPage->TextBox1 = & $TextBox1;
+$MainPage->TextBox2 = & $TextBox2;
+$MainPage->TextBox3 = & $TextBox3;
+$MainPage->input_data_control_id = & $input_data_control_id;
+
+BindEvents();
+
+$CCSEventResult = CCGetEvent($CCSEvents, "AfterInitialize", $MainPage);
+
+if ($Charset) {
+    header("Content-Type: " . $ContentType . "; charset=" . $Charset);
+} else {
+    header("Content-Type: " . $ContentType);
+}
+//End Initialize Objects
+
+//Initialize HTML Template @1-52F9C312
+$CCSEventResult = CCGetEvent($CCSEvents, "OnInitializeView", $MainPage);
+$Tpl = new clsTemplate($FileEncoding, $TemplateEncoding);
+$Tpl->LoadTemplate(PathToCurrentPage . $TemplateFileName, $BlockToParse, "CP1252");
+$Tpl->block_path = "/$BlockToParse";
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeShow", $MainPage);
+$Attributes->SetValue("pathToRoot", "../");
+$Attributes->Show();
+//End Initialize HTML Template
+
+//Go to destination page @1-FBA93089
+if($Redirect)
+{
+    $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
+    header("Location: " . $Redirect);
+    unset($Tpl);
+    exit;
+}
+//End Go to destination page
+
+//Show Page @1-D195E0E8
+$TextBox1->Show();
+$TextBox2->Show();
+$TextBox3->Show();
+$input_data_control_id->Show();
+$Tpl->block_path = "";
+$Tpl->Parse($BlockToParse, false);
+if (!isset($main_block)) $main_block = $Tpl->GetVar($BlockToParse);
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeOutput", $MainPage);
+if ($CCSEventResult) echo $main_block;
+//End Show Page
+
+//Unload Page @1-74A7C1E7
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
+unset($Tpl);
+//End Unload Page
+
+
+?>

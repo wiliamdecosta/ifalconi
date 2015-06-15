@@ -1,0 +1,229 @@
+<!CCSDOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html >
+<head><style needdelete>td {border-style:dotted;border-width:1px;border-color:#aaaaaa;} table {border-style:dashed;border-width:1px;border-color:#aaaaaa;}</style>
+<meta ccsServiceable="true" name="GENERATOR" content="CodeCharge Studio 4.1.00.031"/><meta ccsServiceable="true" http-equiv="content-type" content="text/html; charset=windows-1252"/>
+
+<title>T_BUDGET</title>
+
+
+<!--#include File="../include/sessi.inc"-->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+    //view_LOV(formName,fieldList,LOV_NM)
+        arrLOV = LOV_NM.split("?");
+        window.open("../bil_lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+
+function lovFinance()
+{
+        classname = "BATCH1";
+        fieldname = "P_FINANCE_PERIOD_ID,FINANCE_PERIOD_CODE";
+        filename = "lov_p_finance_period.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+function lovCycle()
+{
+                classname = "BATCH1";
+        fieldname = "P_BILL_CYCLE_ID,BILL_CYCLE_CODE";
+        filename = "lov_p_bill_cycle.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//_OnLoad @1-9C4F01C0
+function _OnLoad()
+{
+    var result = true;
+//End _OnLoad
+
+//Custom Code @57-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close _OnLoad @1-BC33A33A
+    return result;
+}
+//End Close _OnLoad
+
+//bind_events @1-B4BAE7CE
+function bind_events() {
+    addEventHandler("", "load", _OnLoad);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+
+function toBilling(){
+        var idIDC = document.getElementById("V_R_L13_BILLINGSearchINPUT_DATA_CONTROL_ID").value;
+    location.href = "v_input_data_control_bill.php?INPUT_DATA_CONTROL_ID="+idIDC;
+}
+
+function toJobProLog(){
+        alert("Job Control is required!!");
+}
+
+</script>
+
+<link ccsServiceable="true" rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css" ccsdynamicstyle="href"/>
+
+</head>
+<body style="MARGIN: 0px" marginwidth="0" marginheight="0">
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tr>
+    <td><img ccsServiceable="true" border="0" src="../images/tab_s_off.gif"/></td> 
+    <td class="th" background="../images/tab_off.gif" nowrap align="center"><span ccsServiceable="true" ccsHtmlTag="label" ccsHtmlTag_onclick="javascript:toBilling()">BILLING PERIOD</span></td> 
+    <td><img ccsServiceable="true" border="0" src="../images/tab_e_off.gif"/></td> 
+    <td><img ccsServiceable="true" border="0" src="../images/tab_s_on.gif"/></td> 
+    <td class="th" background="../images/tab_on.gif" nowrap align="center">L13 BILLING</td> 
+    <td><img ccsServiceable="true" border="0" src="../images/tab_e_on.gif" width="16" height="24"/></td> 
+    <td background="../images/tab_back.gif" width="100%"></td>
+  </tr>
+</table>
+<br>
+<table align="center">
+  <tr>
+    <td>
+      <span contentEditable="true"  style="display:block;border-style:dashed;border-color:#FF3333; border-width:thin" ccsType="Component" ccsId="3" ccsServiceable="true" ccsName="V_R_L13_BILLINGSearch" >
+      
+<form ccsServiceable="true" id="V_R_L13_BILLINGSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>&nbsp;{Error}</td> 
+                  <td></td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th">Invoice Period&nbsp;</td> 
+                  <td class="th">&nbsp;<input ccsServiceable="true" ccsId="393" ccsName="Invoice_date" ccsType="Component" id="V_R_L13_BILLINGSearchInvoice_date" class="ControlsRO" value="{Invoice_date}" name="{Invoice_date_Name}"/><input ccsServiceable="true" ccsId="394" ccsName="bill_cycle_code" ccsType="Component" id="V_R_L13_BILLINGSearchbill_cycle_code" class="ControlsRO" value="{bill_cycle_code}" name="{bill_cycle_code_Name}"/><input ccsServiceable="true" ccsId="396" ccsName="INPUT_DATA_CONTROL_ID" ccsType="Component" id="V_R_L13_BILLINGSearchINPUT_DATA_CONTROL_ID" type="hidden" value="{INPUT_DATA_CONTROL_ID}" name="{INPUT_DATA_CONTROL_ID_Name}"/></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Finance Period</td> 
+                  <td class="th">&nbsp;<input ccsServiceable="true" ccsId="395" ccsName="finance_period_code" ccsType="Component" id="V_R_L13_BILLINGSearchfinance_period_code" class="ControlsRO" value="{finance_period_code}" name="{finance_period_code_Name}"/></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Currency (LOV)</td> 
+                  <td class="th">&nbsp; 
+                    <Select ccsType="Component" ccsServiceable="true" ccsId="399"  id="V_R_L13_BILLINGSearchCURRENCY_CODE" class="ControlsRQ" name="{CURRENCY_CODE_Name}"ccsName="CURRENCY_CODE">{CURRENCY_CODE_Options}</Select>
+ 
+                    <input ccsServiceable="true" ccsId="4" ccsName="Button_DoSearch" ccsType="Component" ccsExtendedHtml="true" id="V_R_L13_BILLINGSearchButton_DoSearch" class="Button" alt="Search" type="submit" value="Search" name="{Button_Name}"/></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+
+      &nbsp;</span><br>
+      <span contentEditable="true"  style="display:block;border-style:dashed;border-color:#FF3333; border-width:thin" ccsType="Component" ccsId="282" ccsServiceable="true" ccsName="V_R_L13_BILLINGGrid" >
+      <table cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img ccsServiceable="true" border="0" alt="" src="../Styles/trb/Images/Spacer.gif" ccsdynamicstyle="src"/></td> 
+                <td class="th"><strong>L13 BILLING</strong></td> 
+                <td class="HeaderRight"><img ccsServiceable="true" border="0" alt="" src="../Styles/trb/Images/Spacer.gif" ccsdynamicstyle="src"/></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th scope="col">BUSINESS AREA</th>
+ 
+                <th scope="col">SUB BUSINESS AREA</th>
+ 
+                <th scope="col">CUSTOMER SEGMENT</th>
+ 
+                <th scope="col">REPORT SEGMENT</th>
+ 
+                <th scope="col">SUBSCRIBER SEGMENT</th>
+ 
+                <th scope="col">SERVICE GROUP</th>
+ 
+                <th scope="col">SERVICE TYPE</th>
+ 
+                <th scope="col">BILL COMPONENT</th>
+ 
+                <th scope="col">CHARGE AMOUNT</th>
+ 
+                <th scope="col">VAT AMOUNT</th>
+              </tr>
+ 
+              <tr  ccsType="Block" isBegin="True" name="Row" ccsServiceable="true" ><td atomicselection="true" unselectable="on" colspan="99" style="border-right: black 1px solid;border-top: 2px groove;border-left: 2px groove;border-bottom: black 1px solid;background-color:#DDDDDD" ccsServiceable="true"><span style="width:100%;height:100%;border-style:none;font-size:xx-small;font-family:Arial" unselectable="on" ccsServiceable="true"> Begin Row</span></td></tr>
+              <tr  class="Row" {V_R_L13_BILLINGGrid:rowStyle}>
+                <td style="TEXT-ALIGN: right"><span ccsId="284" ccsName="BUSINESS_AREA_NAME" ccsBlockIsWhiteSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px" ccsType="Component" ccsServiceable="true" contentEditable="false">BUSINESS_AREA_NAME</span>&nbsp;</td> 
+                <td><span ccsId="310" ccsName="SUB_BUSINESS_AREA_NAME" ccsBlockIsWhiteSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px" ccsType="Component" ccsServiceable="true" contentEditable="false">SUB_BUSINESS_AREA_NAME</span>&nbsp;</td> 
+                <td><span ccsId="311" ccsName="CUSTOMER_SEGMENT_CODE" ccsBlockIsWhiteSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px" ccsType="Component" ccsServiceable="true" contentEditable="false">CUSTOMER_SEGMENT_CODE</span>&nbsp;</td> 
+                <td><span ccsId="296" ccsName="REPORT_SEGMENT_CODE" ccsBlockIsWhiteSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px" ccsType="Component" ccsServiceable="true" contentEditable="false">REPORT_SEGMENT_CODE</span>&nbsp;</td> 
+                <td><span ccsId="314" ccsName="SUBSCRIBER_SEGMENT_CODE" ccsBlockIsWhiteSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px" ccsType="Component" ccsServiceable="true" contentEditable="false">SUBSCRIBER_SEGMENT_CODE</span>&nbsp;</td> 
+                <td><span ccsId="315" ccsName="SERVICE_GROUP_CODE" ccsBlockIsWhiteSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px" ccsType="Component" ccsServiceable="true" contentEditable="false">SERVICE_GROUP_CODE</span>&nbsp;</td> 
+                <td style="TEXT-ALIGN: right"><span ccsId="297" ccsName="SERVICE_TYPE_CODE" ccsBlockIsWhiteSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px" ccsType="Component" ccsServiceable="true" contentEditable="false">SERVICE_TYPE_CODE</span>&nbsp;</td> 
+                <td><span ccsId="300" ccsName="BILL_COMPONENT_CODE" ccsBlockIsWhiteSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px" ccsType="Component" ccsServiceable="true" contentEditable="false">BILL_COMPONENT_CODE</span>&nbsp;</td> 
+                <td><span ccsId="301" ccsName="CHARGE_AMOUNT" ccsBlockIsWhiteSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px" ccsType="Component" ccsServiceable="true" contentEditable="false">CHARGE_AMOUNT</span>&nbsp;</td> 
+                <td><span ccsId="291" ccsName="VAT_AMOUNT" ccsBlockIsWhiteSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px" ccsType="Component" ccsServiceable="true" contentEditable="false">VAT_AMOUNT</span>&nbsp;</td>
+              </tr>
+ <tr  ccsType="Block" isBegin="False" name="Row" ccsServiceable="true" ><td atomicselection="true" unselectable="on" colspan="99" style="border-right: black 1px solid;border-top: 2px groove;border-left: 2px groove;border-bottom: black 1px solid;background-color:#DDDDDD" ccsServiceable="true"><span style="width:100%;height:100%;border-style:none;font-size:xx-small;font-family:Arial" unselectable="on" ccsServiceable="true"> End Row</span></td></tr>
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="10">Data not found</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td colspan="10">&nbsp; 
+                  <span ccsId="316" ccsName="Navigator" ccsType="Navigator" ccsControlType="Navigator" ccsControlName="Navigator" ccsExtendedHtml="true" atomicselection="true"  ccsServiceable="true" ccsExtendedHtmlSpan="true">
+                  <span ccsId="" ccsName="First_On" name="First_On" ccsType="Block" ccsServiceable="true" contentEditable="true" ccsPreserveEndSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px"><a ccsServiceable="true" href="{First_URL}"><img ccsServiceable="true" border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif" ccsdynamicstyle="src"/></a> </span>
+                  <span ccsId="" ccsName="Prev_On" name="Prev_On" ccsType="Block" ccsServiceable="true" contentEditable="true" ccsPreserveEndSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px"><a ccsServiceable="true" href="{Prev_URL}"><img ccsServiceable="true" border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif" ccsdynamicstyle="src"/></a> </span>&nbsp; 
+                  <span ccsId="" ccsName="Pages" name="Pages" ccsType="Block" ccsServiceable="true" contentEditable="true">
+                  <span ccsId="" ccsName="Page_On" name="Page_On" ccsType="Block" ccsServiceable="true" contentEditable="true" ccsPreserveEndSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px"><a ccsServiceable="true" href="{Page_URL}">{Page_Number}</a>&nbsp;</span>
+                  <span ccsId="" ccsName="Page_Off" name="Page_Off" ccsType="Block" ccsServiceable="true" contentEditable="true" ccsPreserveEndSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px">{Page_Number}&nbsp;</span></span>&nbsp;{Total_Pages}&nbsp; 
+                  <span ccsId="" ccsName="Next_On" name="Next_On" ccsType="Block" ccsServiceable="true" contentEditable="true" ccsPreserveEndSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px"><a ccsServiceable="true" href="{Next_URL}"><img ccsServiceable="true" border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif" ccsdynamicstyle="src"/></a> </span>
+                  <span ccsId="" ccsName="Last_On" name="Last_On" ccsType="Block" ccsServiceable="true" contentEditable="true" ccsPreserveEndSpace="true" style="white-space:nowrap;border-color:#bbbbbb;border-style:solid;border-width:1px"><a ccsServiceable="true" href="{Last_URL}"><img ccsServiceable="true" border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif" ccsdynamicstyle="src"/></a> </span>&nbsp;</span>&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      &nbsp;</span><br>
+    </td>
+  </tr>
+</table>
+<!--#include File="../include/function.inc"-->
+<script language="JavaScript">
+// === FUNGSI ANGKA ===
+function checkIt(evt) {
+var charCode = (evt.which) ? evt.which : event.keyCode
+if (charCode > 31 && (charCode < 40 || charCode > 57)) {
+return false
+}
+return true
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>T_BUDGET</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.1.00.031">
+<!--#include File="../include/sessi.inc"-->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+    //view_LOV(formName,fieldList,LOV_NM)
+        arrLOV = LOV_NM.split("?");
+        window.open("../bil_lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+
+function lovFinance()
+{
+        classname = "BATCH1";
+        fieldname = "P_FINANCE_PERIOD_ID,FINANCE_PERIOD_CODE";
+        filename = "lov_p_finance_period.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+function lovCycle()
+{
+                classname = "BATCH1";
+        fieldname = "P_BILL_CYCLE_ID,BILL_CYCLE_CODE";
+        filename = "lov_p_bill_cycle.php";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//_OnLoad @1-9C4F01C0
+function _OnLoad()
+{
+    var result = true;
+//End _OnLoad
+
+//Custom Code @57-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close _OnLoad @1-BC33A33A
+    return result;
+}
+//End Close _OnLoad
+
+//bind_events @1-B4BAE7CE
+function bind_events() {
+    addEventHandler("", "load", _OnLoad);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+
+function toL13Billing(){
+	var idIDC = document.getElementById("v_input_data_control_billGridIDCid").value;
+    location.href = "V_R_L13_BILLING.php?INPUT_DATA_CONTROL_ID="+idIDC;
+}
+
+function toJobProLog(){
+        alert("Job Control is required!!");
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="../Styles/{CCS_Style}/Style_doctype.css">
+</head>
+<body style="MARGIN: 0px" marginheight="0" marginwidth="0">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tr>
+    <td><img border="0" src="../images/tab_s_on.gif"></td> 
+    <td class="th" background="../images/tab_on.gif" nowrap align="center">BILLING PERIOD</td> 
+    <td><img border="0" src="../images/tab_e_on.gif"></td> 
+    <td><img border="0" src="../images/tab_s_off.gif"></td> 
+    <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toL13Billing()">L13 BILLING</label></td> 
+    <td><img border="0" src="../images/tab_e_off.gif" width="16" height="24"></td> 
+    <td background="../images/tab_back.gif" width="100%"></td>
+  </tr>
+</table>
+<br>
+<table align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record v_input_data_control_billSearch -->
+      <form id="v_input_data_control_billSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="v_input_data_control_billSearchs_keyword">&nbsp;</label><input id="v_input_data_control_billSearchs_keyword" class="ControlsIN" style="TEXT-TRANSFORM: uppercase" maxlength="32" size="32" value="{s_keyword}" name="{s_keyword_Name}">
+                    <!-- BEGIN Button Button_DoSearch --><input id="v_input_data_control_billSearchButton_DoSearch" class="Button" alt="Search" type="submit" value="Search" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record v_input_data_control_billSearch --><br>
+      <!-- BEGIN Grid v_input_data_control_billGrid -->
+      <table cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/{CCS_Style}/Images/Spacer.gif"></td> 
+                <td class="th"><strong>BILLING&nbsp;PERIOD LIST </strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/{CCS_Style}/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">BATCH&nbsp;ID</th>
+ 
+                <th scope="col">BATCH TYPE</th>
+ 
+                <th scope="col">FINANCE PERIOD CODE</th>
+ 
+                <th scope="col">INVOICE DATE</th>
+ 
+                <th scope="col">BILL CYCLE CODE</th>
+ 
+                <th scope="col">BILL STATUS</th>
+ 
+                <th scope="col">TOTAL BILL AMOUNT</th>
+ 
+                <th scope="col">CLOSING DATE</th>
+ 
+                <th scope="col">CLOSED BY</th>
+ 
+                <th scope="col">CREATION DATE</th>
+ 
+                <th scope="col">CREATED BY</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {v_input_data_control_billGrid:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="v_input_data_control_billGridDLink_{BATCH:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="v_input_data_control_billGridADLink_{BATCH:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td style="TEXT-ALIGN: right">{INPUT_DATA_CONTROL_ID}&nbsp;</td> 
+                <td>{BATCH_TYPE}&nbsp;</td> 
+                <td>{FINANCE_PERIOD_CODE}&nbsp;</td> 
+                <td>{INVOICE_DATE}&nbsp;</td> 
+                <td>{BILL_CYCLE_CODE}&nbsp;</td> 
+                <td>{BILL_STATUS}&nbsp;</td> 
+                <td style="TEXT-ALIGN: right">{BILL_AMT}&nbsp;</td> 
+                <td>{CLOSING_DATE}&nbsp;</td> 
+                <td>{CLOSED_BY}&nbsp;</td> 
+                <td>{CREATION_DATE}&nbsp;</td> 
+                <td>{OPERATOR_ID}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="12">Data not found</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="BORDER-RIGHT: 0px">&nbsp;<input id="v_input_data_control_billGridIDCid" style="HEIGHT: 22px; WIDTH: 55px" size="1" type="hidden" value="{IDCid}" name="{IDCid_Name}"></td> 
+                <td colspan="12">&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/{CCS_Style}/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/{CCS_Style}/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/{CCS_Style}/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/{CCS_Style}/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid v_input_data_control_billGrid --><br>
+    </td>
+  </tr>
+</table>
+<!--#include File="../include/function.inc"-->
+<script language="JavaScript">
+// === FUNGSI ANGKA ===
+function checkIt(evt) {
+var charCode = (evt.which) ? evt.which : event.keyCode
+if (charCode > 31 && (charCode < 40 || charCode > 57)) {
+return false
+}
+return true
+}
+</script>
+</body>
+</html>
