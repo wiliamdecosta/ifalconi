@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>sub_promo</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+		<table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+				<tr>
+						<td><img border="0" src="../images/tab_s_off.gif"></td> 
+						<td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="toSubscription()">SUBSCRIPTION</label></td> 
+						<td><img border="0" src="../images/tab_e_off.gif"></td> 
+						<td><img border="0" src="../images/tab_s_on.gif"></td> 
+						<td class="th" background="../images/tab_on.gif" nowrap align="center"><label onclick="javascript:toPromotion()">PROMOTION</label></td> 
+						<td><img border="0" src="../images/tab_e_on.gif"></td> 
+						<td><img border="0" src="../images/tab_s_off.gif"></td> 
+						<td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toFeature()">FEATURE</label></td> 
+						<td><img border="0" src="../images/tab_e_off.gif"></td> 
+						<td><img border="0" src="../images/tab_s_off.gif"></td> 
+						<td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toTariff()">TARIFF OVERRIDE</label></td> 
+						<td><img border="0" src="../images/tab_e_off.gif"></td> 
+						<td><img border="0" src="../images/tab_s_off.gif"></td> 
+						<td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toCPE()">CPE</label></td> 
+						<td><img border="0" src="../images/tab_e_off.gif"></td> 
+						<td><img border="0" src="../images/tab_s_off.gif"></td> 
+						<td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toStatus()">STATUS HISTORY</label></td> 
+						<td><img border="0" src="../images/tab_e_off.gif"></td> 
+						<td><img border="0" src="../images/tab_s_off.gif"></td> 
+						<td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toSubInfo()">SUBSCRIBER INFO</label></td> 
+						<td><img border="0" src="../images/tab_e_off.gif"></td> 
+						<td background="../images/tab_back.gif" width="100%"></td>
+				</tr>
+		</table>
+</div>
+<br>
+<br>
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+		<tr>
+				<td>
+						<!-- BEGIN Record SubscribInfo -->
+						<form id="SubscribInfo" method="post" name="{HTMLFormName}" action="{Action}">
+								<table cellspacing="0" cellpadding="0" border="2">
+										<tr>
+												<td valign="top">
+														<table class="Record" cellspacing="0" cellpadding="0">
+																<!-- BEGIN Error -->
+																<tr class="Error">
+																		<td colspan="6">{Error}</td>
+																</tr>
+																<!-- END Error -->
+																<tr class="Controls">
+																		<td class="th" style="TEXT-ALIGN: right"><label for="SubscribInfoSERVICE_NO"><strong>Service&nbsp;: </strong></label></td> 
+																		<td colspan="4">{SERVICE_NO}&nbsp;</td> 
+																		<td>&nbsp;{SERVICE_TYPE_CODE}</td>
+																</tr>
+ 
+																<tr class="Controls">
+																		<td class="th" style="TEXT-ALIGN: right"><label for="SubscribInfoSERVICE_NO"><strong>Tariff Scenario : </strong></label></td> 
+																		<td colspan="5">{TARIFF_SCENARIO_CODE}</td>
+																</tr>
+ 
+																<tr class="Controls">
+																		<td class="th" style="TEXT-ALIGN: right"><strong>Subcriber&nbsp;Name :</strong></td> 
+																		<td colspan="5">{SUBSCRIPTION_NAME}</td>
+																</tr>
+														</table>
+												</td>
+										</tr>
+								</table>
+						</form>
+						<!-- END Record SubscribInfo --><br>
+						<!-- BEGIN Grid SERVICEPROMOTION -->
+						<table cellspacing="0" cellpadding="0" width="100%" border="0">
+								<tr>
+										<td valign="top">
+												<table class="Header" cellspacing="0" cellpadding="0" border="0">
+														<tr>
+																<td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+																<td class="th"><strong>SERVICE PROMOTION</strong></td> 
+																<td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+														</tr>
+												</table>
+ 
+												<table class="Grid" cellspacing="0" cellpadding="0">
+														<tr class="Caption">
+																<th style="TEXT-ALIGN: center" scope="col">&nbsp;DETAIL</th>
+ 
+																<th scope="col">SERVICE PROMO CODE</th>
+ 
+																<th scope="col">PROMOTION DATE</th>
+ 
+																<th colspan="3" scope="col">DESCRIPTION</th>
+														</tr>
+ 
+														<!-- BEGIN Row -->
+														<tr {SERVICEPROMOTION:rowStyle}>
+																<td style="TEXT-ALIGN: center">
+																		<!-- BEGIN Link Editlink --><a href="{Editlink_Src}" id="SERVICEPROMOTIONEditlink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/act.png" width="16" height="16"></a><!-- END Link Editlink --></td> 
+																<td>{OT_PROMO_CODE}&nbsp;<input id="SERVICEPROMOTIONSUBS_OT_PROMO_SERVICE_ID" type="hidden" value="{SUBS_OT_PROMO_SERVICE_ID}" name="{SUBS_OT_PROMO_SERVICE_ID_Name}"></td> 
+																<td>{PROMOTION_DATE}&nbsp;</td> 
+																<td colspan="3">{DESCRIPTION}&nbsp;</td>
+														</tr>
+ <!-- END Row -->
+														<!-- BEGIN NoRecords -->
+														<tr class="NoRecords">
+																<td colspan="6">No Record</td>
+														</tr>
+														<!-- END NoRecords -->
+														<tr class="Footer">
+																<td style="TEXT-ALIGN: center">&nbsp;<a href="{ServicePromo_Insert_Src}" id="SERVICEPROMOTIONServicePromo_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a>&nbsp;&nbsp;&nbsp;</td> 
+																<td colspan="5">&nbsp; 
+																		<!-- BEGIN Navigator Navigator -->
+																		<!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+																		<!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+																		<!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+																		<!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->
+																		<!-- BEGIN Pages -->
+																		<!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a><!-- END Page_On -->
+																		<!-- BEGIN Page_Off -->{Page_Number}<!-- END Page_Off --><!-- END Pages -->
+																		<!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+																		<!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+																		<!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+																		<!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator --></td>
+														</tr>
+												</table>
+										</td>
+								</tr>
+						</table>
+						<!-- END Grid SERVICEPROMOTION -->
+						<p>
+						<!-- BEGIN Grid FEATUREPROMOTION -->
+						<table cellspacing="0" cellpadding="0" width="100%" border="0">
+								<tr>
+										<td valign="top">
+												<table class="Header" cellspacing="0" cellpadding="0" border="0">
+														<tr>
+																<td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+																<td class="th"><strong>FEATURE&nbsp;PROMOTION</strong></td> 
+																<td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+														</tr>
+												</table>
+ 
+												<table class="Grid" cellspacing="0" cellpadding="0">
+														<tr class="Caption">
+																<th style="TEXT-ALIGN: center" scope="col">&nbsp;DETAIL</th>
+ 
+																<th scope="col">FEATUR PROMO CODE</th>
+ 
+																<th scope="col">PROMOTION DATE</th>
+ 
+																<th colspan="3" scope="col">DESCRIPTION</th>
+														</tr>
+ 
+														<!-- BEGIN Row -->
+														<tr {FEATUREPROMOTION:rowStyle}>
+																<td style="TEXT-ALIGN: center">
+																		<!-- BEGIN Link Editlink --><a href="{Editlink_Src}" id="FEATUREPROMOTIONEditlink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/act.png" width="16" height="16"></a><!-- END Link Editlink --></td> 
+																<td>{OT_FEATURE_PROMO_CODE}&nbsp;<input id="FEATUREPROMOTIONSUBS_OT_PROMO_FEATURE_ID" type="hidden" value="{SUBS_OT_PROMO_FEATURE_ID}" name="{SUBS_OT_PROMO_FEATURE_ID_Name}"></td> 
+																<td>{PROMOTION_DATE}&nbsp;</td> 
+																<td colspan="3">{DESCRIPTION}&nbsp;</td>
+														</tr>
+ <!-- END Row -->
+														<!-- BEGIN NoRecords -->
+														<tr class="NoRecords">
+																<td colspan="6">No Record</td>
+														</tr>
+														<!-- END NoRecords -->
+														<tr class="Footer">
+																<td style="TEXT-ALIGN: center">&nbsp;<a href="{ServicePromo_Insert_Src}" id="FEATUREPROMOTIONServicePromo_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a>&nbsp;&nbsp;&nbsp;</td> 
+																<td colspan="5">&nbsp; 
+																		<!-- BEGIN Navigator Navigator -->
+																		<!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+																		<!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+																		<!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+																		<!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->
+																		<!-- BEGIN Pages -->
+																		<!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a><!-- END Page_On -->
+																		<!-- BEGIN Page_Off -->{Page_Number}<!-- END Page_Off --><!-- END Pages -->
+																		<!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+																		<!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+																		<!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+																		<!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator --></td>
+														</tr>
+												</table>
+										</td>
+								</tr>
+						</table>
+						<!-- END Grid FEATUREPROMOTION --></p>
+				</td>
+		</tr>
+		<br>
+</table>
+<script language="javascript">
+        function toSubscription()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toPromotion()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_promo.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toFeature()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_feature.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toTariff()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_tariff_override.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toCPE()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_cpe.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toStatus()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_status_historyRO.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toSubInfo()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_info.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+</script>
+</body>
+</html>

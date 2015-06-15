@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>t_bill</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<style>
+        #scripted{ padding-top: 40px;}
+
+                .custom {
+                border-right: 0px solid white !important;
+                }
+</style>
+<script language="JavaScript" type="text/javascript">
+        function toCust(){
+                var customer = document.getElementById("V_SUBSCRIBERCUSTOMER_ACCOUNT_ID").value;
+                location.href = "customer_account.php";
+        }
+
+        function toInvPeriod(){
+                //var bill = document.getElementById("V_INVOICE_PERIODINVOICE_DATE_PARAM").value;
+                location.href = "t_input_data_control.php";
+        }
+
+        function toINVOICE(){
+                var customer = document.getElementById("V_SUBSCRIBERCUSTOMER_ACCOUNT_ID").value;
+                location.href = "cust_acc_payment_method.php?CUSTOMER_ACCOUNT_ID="+customer;
+        }
+        
+</script>
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="WIDTH: 100%; POSITION: absolute">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toInvPeriod()">INVOICE PERIOD</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">BILL</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toINVOIVE()">INVOICE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<table id="scripted" cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record p_customer_account -->
+      <form id="p_customer_account" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="2">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="4">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th custom" style="TEXT-ALIGN: right"><label for="p_customer_accountACCOUNT_NO"><strong>INVOICE DATE&nbsp;: </strong></label></td> 
+                  <td class="custom">{INVOICE_DATE}</td> 
+                  <td class="custom">-</td> 
+                  <td>{FINANCE_PERIOD_CODE}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record p_customer_account --><br>
+      <!-- BEGIN Grid T_BILL2 -->
+      <table cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                <td class="th"><strong>LIST INVOICE PERIOD </strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#&nbsp;</th>
+ 
+                <th scope="col">SUBSCRIBER ID</th>
+ 
+                <th scope="col">SERVICE NO</th>
+ 
+                <th scope="col">SERVICE TYPE</th>
+ 
+                <th scope="col">START BILL DATE</th>
+ 
+                <th scope="col">END BILL DATE</th>
+ 
+                <th scope="col">CCY</th>
+ 
+                <th scope="col">CREATE INV?</th>
+ 
+                <th scope="col">ACCOUNT ID</th>
+ 
+                <th scope="col">ACCOUNT NAME</th>
+ 
+                <th scope="col">NPWP&nbsp;</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {T_BILL2:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="T_BILL2DLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="T_BILL2ADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td style="TEXT-ALIGN: right">{SUBSCRIBER_ID}&nbsp;</td> 
+                <td>{SERVICE_LINE_NUMBER}&nbsp;<input id="T_BILL2INVOICE_DATE_{T_BILL2:rowNumber}" type="hidden" value="{INVOICE_DATE}" name="{INVOICE_DATE_Name}"></td> 
+                <td>{SERVICE_TYPE_CODE}<label for="T_BILL2INPUT_DATA_CONTROL_ID_{T_BILL2:rowNumber}" style="display: none;">&nbsp;</label><input id="T_BILL2INPUT_DATA_CONTROL_ID_{T_BILL2:rowNumber}" type="hidden" value="{INPUT_DATA_CONTROL_ID}" name="{INPUT_DATA_CONTROL_ID_Name}"></td> 
+                <td>{START_BILL_DATE}&nbsp;</td> 
+                <td>{END_BILL_DATE}&nbsp;</td> 
+                <td style="TEXT-ALIGN: right">{CURRENCY_CODE}&nbsp;</td> 
+                <td style="TEXT-ALIGN: right">{IS_CREATE_INVOICE}&nbsp;</td> 
+                <td style="TEXT-ALIGN: right">{ACCOUNT_ID}&nbsp;</td> 
+                <td style="TEXT-ALIGN: left">{ACCOUNT_NAME}</td> 
+                <td style="TEXT-ALIGN: left">{NPWP}</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="11">Data not found</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td colspan="11">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid T_BILL2 --><br>
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td>
+            <!-- BEGIN Grid V_T_DETAIL_BIL -->
+            <table cellspacing="0" cellpadding="2" width="100%" border="0">
+              <tr>
+                <td valign="top">
+                  <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                      <td class="HeaderLeft"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                      <td class="th"><strong>DETAIL BIL </strong></td> 
+                      <td class="HeaderRight"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td>
+                    </tr>
+                  </table>
+ 
+                  <table class="Grid" cellspacing="0" cellpadding="0">
+                    <tr class="Caption">
+                      <th scope="col">BILL COMPONENT</th>
+ 
+                      <th scope="col">BILL AMOUNT</th>
+ 
+                      <th scope="col">TAX AMOUNT</th>
+ 
+                      <th scope="col">DESCRIPTION</th>
+                    </tr>
+ 
+                    <!-- BEGIN Row -->
+                    <tr {V_T_DETAIL_BIL:rowStyle}>
+                      <td style="TEXT-ALIGN: right">{BILL_COMPONENT_ID}&nbsp;<input id="V_T_DETAIL_BILSUBSCRIBER_ID_{V_T_DETAIL_BIL:rowNumber}" type="hidden" value="{SUBSCRIBER_ID}" name="{SUBSCRIBER_ID_Name}"></td> 
+                      <td style="TEXT-ALIGN: right">{AMOUNT}&nbsp;<input id="V_T_DETAIL_BILSTART_BILL_DATE_{V_T_DETAIL_BIL:rowNumber}" type="hidden" value="{START_BILL_DATE}" name="{START_BILL_DATE_Name}"></td> 
+                      <td style="TEXT-ALIGN: right">{TAX_AMOUNT}</td> 
+                      <td>{DESCRIPTION}&nbsp;</td>
+                    </tr>
+ 
+                    <tr class="Row">
+                      <td style="TEXT-ALIGN: center">&nbsp;</td> 
+                      <td style="TEXT-ALIGN: right">{TOT_BILL}</td> 
+                      <td style="TEXT-ALIGN: right">{TOT_TAX_BILL}</td> 
+                      <td style="TEXT-ALIGN: right">&nbsp;</td>
+                    </tr>
+ <!-- END Row -->
+                    <!-- BEGIN NoRecords -->
+                    <tr class="NoRecords">
+                      <td colspan="4">Data not found</td>
+                    </tr>
+                    <!-- END NoRecords -->
+                    <tr class="Footer">
+                      <td colspan="4">
+                        <!-- BEGIN Navigator Navigator -->
+                        <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                        <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                        <!-- BEGIN Pages -->
+                        <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                        <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                        <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                        <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!-- END Grid V_T_DETAIL_BIL --></td> 
+          <td>&nbsp; 
+            <!-- BEGIN Grid V_DETAIL_BILL_BY_ACCOUNT -->
+            <table cellspacing="0" cellpadding="0" width="100%" border="0">
+              <tr>
+                <td valign="top">
+                  <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                      <td class="HeaderLeft"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                      <td class="th"><strong>V DETAIL BILL BY ACCOUNT </strong></td> 
+                      <td class="HeaderRight"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td>
+                    </tr>
+                  </table>
+ 
+                  <table class="Grid" cellspacing="0" cellpadding="0">
+                    <tr class="Caption">
+                      <th scope="col">SUBSCRIBER ID</th>
+ 
+                      <th scope="col">BILL COMPONENT</th>
+ 
+                      <th scope="col">AMOUNT</th>
+                    </tr>
+ 
+                    <!-- BEGIN Row -->
+                    <tr {V_DETAIL_BILL_BY_ACCOUNT:rowStyle}>
+                      <td style="TEXT-ALIGN: right">{SUBSCRIBER_ID}&nbsp;</td> 
+                      <td>{BILL_COMP_CODE}&nbsp;<input id="V_DETAIL_BILL_BY_ACCOUNTSTART_BILL_DATE_{V_DETAIL_BILL_BY_ACCOUNT:rowNumber}" type="hidden" value="{START_BILL_DATE}" name="{START_BILL_DATE_Name}"></td> 
+                      <td>&nbsp;{AMOUNT}<input id="V_DETAIL_BILL_BY_ACCOUNTCUSTOMER_ACCOUNT_ID_{V_DETAIL_BILL_BY_ACCOUNT:rowNumber}" value="{CUSTOMER_ACCOUNT_ID}" name="{CUSTOMER_ACCOUNT_ID_Name}"></td>
+                    </tr>
+ 
+                    <tr class="Row">
+                      <td class="custom" style="TEXT-ALIGN: right">&nbsp;</td> 
+                      <td>&nbsp;</td> 
+                      <td>&nbsp;{TOT_AMOUNT}{TOT_AMOUNT1}</td>
+                    </tr>
+ <!-- END Row -->
+                    <!-- BEGIN NoRecords -->
+                    <tr class="NoRecords">
+                      <td colspan="3">Data not found</td>
+                    </tr>
+                    <!-- END NoRecords -->
+                    <tr class="Footer">
+                      <td colspan="3">
+                        <!-- BEGIN Navigator Navigator -->
+                        <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                        <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                        <!-- BEGIN Pages -->
+                        <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                        <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                        <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                        <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!-- END Grid V_DETAIL_BILL_BY_ACCOUNT --><br>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+&nbsp; 
+</body>
+</html>

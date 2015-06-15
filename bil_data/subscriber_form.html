@@ -1,0 +1,455 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>subscriber_form</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+        arrLOV = LOV_NM.split("?");
+        window.open("../lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-53766BA7
+
+var V_SUBSCRIBER_DatePicker_LAST_STATUS_DATE = new Object(); 
+V_SUBSCRIBER_DatePicker_LAST_STATUS_DATE.format           = "dd-mmm-yyyy";
+V_SUBSCRIBER_DatePicker_LAST_STATUS_DATE.style            = "Styles/trb/Style.css";
+V_SUBSCRIBER_DatePicker_LAST_STATUS_DATE.relativePathPart = "../";
+V_SUBSCRIBER_DatePicker_LAST_STATUS_DATE.themeVersion = "3.0";
+
+var V_SUBSCRIBER_DatePicker_ACTIVE_DATE = new Object(); 
+V_SUBSCRIBER_DatePicker_ACTIVE_DATE.format           = "dd-mmm-yyyy";
+V_SUBSCRIBER_DatePicker_ACTIVE_DATE.style            = "Styles/trb/Style.css";
+V_SUBSCRIBER_DatePicker_ACTIVE_DATE.relativePathPart = "../";
+V_SUBSCRIBER_DatePicker_ACTIVE_DATE.themeVersion = "3.0";
+
+var V_SUBSCRIBER_DatePicker_TERMINATION_DATE = new Object(); 
+V_SUBSCRIBER_DatePicker_TERMINATION_DATE.format           = "dd-mmm-yyyy";
+V_SUBSCRIBER_DatePicker_TERMINATION_DATE.style            = "Styles/trb/Style.css";
+V_SUBSCRIBER_DatePicker_TERMINATION_DATE.relativePathPart = "../";
+V_SUBSCRIBER_DatePicker_TERMINATION_DATE.themeVersion = "3.0";
+
+var V_SUBSCRIBER_DatePicker_START_INVOICE_DATE = new Object(); 
+V_SUBSCRIBER_DatePicker_START_INVOICE_DATE.format           = "dd-mmm-yyyy";
+V_SUBSCRIBER_DatePicker_START_INVOICE_DATE.style            = "Styles/trb/Style.css";
+V_SUBSCRIBER_DatePicker_START_INVOICE_DATE.relativePathPart = "../";
+V_SUBSCRIBER_DatePicker_START_INVOICE_DATE.themeVersion = "3.0";
+
+var V_SUBSCRIBER_DatePicker_END_INVOICE_DATE = new Object(); 
+V_SUBSCRIBER_DatePicker_END_INVOICE_DATE.format           = "dd-mmm-yyyy";
+V_SUBSCRIBER_DatePicker_END_INVOICE_DATE.style            = "Styles/trb/Style.css";
+V_SUBSCRIBER_DatePicker_END_INVOICE_DATE.relativePathPart = "../";
+V_SUBSCRIBER_DatePicker_END_INVOICE_DATE.themeVersion = "3.0";
+
+var V_SUBSCRIBER_DatePicker_CREATION_DATE = new Object(); 
+V_SUBSCRIBER_DatePicker_CREATION_DATE.format           = "dd-mmm-yyyy";
+V_SUBSCRIBER_DatePicker_CREATION_DATE.style            = "Styles/trb/Style.css";
+V_SUBSCRIBER_DatePicker_CREATION_DATE.relativePathPart = "../";
+V_SUBSCRIBER_DatePicker_CREATION_DATE.themeVersion = "3.0";
+
+var V_SUBSCRIBER_DatePicker_UPDATE_DATE = new Object(); 
+V_SUBSCRIBER_DatePicker_UPDATE_DATE.format           = "dd-mmm-yyyy";
+V_SUBSCRIBER_DatePicker_UPDATE_DATE.style            = "Styles/trb/Style.css";
+V_SUBSCRIBER_DatePicker_UPDATE_DATE.relativePathPart = "../";
+V_SUBSCRIBER_DatePicker_UPDATE_DATE.themeVersion = "3.0";
+
+var V_SUBSCRIBER_DatePicker_RE_ACTIVATION_DATE = new Object(); 
+V_SUBSCRIBER_DatePicker_RE_ACTIVATION_DATE.format           = "dd-mmm-yyyy";
+V_SUBSCRIBER_DatePicker_RE_ACTIVATION_DATE.style            = "Styles/trb/Style.css";
+V_SUBSCRIBER_DatePicker_RE_ACTIVATION_DATE.relativePathPart = "../";
+V_SUBSCRIBER_DatePicker_RE_ACTIVATION_DATE.themeVersion = "3.0";
+ 
+//End Date Picker Object Definitions
+
+//V_SUBSCRIBERButton_Insert_OnClick @72-A435766A
+function V_SUBSCRIBERButton_Insert_OnClick()
+{
+    var result = true;
+//End V_SUBSCRIBERButton_Insert_OnClick
+
+//Custom Code @73-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close V_SUBSCRIBERButton_Insert_OnClick @72-BC33A33A
+    return result;
+}
+//End Close V_SUBSCRIBERButton_Insert_OnClick
+
+//V_SUBSCRIBERButton_Delete_OnClick @78-6B9A1724
+function V_SUBSCRIBERButton_Delete_OnClick()
+{
+    var result = true;
+//End V_SUBSCRIBERButton_Delete_OnClick
+
+//Confirmation Message @79-775C9E71
+    return confirm('Ara you sure delete this record?');
+//End Confirmation Message
+
+//Custom Code @80-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close V_SUBSCRIBERButton_Delete_OnClick @78-BC33A33A
+    return result;
+}
+//End Close V_SUBSCRIBERButton_Delete_OnClick
+
+//V_SUBSCRIBERButton_Cancel_OnClick @81-B7D4517A
+function V_SUBSCRIBERButton_Cancel_OnClick()
+{
+    var result = true;
+//End V_SUBSCRIBERButton_Cancel_OnClick
+
+//Custom Code @82-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close V_SUBSCRIBERButton_Cancel_OnClick @81-AEF500E0
+    disableValidation = true;
+    return result;
+}
+//End Close V_SUBSCRIBERButton_Cancel_OnClick
+
+//bind_events @1-8A7AA129
+function bind_events() {
+    addEventHandler("V_SUBSCRIBERButton_Insert", "click", V_SUBSCRIBERButton_Insert_OnClick);
+    addEventHandler("V_SUBSCRIBERButton_Delete", "click", V_SUBSCRIBERButton_Delete_OnClick);
+    addEventHandler("V_SUBSCRIBERButton_Cancel", "click", V_SUBSCRIBERButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">SUBSCRIPTION</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toJob()">PROMOTION</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toJob()">FEATURE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toJob()">TARIFF OVERRIDE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toJob()">CPE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toJob()">STATUS HISTORY</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toJob()">SUBSCRIBER INFO</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+&nbsp; 
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record V_SUBSCRIBER -->
+      <form id="V_SUBSCRIBER" method="post" name="{HTMLFormName}" action="{Action}">
+        &nbsp;&nbsp; 
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>SUBSCRIPTION&nbsp;</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="8">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBSCRIBERSERVICE_NO">ID</label></td> 
+                  <td><input id="V_SUBSCRIBERSUBSCRIBER_ID" class="ControlsIN" readonly maxlength="12" size="12" value="{SUBSCRIBER_ID}" name="{SUBSCRIBER_ID_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>SERVICE NO</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERSERVICE_NO" class="ControlsRQ" maxlength="12" size="12" value="{SERVICE_NO}" name="{SERVICE_NO_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBSCRIBERSUBSCRIPTION_NAME">SUBSCRIPTION NAME</label></td> 
+                  <td><input id="V_SUBSCRIBERSUBSCRIPTION_NAME" class="ControlsRQ" maxlength="64" size="50" value="{SUBSCRIPTION_NAME}" name="{SUBSCRIPTION_NAME_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>ACCOUNT NAME</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERACCOUNT_NAME" class="ControlsRQ" readonly maxlength="64" size="30" value="{ACCOUNT_NAME}" name="{ACCOUNT_NAME_Name}"><a href="#" onclick="lov_customer_account()" id="lov_1"><img src="../images/folder.gif"></a><input id="V_SUBSCRIBERCUSTOMER_ACCOUNT_ID" class="ControlsRQ" maxlength="12" size="12" type="hidden" value="{CUSTOMER_ACCOUNT_ID}" name="{CUSTOMER_ACCOUNT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBSCRIBERCUSTOMER_ACCOUNT_ID">ACCOUNT NO</label></td> 
+                  <td><input id="V_SUBSCRIBERACCOUNT_NO" class="ControlsIN" readonly maxlength="20" value="{ACCOUNT_NO}" name="{ACCOUNT_NO_Name}" size="20"></td> 
+                  <td>&nbsp;</td> 
+                  <td>SERVICE TYPE</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERSERVICE_TYPE_CODE" class="ControlsRQ" readonly maxlength="64" size="30" value="{SERVICE_TYPE_CODE}" name="{SERVICE_TYPE_CODE_Name}"><a href="#" onclick="lov_p_service_type()" id="lov2"><img src="../images/folder.gif"></a><input id="V_SUBSCRIBERP_SERVICE_TYPE_ID" class="ControlsRQ" maxlength="12" size="12" type="hidden" value="{P_SERVICE_TYPE_ID}" name="{P_SERVICE_TYPE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">HOME PASS&nbsp;</td> 
+                  <td><input id="V_SUBSCRIBERQTY_SUB_FROM" class="ControlsIN" maxlength="12" size="12" value="{QTY_SUB_FROM}" name="{QTY_SUB_FROM_Name}">&nbsp;| <input id="V_SUBSCRIBERQTY_SUB_TO" class="ControlsIN" maxlength="12" size="12" value="{QTY_SUB_TO}" name="{QTY_SUB_TO_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>SUBSCRIPTION TYPE</td> 
+                  <td colspan="4">
+                    <select id="V_SUBSCRIBERSUBSCRIPTION_TYPE_ID" class="ControlsRQ" name="{SUBSCRIPTION_TYPE_ID_Name}">
+                      {SUBSCRIPTION_TYPE_ID_Options}
+                    </select>
+ </td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">TARIFF SKENARIO</td> 
+                  <td><input id="V_SUBSCRIBERTARIFF_SCENARIO_CODE" class="ControlsRQ" readonly maxlength="128" size="32" value="{TARIFF_SCENARIO_CODE}" name="{TARIFF_SCENARIO_CODE_Name}"><a href="#" onclick="lov_p_tariff_scenario()" id="lov2"><img src="../images/folder.gif"></a><input id="V_SUBSCRIBERP_TARIFF_SCENARIO_ID" class="ControlsRQ" style="HEIGHT: 18px; WIDTH: 33px" maxlength="12" size="1" type="hidden" value="{P_TARIFF_SCENARIO_ID}" name="{P_TARIFF_SCENARIO_ID_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>BILL PERIOD UNIT</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERBILL_PERIOD_UNIT_CODE" class="ControlsRQ" readonly maxlength="32" size="19" value="{BILL_PERIOD_UNIT_CODE}" name="{BILL_PERIOD_UNIT_CODE_Name}"><a href="#" onclick="lov_p_billing_period_unit()" id="lov2"><img src="../images/folder.gif"></a><input id="V_SUBSCRIBERP_BILLING_PERIOD_UNIT_ID" class="ControlsRQ" maxlength="12" size="12" type="hidden" value="{P_BILLING_PERIOD_UNIT_ID}" name="{P_BILLING_PERIOD_UNIT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">BILLING UNIT</td> 
+                  <td><input id="V_SUBSCRIBERBILLING_UNIT" class="ControlsRQ" maxlength="12" size="12" value="{BILLING_UNIT}" name="{BILLING_UNIT_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>BILL CYCLE</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERBILL_CYCLE_CODE" class="ControlsRQ" readonly maxlength="32" size="8" value="{BILL_CYCLE_CODE}" name="{BILL_CYCLE_CODE_Name}"><a href="#" onclick="lov_p_bill_cycle()" id="lov4"><img src="../images/folder.gif"></a><input id="V_SUBSCRIBERP_BILL_CYCLE_ID" class="ControlsRQ" maxlength="12" size="12" type="hidden" value="{P_BILL_CYCLE_ID}" name="{P_BILL_CYCLE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">SUBSCRIBER_STATUS</td> 
+                  <td><input id="V_SUBSCRIBERSUBSCRIPTION_STATUS_CODE" class="ControlsRQ" readonly maxlength="32" size="13" value="{SUBSCRIPTION_STATUS_CODE}" name="{SUBSCRIPTION_STATUS_CODE_Name}"><a href="#" onclick="lov_p_subscription_status()" id="lov2"><img src="../images/folder.gif"></a><input id="V_SUBSCRIBERP_SUBSCRIPTION_STATUS_ID" class="ControlsRQ" maxlength="12" size="12" type="hidden" value="{P_SUBSCRIPTION_STATUS_ID}" name="{P_SUBSCRIPTION_STATUS_ID_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>LAST STATUS DATE</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERLAST_STATUS_DATE" class="ControlsRQ" readonly maxlength="100" size="16" value="{LAST_STATUS_DATE}" name="{LAST_STATUS_DATE_Name}">
+                    <!-- BEGIN DatePicker DatePicker_LAST_STATUS_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBSCRIBERDatePicker_LAST_STATUS_DATE"><img id="V_SUBSCRIBERDatePicker_LAST_STATUS_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_LAST_STATUS_DATE --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">IS INVOICED?</td> 
+                  <td>
+                    <select id="V_SUBSCRIBERIS_INVOICED" class="ControlsRQ" name="{IS_INVOICED_Name}">
+                      {IS_INVOICED_Options}
+                    </select>
+ </td> 
+                  <td>&nbsp;</td> 
+                  <td>IS VAT EXCEPTION?</td> 
+                  <td colspan="4"><label for="V_SUBSCRIBERIS_VAT_EXCEPTION" style="display: none;">&nbsp;</label> 
+                    <select id="V_SUBSCRIBERIS_VAT_EXCEPTION" class="ControlsRQ" name="{IS_VAT_EXCEPTION_Name}">
+                      {IS_VAT_EXCEPTION_Options}
+                    </select>
+ </td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">SUBSCRIBER SEGMENT</td> 
+                  <td><input id="V_SUBSCRIBERSUBSCRIBER_SEGMENT_CODE" class="ControlsRQ" readonly maxlength="64" size="32" value="{SUBSCRIBER_SEGMENT_CODE}" name="{SUBSCRIBER_SEGMENT_CODE_Name}"><a href="#" onclick="lov_p_subscriber_segment()" id="lov2"><img src="../images/folder.gif"></a><input id="V_SUBSCRIBERP_SUBSCRIBER_SEGMENT_ID" class="ControlsRQ" style="HEIGHT: 18px; WIDTH: 49px" maxlength="12" size="1" type="hidden" value="{P_SUBSCRIBER_SEGMENT_ID}" name="{P_SUBSCRIBER_SEGMENT_ID_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>BUILDING TYPE</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERBUILDING_TYPE_CODE" class="ControlsIN" readonly maxlength="32" size="11" value="{BUILDING_TYPE_CODE}" name="{BUILDING_TYPE_CODE_Name}"><a href="#" onclick="lov_building_type()" id="lov2"><img src="../images/folder.gif"></a><input id="V_SUBSCRIBERBUILDING_TYPE_ID" class="ControlsIN" maxlength="12" size="12" type="hidden" value="{BUILDING_TYPE_ID}" name="{BUILDING_TYPE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">CUSTOMER SEGMENT</td> 
+                  <td><input id="V_SUBSCRIBERCUSTOMER_SEGMENT_CODE" class="ControlsIN" readonly size="32" value="{CUSTOMER_SEGMENT_CODE}" name="{CUSTOMER_SEGMENT_CODE_Name}">&nbsp;<img onclick="lov_p_customer_segment()" border="0" src="../images/folder.gif">&nbsp;<input id="V_SUBSCRIBERP_CUSTOMER_SEGMENT_ID" class="ControlsIN" type="hidden" value="{P_CUSTOMER_SEGMENT_ID}" name="{P_CUSTOMER_SEGMENT_ID_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>BUSINESS SEGMENT</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERBUSINESS_SEGMENT_CODE" class="ControlsIN" size="32" value="{BUSINESS_SEGMENT_CODE}" name="{BUSINESS_SEGMENT_CODE_Name}">&nbsp;<img onclick="lov_p_business_segment()" border="0" src="../images/folder.gif">&nbsp;<input id="V_SUBSCRIBERP_BUSINESS_SEGMENT_ID" class="ControlsIN" type="hidden" value="{P_BUSINESS_SEGMENT_ID}" name="{P_BUSINESS_SEGMENT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">BUILDING STATUS</td> 
+                  <td><label for="V_SUBSCRIBERCUSTOMER_SEGMENT_CODE" style="display: none;">&nbsp;</label><input id="V_SUBSCRIBERBUILDING_STATUS_CODE" class="ControlsIN" readonly maxlength="32" size="16" value="{BUILDING_STATUS_CODE}" name="{BUILDING_STATUS_CODE_Name}"><a href="#" onclick="lov_building_status()" id="lov2"><img src="../images/folder.gif"></a><input id="V_SUBSCRIBERBUILDING_STATUS_ID" class="ControlsIN" maxlength="12" size="12" type="hidden" value="{BUILDING_STATUS_ID}" name="{BUILDING_STATUS_ID_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>DEBTOR SEGMENT</td> 
+                  <td colspan="4"><label for="V_SUBSCRIBERDEBTOR_SEGMENT_CODE" style="display: none;">&nbsp;</label><input id="V_SUBSCRIBERDEBTOR_SEGMENT_CODE" class="ControlsIN" size="32" value="{DEBTOR_SEGMENT_CODE}" name="{DEBTOR_SEGMENT_CODE_Name}">&nbsp;<img onclick="lov_p_debtor_segment()" border="0" src="../images/folder.gif">&nbsp;<input id="V_SUBSCRIBERP_DEBTOR_SEGMENT_ID" class="ControlsIN" type="hidden" value="{P_DEBTOR_SEGMENT_ID}" name="{P_DEBTOR_SEGMENT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">ADDRESS1</td> 
+                  <td><input id="V_SUBSCRIBERADDRESS_1" class="ControlsRQ" maxlength="64" size="50" value="{ADDRESS_1}" name="{ADDRESS_1_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>BISNIS AREA</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERBUSINESS_AREA_CODE" class="ControlsRQ" readonly maxlength="6" value="{BUSINESS_AREA_CODE}" name="{BUSINESS_AREA_CODE_Name}">&nbsp;<a href="#" onclick="lov_p_business_area()" id="lov2"><img src="../images/folder.gif"></a><input id="V_SUBSCRIBERP_BUSINESS_AREA_ID" class="ControlsRQ" maxlength="12" size="12" type="hidden" value="{P_BUSINESS_AREA_ID}" name="{P_BUSINESS_AREA_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">ADDRESS2</td> 
+                  <td><input id="V_SUBSCRIBERADDRESS_2" class="ControlsIN" maxlength="64" size="50" value="{ADDRESS_2}" name="{ADDRESS_2_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>SUBS AREA</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERSUB_ARE_CODE" class="ControlsIN" readonly maxlength="6" value="{SUB_ARE_CODE}" name="{SUB_ARE_CODE_Name}">&nbsp;<img onclick="lov_p_sub_area()" border="0" src="../images/folder.gif">&nbsp;<input id="V_SUBSCRIBERP_SUB_BUSINESS_AREA_ID" class="ControlsIN" type="hidden" value="{P_SUB_BUSINESS_AREA_ID}" name="{P_SUB_BUSINESS_AREA_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">ADDRESS3</td> 
+                  <td><input id="V_SUBSCRIBERADDRESS_3" class="ControlsIN" maxlength="64" size="50" value="{ADDRESS_3}" name="{ADDRESS_3_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>RE ACTIVATION DATE</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERRE_ACTIVATION_DATE" class="ControlsIN" size="16" value="{RE_ACTIVATION_DATE}" name="{RE_ACTIVATION_DATE_Name}">&nbsp; 
+                    <!-- BEGIN DatePicker DatePicker_RE_ACTIVATION_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBSCRIBERDatePicker_RE_ACTIVATION_DATE"><img id="V_SUBSCRIBERDatePicker_RE_ACTIVATION_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_RE_ACTIVATION_DATE --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">REGION NAME</td> 
+                  <td><input id="V_SUBSCRIBERREGION_NAME" class="ControlsIN" readonly maxlength="64" size="32" value="{REGION_NAME}" name="{REGION_NAME_Name}"><a href="#" onclick="lov_p_region()" id="lov_15"><img src="../images/folder.gif"></a><input id="V_SUBSCRIBERP_REGION_ID" class="ControlsIN" maxlength="12" size="12" type="hidden" value="{P_REGION_ID}" name="{P_REGION_ID_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>IS PAYMENT KEY</td> 
+                  <td colspan="4"><label for="V_SUBSCRIBERIS_PAYMENT_KEY" style="display: none;">&nbsp;</label> 
+                    <select id="V_SUBSCRIBERIS_PAYMENT_KEY" class="ControlsIN" name="{IS_PAYMENT_KEY_Name}">
+                      <option selected value="">--&nbsp;Select&nbsp;--</option>
+                      {IS_PAYMENT_KEY_Options}
+                    </select>
+ </td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">ZIP CODE</td> 
+                  <td><a href="#" onclick="lov_p_region()" id="lov_15"></a><input id="V_SUBSCRIBERZIP_CODE" class="ControlsIN" maxlength="12" size="12" value="{ZIP_CODE}" name="{ZIP_CODE_Name}">&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>TERMINATION DATE</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERTERMINATION_DATE" class="ControlsIN" readonly maxlength="16" size="16" value="{TERMINATION_DATE}" name="{TERMINATION_DATE_Name}">&nbsp; 
+                    <!-- BEGIN DatePicker DatePicker_TERMINATION_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBSCRIBERDatePicker_TERMINATION_DATE"><img id="V_SUBSCRIBERDatePicker_TERMINATION_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_TERMINATION_DATE --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">ACTIVE DATE</td> 
+                  <td><input id="V_SUBSCRIBERACTIVE_DATE" class="ControlsRO" readonly maxlength="16" size="16" value="{ACTIVE_DATE}" name="{ACTIVE_DATE_Name}">
+                    <!-- BEGIN DatePicker DatePicker_ACTIVE_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBSCRIBERDatePicker_ACTIVE_DATE"><img id="V_SUBSCRIBERDatePicker_ACTIVE_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_ACTIVE_DATE --></td> 
+                  <td>&nbsp;</td> 
+                  <td>COORDINATE</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBEREM_DEGREE" class="ControlsIN" maxlength="4" size="4" value="{EM_DEGREE}" name="{EM_DEGREE_Name}">/<input id="V_SUBSCRIBEREM_MINUTE" class="ControlsIN" maxlength="4" size="4" value="{EM_MINUTE}" name="{EM_MINUTE_Name}">/<input id="V_SUBSCRIBEREM_SECOND" class="ControlsIN" maxlength="4" size="4" value="{EM_SECOND}" name="{EM_SECOND_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">SALES START_DATE</td> 
+                  <td><input id="V_SUBSCRIBERSTART_INVOICE_DATE" class="ControlsRO" readonly maxlength="16" size="16" value="{START_INVOICE_DATE}" name="{START_INVOICE_DATE_Name}">&nbsp; 
+                    <!-- BEGIN DatePicker DatePicker_START_INVOICE_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBSCRIBERDatePicker_START_INVOICE_DATE"><img id="V_SUBSCRIBERDatePicker_START_INVOICE_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_START_INVOICE_DATE -->&nbsp; TO&nbsp;<input id="V_SUBSCRIBEREND_INVOICE_DATE" class="ControlsRO" readonly maxlength="16" size="16" value="{END_INVOICE_DATE}" name="{END_INVOICE_DATE_Name}">&nbsp; 
+                    <!-- BEGIN DatePicker DatePicker_END_INVOICE_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBSCRIBERDatePicker_END_INVOICE_DATE"><img id="V_SUBSCRIBERDatePicker_END_INVOICE_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_END_INVOICE_DATE --></td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERSL_DEGREE" class="ControlsIN" maxlength="4" size="4" value="{SL_DEGREE}" name="{SL_DEGREE_Name}">/<input id="V_SUBSCRIBERSL_MINUTE" class="ControlsIN" maxlength="4" size="4" value="{SL_MINUTE}" name="{SL_MINUTE_Name}">/<input id="V_SUBSCRIBERSL_SECOND" class="ControlsIN" maxlength="4" size="4" value="{SL_SECOND}" name="{SL_SECOND_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">CONTRACT NUMBER</td> 
+                  <td><input id="V_SUBSCRIBERCONTRACT_NUMBER" class="ControlsIN" maxlength="32" size="32" value="{CONTRACT_NUMBER}" name="{CONTRACT_NUMBER_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>SALES PERSON</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERSALES_PERSON_CODE" class="ControlsIN" readonly maxlength="64" size="32" value="{SALES_PERSON_CODE}" name="{SALES_PERSON_CODE_Name}"><a href="#" onclick="lov_p_sales_person()" id="lov_16"><img src="../images/folder.gif"></a> <input id="V_SUBSCRIBERP_SALES_PERSON_ID" class="ControlsIN" maxlength="12" size="1" type="hidden" value="{P_SALES_PERSON_ID}" name="{P_SALES_PERSON_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">CREATION DATE</td> 
+                  <td><input id="V_SUBSCRIBERCREATION_DATE" class="ControlsRO" readonly maxlength="16" size="16" value="{CREATION_DATE}" name="{CREATION_DATE_Name}">
+                    <!-- BEGIN DatePicker DatePicker_CREATION_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBSCRIBERDatePicker_CREATION_DATE"><img id="V_SUBSCRIBERDatePicker_CREATION_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_CREATION_DATE --></td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERSALES_COMPANY" class="ControlsIN" maxlength="32" size="32" value="{SALES_COMPANY}" name="{SALES_COMPANY_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">UPDATE BY</td> 
+                  <td><input id="V_SUBSCRIBERUPDATE_BY" class="ControlsRO" readonly maxlength="16" size="16" value="{UPDATE_BY}" name="{UPDATE_BY_Name}">&nbsp; </td> 
+                  <td>&nbsp;</td> 
+                  <td>UPDATE DATE</td> 
+                  <td colspan="4"><input id="V_SUBSCRIBERUPDATE_DATE" class="ControlsRO" readonly maxlength="16" size="16" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}">
+                    <!-- BEGIN DatePicker DatePicker_UPDATE_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBSCRIBERDatePicker_UPDATE_DATE"><img id="V_SUBSCRIBERDatePicker_UPDATE_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_UPDATE_DATE --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">DESCRIPTION</td> 
+                  <td colspan="7"><textarea id="V_SUBSCRIBERDESCRIPTION" class="ControlsIN" style="HEIGHT: 63px; WIDTH: 277px" rows="3" cols="24" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="8" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="V_SUBSCRIBERButton_Insert" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="V_SUBSCRIBERButton_Update" alt="SIMPAN" src="../Styles/trb/Images/en/ButtonUpdate.gif" type="image" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="V_SUBSCRIBERButton_Delete" alt="HAPUS" src="../Styles/trb/Images/en/ButtonDelete.gif" type="image" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="V_SUBSCRIBERButton_Cancel" alt="BATAL" src="../Styles/trb/Images/en/ButtonCancel.gif" type="image" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record V_SUBSCRIBER --><br>
+      <br>
+      <br>
+    </td>
+  </tr>
+</table>
+<script language="javascript">
+function lov_customer_account(){getFrom_LOV('V_SUBSCRIBER','CUSTOMER_ACCOUNT_ID,ACCOUNT_NAME,ACCOUNT_NO','../bil_lov/lov_customer_account.php?');}
+function lov_p_service_type(){getFrom_LOV('V_SUBSCRIBER','P_SERVICE_TYPE_ID,SERVICE_TYPE_CODE','../bil_lov/lov_p_service_type.php?');}
+function lov_p_tariff_scenario(){var P_SERVICE_TYPE_ID=document.getElementById('V_SUBSCRIBERP_SERVICE_TYPE_ID').value;if(P_SERVICE_TYPE_ID=='')alert('TIPE LAYANAN KOSONG');else getFrom_LOV('V_SUBSCRIBER','P_TARIFF_SCENARIO_ID,TARIFF_SCENARIO_CODE','../bil_lov/lov_p_tariff_scenario.php?P_SERVICE_TYPE_ID='+P_SERVICE_TYPE_ID);}
+function lov_p_billing_period_unit(){getFrom_LOV('V_SUBSCRIBER','P_BILLING_PERIOD_UNIT_ID,BILL_PERIOD_UNIT_CODE','../bil_lov/lov_p_billing_period_unit.php?');}
+function lov_p_bill_cycle(){getFrom_LOV('V_SUBSCRIBER','P_BILL_CYCLE_ID,BILL_CYCLE_CODE','../bil_lov/lov_p_bill_cycle.php?');}
+function lov_p_subscription_status(){getFrom_LOV('V_SUBSCRIBER','P_SUBSCRIPTION_STATUS_ID,SUBSCRIPTION_STATUS_CODE','../bil_lov/lov_p_subscription_status.php?');}
+function lov_p_subscriber_segment(){getFrom_LOV('V_SUBSCRIBER','P_SUBSCRIBER_SEGMENT_ID,SUBSCRIBER_SEGMENT_CODE','../bil_lov/lov_p_subscriber_segment.php?');}
+function lov_building_status(){getFrom_LOV('V_SUBSCRIBER','BUILDING_STATUS_ID,BUILDING_STATUS_CODE','../bil_lov/lov_building_status.php?');}
+function lov_building_type(){getFrom_LOV('V_SUBSCRIBER','BUILDING_TYPE_ID,BUILDING_TYPE_CODE','../bil_lov/lov_building_type.php?');}
+function lov_p_business_area(){
+document.getElementById('V_SUBSCRIBERSUB_ARE_CODE').value = "";
+document.getElementById('V_SUBSCRIBERP_SUB_BUSINESS_AREA_ID').value = "";
+getFrom_LOV('V_SUBSCRIBER','P_BUSINESS_AREA_ID,BUSINESS_AREA_CODE','../bil_lov/lov_p_business_area.php?');}
+function lov_p_region(){getFrom_LOV('V_SUBSCRIBER','P_REGION_ID,REGION_NAME','../bil_lov/lov_p_region.php?');}
+function lov_p_sales_person(){getFrom_LOV('V_SUBSCRIBER','P_SALES_PERSON_ID,SALES_PERSON_CODE,SALES_COMPANY','../bil_lov/lov_p_sales_person.php?');}
+function lov_p_sub_area(){
+var P_BUSINESS_AREA_ID = document.getElementById('V_SUBSCRIBERP_BUSINESS_AREA_ID').value;
+getFrom_LOV('V_SUBSCRIBER','P_SUB_BUSINESS_AREA_ID,SUB_ARE_CODE','../bil_lov/lov_p_sub_area.php?P_BUSINESS_AREA_ID='+P_BUSINESS_AREA_ID);
+}
+function lov_p_customer_segment(){
+document.getElementById('V_SUBSCRIBERP_BUSINESS_SEGMENT_ID').value = "";
+document.getElementById('V_SUBSCRIBERBUSINESS_SEGMENT_CODE').value = "";
+getFrom_LOV('V_SUBSCRIBER','P_CUSTOMER_SEGMENT_ID,CUSTOMER_SEGMENT_CODE','../bil_lov/lov_p_customer_segment.php?');
+
+}
+function lov_p_business_segment() {
+            var P_CUSTOMER_SEGMENT_ID = document.getElementById("V_SUBSCRIBERP_CUSTOMER_SEGMENT_ID").value;
+            
+            getFrom_LOV('V_SUBSCRIBER', 'P_BUSINESS_SEGMENT_ID,BUSINESS_SEGMENT_CODE', '../bil_lov/lov_p_business_segment.php?P_CUSTOMER_SEGMENT_ID=' + P_CUSTOMER_SEGMENT_ID);
+        }
+function lov_p_debtor_segment() {        
+            getFrom_LOV('V_SUBSCRIBER', 'DEBTOR_SEGMENT_CODE,P_DEBTOR_SEGMENT_ID', '../bil_lov/lov_p_debtor_segment.php?');
+        }
+</script>
+</body>
+</html>

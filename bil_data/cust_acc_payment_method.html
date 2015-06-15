@@ -1,0 +1,444 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_customer_account</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" type="text/javascript">
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<style>
+  .custom {
+        border-right: 0px solid white !important;
+  }     
+</style>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-895E31C0
+
+var V_CUSTOMER_ACCOUNT1_DatePicker_START_BILL_DATE = new Object(); 
+V_CUSTOMER_ACCOUNT1_DatePicker_START_BILL_DATE.format           = "ShortDate";
+V_CUSTOMER_ACCOUNT1_DatePicker_START_BILL_DATE.style            = "Styles/Basic/Style.css";
+V_CUSTOMER_ACCOUNT1_DatePicker_START_BILL_DATE.relativePathPart = "../";
+V_CUSTOMER_ACCOUNT1_DatePicker_START_BILL_DATE.themeVersion = "3.0";
+
+var V_CUSTOMER_ACCOUNT1_DatePicker_NEXT_BILL_DATE = new Object(); 
+V_CUSTOMER_ACCOUNT1_DatePicker_NEXT_BILL_DATE.format           = "ShortDate";
+V_CUSTOMER_ACCOUNT1_DatePicker_NEXT_BILL_DATE.style            = "Styles/Basic/Style.css";
+V_CUSTOMER_ACCOUNT1_DatePicker_NEXT_BILL_DATE.relativePathPart = "../";
+V_CUSTOMER_ACCOUNT1_DatePicker_NEXT_BILL_DATE.themeVersion = "3.0";
+
+var V_CUSTOMER_ACCOUNT1_DatePicker_TERMINATION_DATE = new Object(); 
+V_CUSTOMER_ACCOUNT1_DatePicker_TERMINATION_DATE.format           = "ShortDate";
+V_CUSTOMER_ACCOUNT1_DatePicker_TERMINATION_DATE.style            = "Styles/Basic/Style.css";
+V_CUSTOMER_ACCOUNT1_DatePicker_TERMINATION_DATE.relativePathPart = "../";
+V_CUSTOMER_ACCOUNT1_DatePicker_TERMINATION_DATE.themeVersion = "3.0";
+
+var V_CUSTOMER_ACCOUNT1_DatePicker_NEXT_END_BILL_DATE = new Object(); 
+V_CUSTOMER_ACCOUNT1_DatePicker_NEXT_END_BILL_DATE.format           = "ShortDate";
+V_CUSTOMER_ACCOUNT1_DatePicker_NEXT_END_BILL_DATE.style            = "Styles/Basic/Style.css";
+V_CUSTOMER_ACCOUNT1_DatePicker_NEXT_END_BILL_DATE.relativePathPart = "../";
+V_CUSTOMER_ACCOUNT1_DatePicker_NEXT_END_BILL_DATE.themeVersion = "3.0";
+
+var V_CUSTOMER_ACCOUNT1_DatePicker_CREATION_DATE = new Object(); 
+V_CUSTOMER_ACCOUNT1_DatePicker_CREATION_DATE.format           = "ShortDate";
+V_CUSTOMER_ACCOUNT1_DatePicker_CREATION_DATE.style            = "Styles/Basic/Style.css";
+V_CUSTOMER_ACCOUNT1_DatePicker_CREATION_DATE.relativePathPart = "../";
+V_CUSTOMER_ACCOUNT1_DatePicker_CREATION_DATE.themeVersion = "3.0";
+
+var V_CUSTOMER_ACCOUNT1_DatePicker_UPDATE_DATE = new Object(); 
+V_CUSTOMER_ACCOUNT1_DatePicker_UPDATE_DATE.format           = "ShortDate";
+V_CUSTOMER_ACCOUNT1_DatePicker_UPDATE_DATE.style            = "Styles/Basic/Style.css";
+V_CUSTOMER_ACCOUNT1_DatePicker_UPDATE_DATE.relativePathPart = "../";
+V_CUSTOMER_ACCOUNT1_DatePicker_UPDATE_DATE.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//V_CUSTOMER_ACCOUNT1Button_Delete_OnClick @121-6DD7BBE4
+function V_CUSTOMER_ACCOUNT1Button_Delete_OnClick()
+{
+    var result = true;
+//End V_CUSTOMER_ACCOUNT1Button_Delete_OnClick
+
+//Confirmation Message @122-95E112AE
+    return confirm('');
+//End Confirmation Message
+
+//Close V_CUSTOMER_ACCOUNT1Button_Delete_OnClick @121-BC33A33A
+    return result;
+}
+//End Close V_CUSTOMER_ACCOUNT1Button_Delete_OnClick
+
+//V_CUSTOMER_ACCOUNT1Button_Cancel_OnClick @123-CE508616
+function V_CUSTOMER_ACCOUNT1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End V_CUSTOMER_ACCOUNT1Button_Cancel_OnClick
+
+//bind_events @1-87DDDF3A
+function bind_events() {
+    addEventHandler("V_CUSTOMER_ACCOUNT1Button_Delete", "click", V_CUSTOMER_ACCOUNT1Button_Delete_OnClick);
+    addEventHandler("V_CUSTOMER_ACCOUNT1Button_Cancel", "click", V_CUSTOMER_ACCOUNT1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//V_CUST_ACC_PAYMENT_METHOD1Button_Insert_OnClick @466-10F11818
+function V_CUST_ACC_PAYMENT_METHOD1Button_Insert_OnClick()
+{
+    var result = true;
+//End V_CUST_ACC_PAYMENT_METHOD1Button_Insert_OnClick
+
+//Confirmation Message @467-2BD3365F
+    return confirm('Save this record?');
+//End Confirmation Message
+
+//Close V_CUST_ACC_PAYMENT_METHOD1Button_Insert_OnClick @466-BC33A33A
+    return result;
+}
+//End Close V_CUST_ACC_PAYMENT_METHOD1Button_Insert_OnClick
+
+//V_CUST_ACC_PAYMENT_METHOD1Button_Update_OnClick @468-87C3A840
+function V_CUST_ACC_PAYMENT_METHOD1Button_Update_OnClick()
+{
+    var result = true;
+//End V_CUST_ACC_PAYMENT_METHOD1Button_Update_OnClick
+
+//Confirmation Message @469-ABAE6950
+    return confirm('Change this record?');
+//End Confirmation Message
+
+//Close V_CUST_ACC_PAYMENT_METHOD1Button_Update_OnClick @468-BC33A33A
+    return result;
+}
+//End Close V_CUST_ACC_PAYMENT_METHOD1Button_Update_OnClick
+
+//V_CUST_ACC_PAYMENT_METHOD1Button_Delete_OnClick @470-DF5E7956
+function V_CUST_ACC_PAYMENT_METHOD1Button_Delete_OnClick()
+{
+    var result = true;
+//End V_CUST_ACC_PAYMENT_METHOD1Button_Delete_OnClick
+
+//Confirmation Message @471-F40F0E61
+    return confirm('Delete this record?');
+//End Confirmation Message
+
+//Close V_CUST_ACC_PAYMENT_METHOD1Button_Delete_OnClick @470-BC33A33A
+    return result;
+}
+//End Close V_CUST_ACC_PAYMENT_METHOD1Button_Delete_OnClick
+
+//V_CUST_ACC_PAYMENT_METHOD1Button_Cancel_OnClick @465-DACD3318
+function V_CUST_ACC_PAYMENT_METHOD1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End V_CUST_ACC_PAYMENT_METHOD1Button_Cancel_OnClick
+
+//bind_events @1-C2732EFF
+function bind_events() {
+    addEventHandler("V_CUST_ACC_PAYMENT_METHOD1Button_Insert", "click", V_CUST_ACC_PAYMENT_METHOD1Button_Insert_OnClick);
+    addEventHandler("V_CUST_ACC_PAYMENT_METHOD1Button_Update", "click", V_CUST_ACC_PAYMENT_METHOD1Button_Update_OnClick);
+    addEventHandler("V_CUST_ACC_PAYMENT_METHOD1Button_Delete", "click", V_CUST_ACC_PAYMENT_METHOD1Button_Delete_OnClick);
+    addEventHandler("V_CUST_ACC_PAYMENT_METHOD1Button_Cancel", "click", V_CUST_ACC_PAYMENT_METHOD1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+        arrLOV = LOV_NM.split("?");
+        window.open("../bil_lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+
+function lovPayMethod(){
+        classname = "V_CUST_ACC_PAYMENT_METHOD1";
+        fieldname = "P_PAYMENT_METHOD_ID,PAYMENT_METHOD_CODE";
+        filename = "lov_p_payment_method.php?";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+function lovPayMethodType(){
+        classname = "V_CUST_ACC_PAYMENT_METHOD1";
+        fieldname = "P_PAYMENT_METHOD_TYPE_ID,PAYMENT_METHOD_TYPE_CODE";
+        filename = "lov_p_payment_method_type.php?";
+                
+        getFrom_LOV(classname,fieldname,filename)
+}
+
+function toSub(){
+        var pm = document.getElementById("V_CUST_ACC_PAYMENT_METHOD1CUST_ACC_PAYMENT_METHOD_ID").value;
+		var customer = document.getElementById("V_CUST_ACC_PAYMENT_METHOD1CUSTOMER_ACCOUNT_ID").value;
+        if(pm==null){
+                alert("Customer Account Payment Method Data Is Required!!");
+        }
+        else{
+                location.href = "subscription.php?CUSTOMER_ACCOUNT_ID="+customer;
+        }
+}
+
+function toAD(){
+        var pm = document.getElementById("V_CUST_ACC_PAYMENT_METHOD1CUST_ACC_PAYMENT_METHOD_ID").value;
+        var customer = document.getElementById("V_CUST_ACC_PAYMENT_METHOD1CUSTOMER_ACCOUNT_ID").value;
+        if(pm==null){
+                alert("Customer Account Payment Method Data Is Required!!");
+        }
+        else{
+                location.href = "account_discount.php?CUSTOMER_ACCOUNT_ID="+customer;
+        }
+}
+
+function toCust(){
+        var pm = document.getElementById("V_CUST_ACC_PAYMENT_METHOD1CUST_ACC_PAYMENT_METHOD_ID").value;
+		var customer = document.getElementById("V_CUST_ACC_PAYMENT_METHOD1CUSTOMER_ACCOUNT_ID").value;
+        if(pm==null){
+                alert("Customer Account Payment Method Data Is Required!!");
+        }
+        else{
+                location.href = "customer_account.php?CUSTOMER_ACCOUNT_ID="+customer;
+        }
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css" />
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toCust()">CUSTOMER ACCOUNT</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toSub()">SUBSCRIPTION</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toAD()">ACCOUNT DISCOUNT</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">PAYMENT METHOD</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td> 
+    </tr>
+ 
+  </table>
+</div>
+<table cellspacing="0" cellpadding="40" align="center" border="0">
+  <tr>
+    <td><br>
+      <!-- BEGIN Record p_customer_account -->
+      <form id="p_customer_account" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="2">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="4">{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="p_customer_accountACCOUNT_NO"><strong>Account No / Name&nbsp;: </strong></label></td> 
+                  <td>{ACCOUNT_NO}</td> 
+                  <td>-</td> 
+                  <td>{LAST_NAME}</td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="p_customer_accountACCOUNT_NO"><strong>Customer No / Name&nbsp;: </strong></label></td> 
+                  <td>{CUSTOMER_NUMBER}</td> 
+                  <td>-</td> 
+                  <td>{CUSTOMER_NAME}</td> 
+                </tr>
+ 
+              </table>
+ </td> 
+          </tr>
+ 
+        </table>
+ 
+      </form>
+ <!-- END Record p_customer_account --><br>
+      <!-- BEGIN Grid V_CUST_ACC_PAYMENT_METHOD -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                <td class="th"><strong>LIST&nbsp;CUSTOMER ACC PAYMENT METHOD</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+              </tr>
+ 
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">ID</th>
+ 
+                <th scope="col">PAYMENT METHOD / TYPE</th>
+ 
+                <th scope="col">REFERENCE NO</th>
+ 
+                <th scope="col">VALID FROM / TO</th>
+ 
+                <th style="DISPLAY: none" scope="col">LAST NAME</th>
+ 
+                <th scope="col">REFERENCE NAME / BANK NAME</th>
+ 
+                <th scope="col">REF VALID FROM / TO</th>
+ 
+                <th scope="col">DESCRIPTION</th>
+ 
+                <th colspan="6" scope="col">UPDATE DATE / BY</th>
+ 
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {V_CUST_ACC_PAYMENT_METHOD:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="V_CUST_ACC_PAYMENT_METHODDLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="V_CUST_ACC_PAYMENT_METHODADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td>&nbsp;{CUST_ACC_PAYMENT_METHOD_ID}</td> 
+                <td>{PAYMENT_METHOD_CODE}&nbsp;- {PAYMENT_METHOD_TYPE_CODE}&nbsp;<input id="V_CUST_ACC_PAYMENT_METHODCUSTOMER_ACCOUNT_ID_{V_CUST_ACC_PAYMENT_METHOD:rowNumber}" type="hidden" value="{CUSTOMER_ACCOUNT_ID}" name="{CUSTOMER_ACCOUNT_ID_Name}"></td> 
+                <td>{REFERENCE_NO}&nbsp;</td> 
+                <td>&nbsp;{VALID_FROM}&nbsp;-&nbsp; {VALID_TO}</td> 
+                <td style="DISPLAY: none">{LAST_NAME}<input id="V_CUST_ACC_PAYMENT_METHODP_CUSTOMER_SEGMENT_ID_{V_CUST_ACC_PAYMENT_METHOD:rowNumber}" type="hidden" value="{P_CUSTOMER_SEGMENT_ID}" name="{P_CUSTOMER_SEGMENT_ID_Name}">&nbsp;<input id="V_CUST_ACC_PAYMENT_METHODCUSTOMER_ID_{V_CUST_ACC_PAYMENT_METHOD:rowNumber}" type="hidden" value="{CUSTOMER_ID}" name="{CUSTOMER_ID_Name}"><input id="V_CUST_ACC_PAYMENT_METHODP_CUSTOMER_TITLE_ID_{V_CUST_ACC_PAYMENT_METHOD:rowNumber}" type="hidden" value="{P_CUSTOMER_TITLE_ID}" name="{P_CUSTOMER_TITLE_ID_Name}"><input id="V_CUST_ACC_PAYMENT_METHODP_BILL_CYCLE_ID_{V_CUST_ACC_PAYMENT_METHOD:rowNumber}" type="hidden" value="{P_BILL_CYCLE_ID}" name="{P_BILL_CYCLE_ID_Name}"><input id="V_CUST_ACC_PAYMENT_METHODP_CURRENCY_ID_{V_CUST_ACC_PAYMENT_METHOD:rowNumber}" type="hidden" value="{P_CURRENCY_ID}" name="{P_CURRENCY_ID_Name}"></td> 
+                <td>{REFERENCE_NAME}&nbsp;- {BANK_NAME}&nbsp;</td> 
+                <td>{REF_VALID_FROM}&nbsp;- &nbsp;{REF_VALID_TO}</td> 
+                <td>{DESCRIPTION}&nbsp;</td> 
+                <td colspan="6">{UPDATE_DATE}&nbsp;- &nbsp;{UPDATE_BY}</td> 
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="15">Data tidak ditemukan</td> 
+              </tr>
+ <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="BORDER-RIGHT: 0px"><a href="{V_P_CUST_ACC_PAY_METHOD_Insert_Src}" id="V_CUST_ACC_PAYMENT_METHODV_P_CUST_ACC_PAY_METHOD_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="14">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td> 
+              </tr>
+ 
+            </table>
+ </td> 
+        </tr>
+ 
+      </table>
+ <!-- END Grid V_CUST_ACC_PAYMENT_METHOD --><br>
+      <!-- BEGIN Record V_CUST_ACC_PAYMENT_METHOD1 -->
+      <form id="V_CUST_ACC_PAYMENT_METHOD1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" width="100%" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>CUSTOMER ACC PAYMENT METHOD</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                </tr>
+ 
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="4">{Error}</td> 
+                </tr>
+ <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACC_PAYMENT_METHOD1CUSTOMER_ACCOUNT_ID">ID</label></td> 
+                  <td class="custom"><input id="V_CUST_ACC_PAYMENT_METHOD1CUST_ACC_PAYMENT_METHOD_ID" class="ControlsRO" readonly maxlength="11" size="11" value="{CUST_ACC_PAYMENT_METHOD_ID}" name="{CUST_ACC_PAYMENT_METHOD_ID_Name}"><input type="hidden" name="{CUSTOMER_ACCOUNT_ID_Name}" value="{CUSTOMER_ACCOUNT_ID}" id="V_CUST_ACC_PAYMENT_METHOD1CUSTOMER_ACCOUNT_ID"></td> 
+                  <td class="th">REFERENCE NAME</td> 
+                  <td><input id="V_CUST_ACC_PAYMENT_METHOD1REFERENCE_NAME" class="ControlsIN" maxlength="64" value="{REFERENCE_NAME}" name="{REFERENCE_NAME_Name}" size="20"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACC_PAYMENT_METHOD1P_PAYMENT_METHOD_ID"><label for="V_CUST_ACC_PAY_METHODPAYMENT_METHOD_CODE">PAYMENT METHOD</label></label></td> 
+                  <td class="custom"><input id="V_CUST_ACC_PAYMENT_METHOD1PAYMENT_METHOD_CODE" class="ControlsRQ" readonly maxlength="64" size="50" value="{PAYMENT_METHOD_CODE}" name="{PAYMENT_METHOD_CODE_Name}">&nbsp;<img onclick="lovPayMethod()" src="../images/folder.gif">&nbsp;<input type="hidden" name="{P_PAYMENT_METHOD_ID_Name}" value="{P_PAYMENT_METHOD_ID}" id="V_CUST_ACC_PAYMENT_METHOD1P_PAYMENT_METHOD_ID"></td> 
+                  <td class="th">BANK NAME</td> 
+                  <td><input id="V_CUST_ACC_PAYMENT_METHOD1BANK_NAME" class="ControlsIN" maxlength="64" size="64" value="{BANK_NAME}" name="{BANK_NAME_Name}"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACC_PAYMENT_METHOD1P_PAYMENT_METHOD_TYPE_ID"><label for="V_CUST_ACC_PAY_METHODCUSTOMER_ACCOUNT_ID">PAYMENT METHOD TYPE</label></label></td> 
+                  <td class="custom"><input id="V_CUST_ACC_PAYMENT_METHOD1PAYMENT_METHOD_TYPE_CODE" class="ControlsIN" readonly maxlength="64" size="50" value="{PAYMENT_METHOD_TYPE_CODE}" name="{PAYMENT_METHOD_TYPE_CODE_Name}">&nbsp;<img onclick="lovPayMethodType()" src="../images/folder.gif">&nbsp;<input type="hidden" name="{P_PAYMENT_METHOD_TYPE_ID_Name}" value="{P_PAYMENT_METHOD_TYPE_ID}" id="V_CUST_ACC_PAYMENT_METHOD1P_PAYMENT_METHOD_TYPE_ID"></td> 
+                  <td class="th">REF VALID FROM</td> 
+                  <td><input id="V_CUST_ACC_PAYMENT_METHOD1REF_VALID_FROM" class="ControlsIN" readonly maxlength="100" size="12" value="{REF_VALID_FROM}" name="{REF_VALID_FROM_Name}">&nbsp;<img onclick="scwShow(document.getElementById('V_CUST_ACC_PAYMENT_METHOD1REF_VALID_FROM'),event);" id="imgCalendar" name="imgCalendar" alt="" src="../Styles/trb/Images/DatePicker.gif"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACC_PAYMENT_METHOD1REFERENCE_NO">REFERENCE NO</label></td> 
+                  <td class="custom"><input id="V_CUST_ACC_PAYMENT_METHOD1REFERENCE_NO" class="ControlsRQ" maxlength="32" size="32" value="{REFERENCE_NO}" name="{REFERENCE_NO_Name}"></td> 
+                  <td class="th">REF VALID TO</td> 
+                  <td><input id="V_CUST_ACC_PAYMENT_METHOD1REF_VALID_TO" class="ControlsIN" readonly maxlength="100" size="12" value="{REF_VALID_TO}" name="{REF_VALID_TO_Name}">&nbsp;<img onclick="scwShow(document.getElementById('V_CUST_ACC_PAYMENT_METHOD1REF_VALID_TO'),event);" id="imgCalendar" name="imgCalendar" alt="" src="../Styles/trb/Images/DatePicker.gif"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACC_PAYMENT_METHOD1VALID_FROM">VALID FROM</label></td> 
+                  <td class="custom"><input id="V_CUST_ACC_PAYMENT_METHOD1VALID_FROM" class="ControlsRQ" readonly maxlength="100" size="12" value="{VALID_FROM}" name="{VALID_FROM_Name}">&nbsp;<img onclick="scwShow(document.getElementById('V_CUST_ACC_PAYMENT_METHOD1VALID_FROM'),event);" id="imgCalendar" name="imgCalendar" alt="" src="../Styles/trb/Images/DatePicker.gif"></td> 
+                  <td class="th" rowspan="2">DESCRIPTION</td> 
+                  <td rowspan="2"><textarea id="V_CUST_ACC_PAYMENT_METHOD1DESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACC_PAYMENT_METHOD1VALID_TO">VALID TO</label></td> 
+                  <td class="custom"><input id="V_CUST_ACC_PAYMENT_METHOD1VALID_TO" class="ControlsIN" readonly maxlength="100" size="12" value="{VALID_TO}" name="{VALID_TO_Name}">&nbsp;<img onclick="scwShow(document.getElementById('V_CUST_ACC_PAYMENT_METHOD1VALID_TO'),event);" id="imgCalendar" name="imgCalendar" alt="" src="../Styles/trb/Images/DatePicker.gif"></td> 
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACC_PAYMENT_METHOD1UPDATE_DATE">UPDATE DATE</label></td> 
+                  <td class="custom"><input id="V_CUST_ACC_PAYMENT_METHOD1UPDATE_DATE" class="ControlsRO" readonly maxlength="100" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}"></td> 
+                  <td class="th">UPDATE BY</td> 
+                  <td><input id="V_CUST_ACC_PAYMENT_METHOD1UPDATE_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}"></td> 
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="4" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="V_CUST_ACC_PAYMENT_METHOD1Button_Insert" class="Button" type="submit" value="SAVE" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="V_CUST_ACC_PAYMENT_METHOD1Button_Update" class="Button" type="submit" value="SAVE" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="V_CUST_ACC_PAYMENT_METHOD1Button_Delete" class="Button" type="submit" value="DELETE" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="V_CUST_ACC_PAYMENT_METHOD1Button_Cancel" class="Button" type="submit" value="CANCEL" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+                </tr>
+ 
+              </table>
+ </td> 
+          </tr>
+ 
+        </table>
+ 
+      </form>
+ <!-- END Record V_CUST_ACC_PAYMENT_METHOD1 --></td> 
+  </tr>
+</table>
+</body>
+</html>

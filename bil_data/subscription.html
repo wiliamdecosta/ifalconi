@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_subcription</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<style>
+        #scripted{ padding-top: 40px;}
+</style>
+<script language="JavaScript" type="text/javascript">
+        function toCust(){
+                var customer = document.getElementById("V_SUBSCRIBERCUSTOMER_ACCOUNT_ID").value;
+                location.href = "customer_account.php";
+        }
+
+        function toAD(){
+                var customer = document.getElementById("V_SUBSCRIBERCUSTOMER_ACCOUNT_ID").value;
+                location.href = "account_discount.php?CUSTOMER_ACCOUNT_ID="+customer;
+        }
+
+        function toPM(){
+                var customer = document.getElementById("V_SUBSCRIBERCUSTOMER_ACCOUNT_ID").value;
+                location.href = "cust_acc_payment_method.php?CUSTOMER_ACCOUNT_ID="+customer;
+        }
+        
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toCust()">CUSTOMER ACCOUNT</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">SUBSCRIPTION</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toAD()">ACCOUNT DISCOUNT</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toPM()">PAYMENT METHOD</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<table id="scripted" cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record p_customer_account -->
+      <form id="p_customer_account" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="2">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="4">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="p_customer_accountACCOUNT_NO"><strong>Account No / Name&nbsp;: </strong></label></td> 
+                  <td>{ACCOUNT_NO}</td> 
+                  <td>-</td> 
+                  <td>{LAST_NAME}</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="p_customer_accountACCOUNT_NO"><strong>Customer No / Name&nbsp;: </strong></label></td> 
+                  <td>{CUSTOMER_NUMBER}</td> 
+                  <td>&nbsp;</td> 
+                  <td>{CUSTOMER_NAME}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      &nbsp;<!-- END Record p_customer_account -->
+      <!-- BEGIN Grid V_SUBSCRIBER -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                <td class="th"><strong>LIST SUBSCRIPTION</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th scope="col">
+                <center>
+                # 
+                </center>
+                </th>
+ 
+                <th scope="col">ID</th>
+ 
+                <th scope="col">SERVICE NO</th>
+ 
+                <th scope="col">SERVICE TYPE CODE</th>
+ 
+                <th scope="col">TARIFF SCENARIO CODE</th>
+ 
+                <th scope="col">SUBSCRIPTION NAME</th>
+ 
+                <th scope="col">LAST STATUS DATE</th>
+ 
+                <th scope="col">IS INVOICED</th>
+ 
+                <th scope="col">IS VAT EXCEPTION</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {V_SUBSCRIBER:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="V_SUBSCRIBERDLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="V_SUBSCRIBERADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td style="TEXT-ALIGN: right">{SUBSCRIBER_ID}&nbsp;</td> 
+                <td style="TEXT-ALIGN: right">{SERVICE_NO}<input id="V_SUBSCRIBERCUSTOMER_ACCOUNT_ID" type="hidden" value="{CUSTOMER_ACCOUNT_ID}" name="{CUSTOMER_ACCOUNT_ID_Name}">&nbsp;</td> 
+                <td>{SERVICE_TYPE_CODE}&nbsp;</td> 
+                <td>{TARIFF_SCENARIO_CODE}&nbsp;</td> 
+                <td>{SUBSCRIPTION_NAME}&nbsp;</td> 
+                <td>{LAST_STATUS_DATE}&nbsp;</td> 
+                <td>{IS_INVOICED}&nbsp;</td> 
+                <td>{IS_VAT_EXCEPTION}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="9">Data not found</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td colspan="9">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid V_SUBSCRIBER --><br>
+      <!-- BEGIN Grid V_SUBSCRIBER_STATUS -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                <td class="th"><strong>LIST&nbsp;SUBSCRIBER STATUS </strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th scope="col">ID</th>
+ 
+                <th scope="col">SUBSCRIPTION STATUS CODE</th>
+ 
+                <th scope="col">STATUS DATE</th>
+ 
+                <th scope="col">IS SENT TO NMS</th>
+ 
+                <th scope="col">IS SENT OK</th>
+ 
+                <th scope="col">SENT DATE</th>
+ 
+                <th scope="col">DESCRIPTION</th>
+ 
+                <th scope="col">UPDATE DATE</th>
+ 
+                <th scope="col">UPDATE BY</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {V_SUBSCRIBER_STATUS:rowStyle} class="Row">
+                <td style="TEXT-ALIGN: right">{SUBSCRIBER_STATUS_ID}&nbsp;</td> 
+                <td>{SUBSCRIPTION_STATUS_CODE}&nbsp;</td> 
+                <td>{STATUS_DATE}&nbsp;</td> 
+                <td>{IS_SENT_TO_NMS}&nbsp;</td> 
+                <td>{IS_SENT_OK}&nbsp;</td> 
+                <td>{SENT_DATE}&nbsp;</td> 
+                <td>{DESCRIPTION}&nbsp;</td> 
+                <td>{UPDATE_DATE}&nbsp;</td> 
+                <td>{UPDATE_BY}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="9">Data not found</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td colspan="9">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid V_SUBSCRIBER_STATUS --></td>
+  </tr>
+</table>
+</body>
+</html>

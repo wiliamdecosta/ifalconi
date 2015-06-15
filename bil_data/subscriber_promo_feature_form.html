@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Feature Promotion</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-08790610
+
+var V_SUBS_OT_PROMO_FEATURE_DatePicker_PROMOTION_DATE = new Object(); 
+V_SUBS_OT_PROMO_FEATURE_DatePicker_PROMOTION_DATE.format           = "dd-mmm-yyyy";
+V_SUBS_OT_PROMO_FEATURE_DatePicker_PROMOTION_DATE.style            = "Styles/trb/Style.css";
+V_SUBS_OT_PROMO_FEATURE_DatePicker_PROMOTION_DATE.relativePathPart = "../";
+V_SUBS_OT_PROMO_FEATURE_DatePicker_PROMOTION_DATE.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//V_SUBS_OT_PROMO_FEATUREButton_Delete_OnClick @113-9E3DDEC7
+function V_SUBS_OT_PROMO_FEATUREButton_Delete_OnClick()
+{
+    var result = true;
+//End V_SUBS_OT_PROMO_FEATUREButton_Delete_OnClick
+
+//Confirmation Message @114-718B6A05
+    return confirm('Are you sure delete this record?');
+//End Confirmation Message
+
+//Close V_SUBS_OT_PROMO_FEATUREButton_Delete_OnClick @113-BC33A33A
+    return result;
+}
+//End Close V_SUBS_OT_PROMO_FEATUREButton_Delete_OnClick
+
+//V_SUBS_OT_PROMO_FEATUREButton_Cancel_OnClick @115-D9F10441
+function V_SUBS_OT_PROMO_FEATUREButton_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End V_SUBS_OT_PROMO_FEATUREButton_Cancel_OnClick
+
+//bind_events @1-80E61AA9
+function bind_events() {
+    addEventHandler("V_SUBS_OT_PROMO_FEATUREButton_Delete", "click", V_SUBS_OT_PROMO_FEATUREButton_Delete_OnClick);
+    addEventHandler("V_SUBS_OT_PROMO_FEATUREButton_Cancel", "click", V_SUBS_OT_PROMO_FEATUREButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="toSubscription()">SUBSCRIPTION</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center"><label onclick="javascript:toPromotion()">PROMOTION</label></td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toFeature()">FEATURE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toTariff()">TARIFF OVERRIDE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toCPE()">CPE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toStatus()">STATUS HISTORY</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toSubInfo()">SUBSCRIBER INFO</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+&nbsp; 
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record SubscribInfo -->
+      <form id="SubscribInfo" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="2">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="6">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="SubscribInfoSERVICE_NO"><strong>Service&nbsp;: </strong></label></td> 
+                  <td colspan="4">{SERVICE_NO}&nbsp;</td> 
+                  <td>&nbsp;{SERVICE_TYPE_CODE}</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="SubscribInfoSERVICE_NO"><strong>Tariff Scenario : </strong></label></td> 
+                  <td colspan="5">{TARIFF_SCENARIO_CODE}</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><strong>Subcriber&nbsp;Name :</strong></td> 
+                  <td colspan="5">{SUBSCRIPTION_NAME}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record SubscribInfo --><br>
+      <!-- BEGIN Record V_SUBS_OT_PROMO_FEATURE -->
+      <form id="V_SUBS_OT_PROMO_FEATURE" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>FEATURE&nbsp;PROMOTION</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error} </td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBS_OT_PROMO_FEATURESUBSCRIBER_ID">SUBSCRIBER ID</label></td> 
+                  <td><input id="V_SUBS_OT_PROMO_FEATURESUBSCRIBER_ID" class="ControlsRO" readonly maxlength="12" size="12" value="{SUBSCRIBER_ID}" name="{SUBSCRIBER_ID_Name}"><label for="V_SUBS_OT_PROMO_FEATURESUBS_OT_PROMO_FEATURE_ID" style="display: none;">&nbsp;</label><input id="V_SUBS_OT_PROMO_FEATURESUBS_OT_PROMO_FEATURE_ID" type="hidden" value="{SUBS_OT_PROMO_FEATURE_ID}" name="{SUBS_OT_PROMO_FEATURE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBS_OT_PROMO_FEATUREP_FEATURE_PROMOTION_ID">ONETIME FEATURE&nbsp;PROMOTION</label></td> 
+                  <td><input id="V_SUBS_OT_PROMO_FEATUREOT_FEATURE_PROMO_CODE" class="ControlsRO" readonly maxlength="128" size="28" value="{OT_FEATURE_PROMO_CODE}" name="{OT_FEATURE_PROMO_CODE_Name}">&nbsp;<img onclick="lov_sub_featurepromotion()" border="0" src="../images/folder.gif">&nbsp;<input id="V_SUBS_OT_PROMO_FEATUREP_FEATURE_PROMOTION_ID" type="hidden" value="{P_FEATURE_PROMOTION_ID}" name="{P_FEATURE_PROMOTION_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBS_OT_PROMO_FEATUREPROMOTION_DATE">PROMOTION DATE</label></td> 
+                  <td><input id="V_SUBS_OT_PROMO_FEATUREPROMOTION_DATE" class="ControlsRO" readonly maxlength="100" size="12" value="{PROMOTION_DATE}" name="{PROMOTION_DATE_Name}">&nbsp; 
+                    <!-- BEGIN DatePicker DatePicker_PROMOTION_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBS_OT_PROMO_FEATUREDatePicker_PROMOTION_DATE"><img id="V_SUBS_OT_PROMO_FEATUREDatePicker_PROMOTION_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_PROMOTION_DATE --><input id="V_SUBS_OT_PROMO_FEATUREP_TARIFF_SCENARIO_ID" type="hidden" value="{P_TARIFF_SCENARIO_ID}" name="{P_TARIFF_SCENARIO_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBS_OT_PROMO_FEATUREDESCRIPTION">DESCRIPTION</label></td> 
+                  <td><textarea id="V_SUBS_OT_PROMO_FEATUREDESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBS_OT_PROMO_FEATUREOT_FEATURE_PROMO_CODE">UPDATE BY</label></td> 
+                  <td><input id="V_SUBS_OT_PROMO_FEATUREUPDATE_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}">&nbsp;<input id="V_SUBS_OT_PROMO_FEATUREUPDATE_DATE" class="ControlsRO" readonly maxlength="100" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="V_SUBS_OT_PROMO_FEATUREButton_Insert" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="V_SUBS_OT_PROMO_FEATUREButton_Update" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="V_SUBS_OT_PROMO_FEATUREButton_Delete" class="Button" type="submit" value="Delete" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="V_SUBS_OT_PROMO_FEATUREButton_Cancel" class="Button" type="submit" value="Cancel" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record V_SUBS_OT_PROMO_FEATURE --></td>
+  </tr>
+  <br>
+</table>
+<script language="javascript">
+        function toSubscription()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber.php?SUBSCRIBER_ID=" + sub_id + "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toPromotion()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_promo.php?SUBSCRIBER_ID=" + sub_id + "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toFeature()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_feature.php?SUBSCRIBER_ID=" + sub_id + "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toTariff()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_tariff_override.php?SUBSCRIBER_ID=" + sub_id + "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toCPE()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_cpe.php?SUBSCRIBER_ID=" + sub_id + "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toStatus()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_status_historyRO.php?SUBSCRIBER_ID=" + sub_id + "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toSubInfo()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_info.php?SUBSCRIBER_ID=" + sub_id + "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+                function getFrom_LOV(FormName, FieldList, FileName) {
+            arrLOV = FileName.split('?');
+
+            var width = 500;
+            var height = 400;
+            ///var left = parseInt((screen.availWidth/2) - (width/2));
+            //var top = parseInt((screen.availHeight/2) - (height/2)); 
+            window.open('../bil_lov/' + arrLOV[0] + '?FORM=' + FormName + '&OBJ=' + FieldList + '&' + arrLOV[1], width, height, "auto");
+        }
+
+                function lov_sub_featurepromotion() 
+                {
+                        var P_TARIFF_SCENARIO_ID = document.getElementById("V_SUBS_OT_PROMO_FEATUREP_TARIFF_SCENARIO_ID").value;
+                        getFrom_LOV('V_SUBS_OT_PROMO_FEATURE', 'P_FEATURE_PROMOTION_ID,OT_FEATURE_PROMO_CODE', 'lov_sub_featurepromotion.php?P_TARIFF_SCENARIO_ID='+P_TARIFF_SCENARIO_ID);
+                }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Tariff Override</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-950D5020
+
+var CPE_RECURRING_TARIFF_DatePicker_VALID_FROM = new Object(); 
+CPE_RECURRING_TARIFF_DatePicker_VALID_FROM.format           = "dd-mmm-yyyy";
+CPE_RECURRING_TARIFF_DatePicker_VALID_FROM.style            = "Styles/trb/Style.css";
+CPE_RECURRING_TARIFF_DatePicker_VALID_FROM.relativePathPart = "../";
+CPE_RECURRING_TARIFF_DatePicker_VALID_FROM.themeVersion = "3.0";
+
+var CPE_RECURRING_TARIFF_DatePicker_VALID_TO = new Object(); 
+CPE_RECURRING_TARIFF_DatePicker_VALID_TO.format           = "dd-mmm-yyyy";
+CPE_RECURRING_TARIFF_DatePicker_VALID_TO.style            = "Styles/trb/Style.css";
+CPE_RECURRING_TARIFF_DatePicker_VALID_TO.relativePathPart = "../";
+CPE_RECURRING_TARIFF_DatePicker_VALID_TO.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//CPE_RECURRING_TARIFFButton_Delete_OnClick @113-44678274
+function CPE_RECURRING_TARIFFButton_Delete_OnClick()
+{
+    var result = true;
+//End CPE_RECURRING_TARIFFButton_Delete_OnClick
+
+//Confirmation Message @114-718B6A05
+    return confirm('Are you sure delete this record?');
+//End Confirmation Message
+
+//Close CPE_RECURRING_TARIFFButton_Delete_OnClick @113-BC33A33A
+    return result;
+}
+//End Close CPE_RECURRING_TARIFFButton_Delete_OnClick
+
+//CPE_RECURRING_TARIFFButton_Cancel_OnClick @115-9E919720
+function CPE_RECURRING_TARIFFButton_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End CPE_RECURRING_TARIFFButton_Cancel_OnClick
+
+//bind_events @1-F99B74B3
+function bind_events() {
+    addEventHandler("CPE_RECURRING_TARIFFButton_Delete", "click", CPE_RECURRING_TARIFFButton_Delete_OnClick);
+    addEventHandler("CPE_RECURRING_TARIFFButton_Cancel", "click", CPE_RECURRING_TARIFFButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="toSubscription()">SUBSCRIPTION</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toPromotion()">PROMOTION</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toFeature()">FEATURE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toTariff()">TARIFF OVERRIDE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center"><label>CPE</label></td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toStatus()">STATUS HISTORY</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toSubInfo()">SUBSCRIBER INFO</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record SubscribInfo -->
+      <form id="SubscribInfo" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="2">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="6">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="SubscribInfoSERVICE_NO"><strong>Service&nbsp;: </strong></label></td> 
+                  <td colspan="4">{SERVICE_NO}&nbsp;</td> 
+                  <td>&nbsp;{SERVICE_TYPE_CODE}</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="SubscribInfoSERVICE_NO"><strong>Tariff Scenario : </strong></label></td> 
+                  <td colspan="5">{TARIFF_SCENARIO_CODE}</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><strong>Subcriber&nbsp;Name :</strong></td> 
+                  <td colspan="5">{SUBSCRIPTION_NAME}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record SubscribInfo --><br>
+      <!-- BEGIN Record CPE_RECURRING_TARIFF -->
+      <form id="CPE_RECURRING_TARIFF" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>CPE RECURRING TARIFF</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="4">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="CPE_RECURRING_TARIFFSUBSCRIBER_ID">SUBSCRIBER ID</label></td> 
+                  <td colspan="3"><input id="CPE_RECURRING_TARIFFSUBSCRIBER_ID" class="ControlsRO" readonly maxlength="12" size="12" value="{SUBSCRIBER_ID}" name="{SUBSCRIBER_ID_Name}">&nbsp;&nbsp;<label for="CPE_RECURRING_TARIFFSUBSCRIBER_CPE_ID" style="display: none;">&nbsp;</label></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CPE_RECURRING_TARIFFP_BILL_COMPONENT_ID">BILL COMPONENT</label></td> 
+                  <td colspan="3"><input id="CPE_RECURRING_TARIFFBILL_COMPONENT_CODE" class="ControlsRO" readonly maxlength="32" size="32" value="{BILL_COMPONENT_CODE}" name="{BILL_COMPONENT_CODE_Name}">&nbsp;<img onclick="lov_p_bill_component()" border="0" src="../images/folder.gif">&nbsp;<input id="CPE_RECURRING_TARIFFP_BILL_COMPONENT_ID" type="hidden" value="{P_BILL_COMPONENT_ID}" name="{P_BILL_COMPONENT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CPE_RECURRING_TARIFFP_CURRENCY_ID">CURRENCY</label></td> 
+                  <td colspan="3"><input id="CPE_RECURRING_TARIFFCURRENCY_CODE" class="ControlsRO" readonly maxlength="6" size="6" value="{CURRENCY_CODE}" name="{CURRENCY_CODE_Name}">&nbsp;<img onclick="lov_p_currency()" border="0" src="../images/folder.gif">&nbsp;<input id="CPE_RECURRING_TARIFFP_CURRENCY_ID" type="hidden" value="{P_CURRENCY_ID}" name="{P_CURRENCY_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CPE_RECURRING_TARIFFVALID_FROM">VALID FROM</label></td> 
+                  <td><input id="CPE_RECURRING_TARIFFVALID_FROM" class="ControlsRO" readonly maxlength="100" size="12" value="{VALID_FROM}" name="{VALID_FROM_Name}">&nbsp; 
+                    <!-- BEGIN DatePicker DatePicker_VALID_FROM --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="CPE_RECURRING_TARIFFDatePicker_VALID_FROM"><img id="CPE_RECURRING_TARIFFDatePicker_VALID_FROM_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_VALID_FROM --></td> 
+                  <td>&nbsp;VALID TO</td> 
+                  <td>&nbsp;<input id="CPE_RECURRING_TARIFFVALID_TO" class="ControlsIN" readonly maxlength="100" size="12" value="{VALID_TO}" name="{VALID_TO_Name}">
+                    <!-- BEGIN DatePicker DatePicker_VALID_TO --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="CPE_RECURRING_TARIFFDatePicker_VALID_TO"><img id="CPE_RECURRING_TARIFFDatePicker_VALID_TO_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_VALID_TO --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CPE_RECURRING_TARIFFCHARGE_AMOUNT">CHARGE AMOUNT</label></td> 
+                  <td colspan="3"><input id="CPE_RECURRING_TARIFFCHARGE_AMOUNT" class="ControlsRQ" maxlength="12" size="12" value="{CHARGE_AMOUNT}" name="{CHARGE_AMOUNT_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CPE_RECURRING_TARIFFP_BILLING_PERIOD_UNIT_ID">BILLING PERIODE UNIT</label></td> 
+                  <td colspan="3"><input id="CPE_RECURRING_TARIFFBILL_PERIOD_UNIT_CODE" class="ControlsRO" readonly maxlength="32" size="32" value="{BILL_PERIOD_UNIT_CODE}" name="{BILL_PERIOD_UNIT_CODE_Name}">&nbsp;<img onclick="lov_p_bill_periode()" border="0" src="../images/folder.gif">&nbsp;<input id="CPE_RECURRING_TARIFFP_BILLING_PERIOD_UNIT_ID" type="hidden" value="{P_BILLING_PERIOD_UNIT_ID}" name="{P_BILLING_PERIOD_UNIT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CPE_RECURRING_TARIFFBILLING_UNIT">BILLING UNIT</label></td> 
+                  <td colspan="3"><input id="CPE_RECURRING_TARIFFBILLING_UNIT" class="ControlsRQ" maxlength="12" size="12" value="{BILLING_UNIT}" name="{BILLING_UNIT_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CPE_RECURRING_TARIFFDESCRIPTION">DESCRIPTION</label></td> 
+                  <td colspan="3"><textarea id="CPE_RECURRING_TARIFFDESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CPE_RECURRING_TARIFFUPDATE_BY">UPDATE BY</label></td> 
+                  <td colspan="3"><input id="CPE_RECURRING_TARIFFUPDATE_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}">&nbsp;<input id="CPE_RECURRING_TARIFFUPDATE_DATE" class="ControlsRO" readonly maxlength="100" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}"><input id="CPE_RECURRING_TARIFFSUBSCRIBER_CPE_TARIFF_ID" type="hidden" value="{SUBSCRIBER_CPE_TARIFF_ID}" name="{SUBSCRIBER_CPE_TARIFF_ID_Name}"><input id="CPE_RECURRING_TARIFFSUBSCRIBER_CPE_ID" type="hidden" value="{SUBSCRIBER_CPE_ID}" name="{SUBSCRIBER_CPE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="4" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="CPE_RECURRING_TARIFFButton_Insert" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="CPE_RECURRING_TARIFFButton_Update" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="CPE_RECURRING_TARIFFButton_Delete" class="Button" type="submit" value="Delete" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="CPE_RECURRING_TARIFFButton_Cancel" class="Button" type="submit" value="Cancel" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record CPE_RECURRING_TARIFF --><br>
+    </td>
+  </tr>
+  <br>
+</table>
+<script language="javascript">
+                function toSubscription()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toPromotion()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_promo.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toFeature()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_feature.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toTariff()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_tariff_override.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toCPE()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_cpe.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toStatus()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_status_historyRO.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toSubInfo()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_info.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+                function getFrom_LOV(FormName, FieldList, FileName) {
+            arrLOV = FileName.split('?');
+
+            var width = 500;
+            var height = 400;
+            ///var left = parseInt((screen.availWidth/2) - (width/2));
+            //var top = parseInt((screen.availHeight/2) - (height/2)); 
+            window.open('../bil_lov/' + arrLOV[0] + '?FORM=' + FormName + '&OBJ=' + FieldList + '&' + arrLOV[1], width, height, "auto");
+        }
+        function lov_p_bill_component() 
+        {
+         getFrom_LOV('CPE_RECURRING_TARIFF', 'P_BILL_COMPONENT_ID,BILL_COMPONENT_CODE', 'lov_p_bill_component.php?');
+        }
+        function lov_p_currency() 
+        {
+        getFrom_LOV('CPE_RECURRING_TARIFF', 'P_CURRENCY_ID,CURRENCY_CODE', 'lov_p_currency.php?');
+        }
+        function lov_p_bill_periode() 
+        {
+         getFrom_LOV('CPE_RECURRING_TARIFF', 'P_BILLING_PERIOD_UNIT_ID,BILL_PERIOD_UNIT_CODE', 'lov_p_bill_periode.php?');
+        }
+                function lov_sub_promotion() 
+        {
+                var SUBSCRIBER_ID = document.getElementById("V_SUBS_OVERRIDE_RECU_TARISUBSCRIBER_ID").value;
+         getFrom_LOV('CPE_RECURRING_TARIFF', 'SUBS_OT_PROMO_SERVICE_ID,OT_PROMOTION_CODE', 'lov_sub_promotion.php?SUBSCRIBER_ID='+SUBSCRIBER_ID);
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>T_BUDGET</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.1.00.031">
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<!--#include File="../include/sessi.inc"-->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+function getFrom_LOV(formName,fieldList,LOV_NM)
+{
+    //view_LOV(formName,fieldList,LOV_NM)
+        arrLOV = LOV_NM.split("?");
+        window.open("../bil_lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+}
+
+function lovSubscriber(){
+        classname = "BATCH1";
+    fieldname = "SUBSCRIBER_ID,SERVICE_NO,SERVICE_TYPE_CODE,SUBSCRIPTION_NAME";
+    filename = "lov_subscriber.php";
+
+    getFrom_LOV(classname,fieldname,filename)
+}
+
+function lovTicket(){
+        classname = "BATCH1";
+    fieldname = "P_TICKET_COMPONENT_ID,BILL_TICKET_CODE";
+    filename = "lov_ticket_component.php";
+
+    getFrom_LOV(classname,fieldname,filename)
+}
+
+function lovReason(){
+        classname = "BATCH1";
+    fieldname = "TICKET_REASON_ID,TICKET_REASON_CODE";
+    filename = "lov_ticket_reason.php";
+
+    getFrom_LOV(classname,fieldname,filename)
+}
+
+function lovCur(){
+        classname = "BATCH1";
+    fieldname = "P_CURRENCY_ID,CURRENCY_CODE";
+    filename = "lov_p_currency.php";
+
+    getFrom_LOV(classname,fieldname,filename)
+}
+</script>
+<style>
+  .custom {
+        border-right: 0px solid white !important;
+  }     
+</style>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//BATCH1Button_Insert_OnClick @20-13781375
+function BATCH1Button_Insert_OnClick()
+{
+    var result = true;
+//End BATCH1Button_Insert_OnClick
+
+//Custom Code @116-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Confirmation Message @164-2BD3365F
+    return confirm('Save this record?');
+//End Confirmation Message
+
+//Close BATCH1Button_Insert_OnClick @20-BC33A33A
+    return result;
+}
+//End Close BATCH1Button_Insert_OnClick
+
+//BATCH1Button_Update_OnClick @21-844AA32D
+function BATCH1Button_Update_OnClick()
+{
+    var result = true;
+//End BATCH1Button_Update_OnClick
+
+//Custom Code @117-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Confirmation Message @165-ABAE6950
+    return confirm('Change this record?');
+//End Confirmation Message
+
+//Close BATCH1Button_Update_OnClick @21-BC33A33A
+    return result;
+}
+//End Close BATCH1Button_Update_OnClick
+
+//BATCH1Button_Delete_OnClick @22-DCD7723B
+function BATCH1Button_Delete_OnClick()
+{
+    var result = true;
+//End BATCH1Button_Delete_OnClick
+
+//Confirmation Message @23-F40F0E61
+    return confirm('Delete this record?');
+//End Confirmation Message
+
+//Custom Code @118-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close BATCH1Button_Delete_OnClick @22-BC33A33A
+    return result;
+}
+//End Close BATCH1Button_Delete_OnClick
+
+//BATCH1Button_Cancel_OnClick @24-00993465
+function BATCH1Button_Cancel_OnClick()
+{
+    var result = true;
+//End BATCH1Button_Cancel_OnClick
+
+//Custom Code @119-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close BATCH1Button_Cancel_OnClick @24-AEF500E0
+    disableValidation = true;
+    return result;
+}
+//End Close BATCH1Button_Cancel_OnClick
+
+//_OnLoad @1-9C4F01C0
+function _OnLoad()
+{
+    var result = true;
+//End _OnLoad
+
+//Custom Code @57-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close _OnLoad @1-BC33A33A
+    return result;
+}
+//End Close _OnLoad
+
+//bind_events @1-84884E41
+function bind_events() {
+    addEventHandler("BATCH1Button_Insert", "click", BATCH1Button_Insert_OnClick);
+    addEventHandler("BATCH1Button_Update", "click", BATCH1Button_Update_OnClick);
+    addEventHandler("BATCH1Button_Delete", "click", BATCH1Button_Delete_OnClick);
+    addEventHandler("BATCH1Button_Cancel", "click", BATCH1Button_Cancel_OnClick);
+    addEventHandler("", "load", _OnLoad);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+
+function toJobAcc(){
+    var idIDC = document.getElementById("BATCH1INPUT_DATA_CONTROL_ID").value;
+    location.href = "job_control_accrue.php?INPUT_DATA_CONTROL_ID="+idIDC;
+}
+
+</script>
+</head>
+<body style="MARGIN: 0px" marginheight="0" marginwidth="0">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+  <tr>
+    <td><img border="0" src="../images/tab_s_on.gif"></td> 
+    <td class="th" background="../images/tab_on.gif" nowrap align="center">TICKET BILLING</td> 
+    <td><img border="0" src="../images/tab_e_on.gif"></td> 
+    <td background="../images/tab_back.gif" width="100%"></td>
+  </tr>
+</table>
+<br>
+<table align="center">
+  <tr>
+    <td>
+      <!-- BEGIN Record BATCHSearch -->
+      <form id="BATCHSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="BATCHSearchs_keyword">&nbsp;</label><input id="BATCHSearchs_keyword" class="ControlsIN" style="TEXT-TRANSFORM: uppercase" maxlength="32" size="32" value="{s_keyword}" name="{s_keyword_Name}">
+                    <!-- BEGIN Button Button_DoSearch --><input id="BATCHSearchButton_DoSearch" class="Button" alt="Search" type="submit" value="Search" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record BATCHSearch --><br>
+      <!-- BEGIN Grid ENTRY_BILL_TICKET -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/sip/images/Spacer.gif"></td> 
+                <td class="th">ENTRY TICKET BILLING</td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/sip/images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">&nbsp;#</th>
+ 
+                <th scope="col" align="center">Ticket Date</th>
+ 
+                <th scope="col">Service No</th>
+ 
+                <th scope="col">Service Name</th>
+ 
+                <th scope="col">Subscription Name</th>
+ 
+                <th scope="col" align="center">Ticket Component</th>
+ 
+                <th scope="col">Currency Code</th>
+ 
+                <th scope="col" align="center">Ticket Amount&nbsp;</th>
+ 
+                <th scope="col" align="center">Ticket Reason</th>
+ 
+                <th scope="col" align="center">Description</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {ENTRY_BILL_TICKET:rowStyle}>
+                <td style="TEXT-ALIGN: center">&nbsp; 
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="ENTRY_BILL_TICKETDLink_{ENTRY_BILL_TICKET:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="ENTRY_BILL_TICKETADLink_{ENTRY_BILL_TICKET:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td nowrap>&nbsp;{TICKET_DATE}<input id="ENTRY_BILL_TICKETT_BILL_TICKET_ID" type="hidden" value="{T_BILL_TICKET_ID}" name="{T_BILL_TICKET_ID_Name}"></td> 
+                <td nowrap>&nbsp;{SERVICE_NO}&nbsp;</td> 
+                <td nowrap>&nbsp;{SERVICE_TYPE_CODE}&nbsp;</td> 
+                <td nowrap>{SUBSCRIPTION_NAME}&nbsp;&nbsp;</td> 
+                <td nowrap>&nbsp;{BILL_TICKET_CODE}</td> 
+                <td nowrap>{CURRENCY_CODE}&nbsp;&nbsp;</td> 
+                <td nowrap>&nbsp;{TICKET_AMOUNT}</td> 
+                <td nowrap>&nbsp;{TICKET_REASON_CODE}</td> 
+                <td nowrap>&nbsp;{DESCRIPTION}</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="10">Data Tidak Ditemukan</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{BATCH_Insert_Src}" id="ENTRY_BILL_TICKETBATCH_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td style="TEXT-ALIGN: left" colspan="9">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid ENTRY_BILL_TICKET --><br>
+      <!-- BEGIN Record BATCH1 -->
+      <form id="BATCH1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/sip/images/Spacer.gif"></td> 
+                  <td class="th"><strong>ADD / EDIT&nbsp;ENTRY TICKET BILLING</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/sip/images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="5">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th">Ticket ID</td> 
+                  <td class="custom"><input id="BATCH1T_BILL_TICKET_ID" class="ControlsRO" readonly value="{T_BILL_TICKET_ID}" name="{T_BILL_TICKET_ID_Name}"></td> 
+                  <td class="custom"></td> 
+                  <td colspan="2">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Ticket Date</td> 
+                  <td class="custom"><input id="BATCH1TICKET_DATE" class="ControlsRQ" style="TEXT-TRANSFORM: uppercase" readonly maxlength="32" size="12" value="{TICKET_DATE}" name="{TICKET_DATE_Name}">&nbsp;<img onclick="scwShow(document.getElementById('BATCH1TICKET_DATE'),event);" id="imgCalendar" name="imgCalendar" alt="" src="../Styles/trb/Images/DatePicker.gif">&nbsp;</td> 
+                  <td class="th">Ticket Component</td> 
+                  <td colspan="2"><input id="BATCH1BILL_TICKET_CODE" class="ControlsRQ" readonly value="{BILL_TICKET_CODE}" name="{BILL_TICKET_CODE_Name}">&nbsp;<img onclick="lovTicket()" id="LOV_COL1" border="0" name="LOV_BUM" src="../images/folder.gif" width="16" height="16"><input id="BATCH1P_TICKET_COMPONENT_ID" type="hidden" value="{P_TICKET_COMPONENT_ID}" name="{P_TICKET_COMPONENT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Service No</td> 
+                  <td class="custom"><input id="BATCH1SERVICE_NO" class="ControlsRQ" readonly value="{SERVICE_NO}" name="{SERVICE_NO_Name}">&nbsp;<img onclick="lovSubscriber()" id="LOV_COL1" border="0" name="LOV_BUM" src="../images/folder.gif" width="16" height="16">&nbsp;<input id="BATCH1INPUT_DATA_CONTROL_ID" type="hidden" value="{INPUT_DATA_CONTROL_ID}" name="{INPUT_DATA_CONTROL_ID_Name}">&nbsp;</td> 
+                  <td class="th">Currency Code</td> 
+                  <td colspan="2"><input id="BATCH1CURRENCY_CODE" class="ControlsRQ" readonly value="{CURRENCY_CODE}" name="{CURRENCY_CODE_Name}">&nbsp;<img onclick="lovCur()" id="LOV_COL1" border="0" name="LOV_BUM" src="../images/folder.gif" width="16" height="16">&nbsp;<input id="BATCH1P_CURRENCY_ID" type="hidden" value="{P_CURRENCY_ID}" name="{P_CURRENCY_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Subscription Name</td> 
+                  <td class="custom"><input id="BATCH1SUBSCRIPTION_NAME" class="ControlsRO" readonly maxlength="250" size="32" value="{SUBSCRIPTION_NAME}" name="{SUBSCRIPTION_NAME_Name}">&nbsp;</td> 
+                  <td class="th">Subscriber</td> 
+                  <td colspan="2"><input id="BATCH1SERVICE_TYPE_CODE" class="ControlsRO" size="32" value="{SERVICE_TYPE_CODE}" name="{SERVICE_TYPE_CODE_Name}"><input id="BATCH1SUBSCRIBER_ID" type="hidden" value="{SUBSCRIBER_ID}" name="{SUBSCRIBER_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Ticket Amount</td> 
+                  <td class="custom"><input id="BATCH1TICKET_AMOUNT" class="ControlsRQ" value="{TICKET_AMOUNT}" name="{TICKET_AMOUNT_Name}">&nbsp;</td> 
+                  <td class="th" rowspan="2"><label for="P_APP_ROLE1CREATED_BY">Description</label></td> 
+                  <td rowspan="2" colspan="2"><textarea id="BATCH1DESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea>&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Ticket Reason</td> 
+                  <td class="custom"><input id="BATCH1TICKET_REASON_CODE" class="ControlsRQ" readonly size="32" value="{TICKET_REASON_CODE}" name="{TICKET_REASON_CODE_Name}">&nbsp;<img onclick="lovReason()" id="LOV_COL1" border="0" name="LOV_BUM" src="../images/folder.gif" width="16" height="16">&nbsp;<input id="BATCH1TICKET_REASON_ID" type="hidden" value="{TICKET_REASON_ID}" name="{TICKET_REASON_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Update Date</td> 
+                  <td class="custom"><input id="BATCH1UPDATE_DATE" class="ControlsRO" language="Jscript" style="TEXT-TRANSFORM: uppercase" readonly maxlength="12" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}"></td> 
+                  <td class="th">Update By</td> 
+                  <td colspan="2"><input id="BATCH1UPDATE_BY" class="ControlsRO" readonly size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="5" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="BATCH1Button_Insert" class="Button" alt="Add" type="submit" value="SAVE" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="BATCH1Button_Update" class="Button" alt="Submit" type="submit" value="SAVE" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="BATCH1Button_Delete" class="Button" alt="Delete" type="submit" value="DELETE" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="BATCH1Button_Cancel" class="Button" alt="Cancel" type="submit" value="CANCEL" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record BATCH1 --><br>
+    </td>
+  </tr>
+</table>
+<!--#include File="../include/function.inc"-->
+<script language="JavaScript">
+// === FUNGSI ANGKA ===
+function checkIt(evt) {
+var charCode = (evt.which) ? evt.which : event.keyCode
+if (charCode > 31 && (charCode < 40 || charCode > 57)) {
+return false
+}
+return true
+}
+</script>
+</body>
+</html>

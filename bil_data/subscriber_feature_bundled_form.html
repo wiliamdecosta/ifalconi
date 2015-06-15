@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Subscriber Bundled Feature Form</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-8EF4A5AD
+
+var V_SUBSCRIBER_BUNDLED_FEAT_DatePicker_ACTIVE_DATE = new Object(); 
+V_SUBSCRIBER_BUNDLED_FEAT_DatePicker_ACTIVE_DATE.format           = "dd-mmm-yyyy";
+V_SUBSCRIBER_BUNDLED_FEAT_DatePicker_ACTIVE_DATE.style            = "Styles/trb/Style.css";
+V_SUBSCRIBER_BUNDLED_FEAT_DatePicker_ACTIVE_DATE.relativePathPart = "../";
+V_SUBSCRIBER_BUNDLED_FEAT_DatePicker_ACTIVE_DATE.themeVersion = "3.0";
+
+var V_SUBSCRIBER_BUNDLED_FEAT_DatePicker_TERMINATION_DATE = new Object(); 
+V_SUBSCRIBER_BUNDLED_FEAT_DatePicker_TERMINATION_DATE.format           = "dd-mmm-yyyy";
+V_SUBSCRIBER_BUNDLED_FEAT_DatePicker_TERMINATION_DATE.style            = "Styles/trb/Style.css";
+V_SUBSCRIBER_BUNDLED_FEAT_DatePicker_TERMINATION_DATE.relativePathPart = "../";
+V_SUBSCRIBER_BUNDLED_FEAT_DatePicker_TERMINATION_DATE.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//V_SUBSCRIBER_BUNDLED_FEATButton_Delete_OnClick @113-201562D5
+function V_SUBSCRIBER_BUNDLED_FEATButton_Delete_OnClick()
+{
+    var result = true;
+//End V_SUBSCRIBER_BUNDLED_FEATButton_Delete_OnClick
+
+//Confirmation Message @114-718B6A05
+    return confirm('Are you sure delete this record?');
+//End Confirmation Message
+
+//Close V_SUBSCRIBER_BUNDLED_FEATButton_Delete_OnClick @113-BC33A33A
+    return result;
+}
+//End Close V_SUBSCRIBER_BUNDLED_FEATButton_Delete_OnClick
+
+//V_SUBSCRIBER_BUNDLED_FEATButton_Cancel_OnClick @115-060CA8A0
+function V_SUBSCRIBER_BUNDLED_FEATButton_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End V_SUBSCRIBER_BUNDLED_FEATButton_Cancel_OnClick
+
+//bind_events @1-D2E73387
+function bind_events() {
+    addEventHandler("V_SUBSCRIBER_BUNDLED_FEATButton_Delete", "click", V_SUBSCRIBER_BUNDLED_FEATButton_Delete_OnClick);
+    addEventHandler("V_SUBSCRIBER_BUNDLED_FEATButton_Cancel", "click", V_SUBSCRIBER_BUNDLED_FEATButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="toSubscription()">SUBSCRIPTION</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toPromotion()">PROMOTION</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center"><label>FEATURE</label></td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toTariff()">TARIFF OVERRIDE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toCPE()">CPE</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toStatus()">STATUS HISTORY</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toSubInfo()">SUBSCRIBER INFO</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record SubscribInfo -->
+      <form id="SubscribInfo" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="2">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="6">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="SubscribInfoSERVICE_NO"><strong>Service&nbsp;: </strong></label></td> 
+                  <td colspan="4">{SERVICE_NO}&nbsp;</td> 
+                  <td>&nbsp;{SERVICE_TYPE_CODE}</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="SubscribInfoSERVICE_NO"><strong>Tariff Scenario : </strong></label></td> 
+                  <td colspan="5">{TARIFF_SCENARIO_CODE}</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><strong>Subcriber&nbsp;Name :</strong></td> 
+                  <td colspan="5">{SUBSCRIPTION_NAME}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record SubscribInfo --><br>
+      <!-- BEGIN Record V_SUBSCRIBER_BUNDLED_FEAT -->
+      <form id="V_SUBSCRIBER_BUNDLED_FEAT" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>BUNDLED FEATURE</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBSCRIBER_BUNDLED_FEATSUBSCRIBER_ID">SUBSCRIBER ID</label></td> 
+                  <td><input id="V_SUBSCRIBER_BUNDLED_FEATSUBSCRIBER_ID" class="ControlsRO" readonly maxlength="12" size="12" value="{SUBSCRIBER_ID}" name="{SUBSCRIBER_ID_Name}">&nbsp;<input id="V_SUBSCRIBER_BUNDLED_FEATSUBSCRIBER_BUNDLED_FEATURE_ID" type="hidden" value="{SUBSCRIBER_BUNDLED_FEATURE_ID}" name="{SUBSCRIBER_BUNDLED_FEATURE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBSCRIBER_BUNDLED_FEATP_BUNDLED_FEATURE_ID">BUNDLED FEATURE</label></td> 
+                  <td><input id="V_SUBSCRIBER_BUNDLED_FEATBUNDLED_FEATURE_CODE" class="ControlsRQ" readonly maxlength="64" size="25" value="{BUNDLED_FEATURE_CODE}" name="{BUNDLED_FEATURE_CODE_Name}">&nbsp;<img onclick="lov_sub_bundledfeature()" border="0" src="../images/folder.gif">&nbsp;<input id="V_SUBSCRIBER_BUNDLED_FEATP_BUNDLED_FEATURE_ID" class="ControlsRQ" style="DISPLAY: none" maxlength="12" size="12" value="{P_BUNDLED_FEATURE_ID}" name="{P_BUNDLED_FEATURE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBSCRIBER_BUNDLED_FEATSERVICE_TYPE_CODE">SERVICE TYPE</label></td> 
+                  <td><input id="V_SUBSCRIBER_BUNDLED_FEATSERVICE_TYPE_CODE" class="ControlsIN" readonly maxlength="64" size="25" value="{SERVICE_TYPE_CODE}" name="{SERVICE_TYPE_CODE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBSCRIBER_BUNDLED_FEATTARIFF_LOCATION_CODE">TARIFF LOCATION CODE</label></td> 
+                  <td><input id="V_SUBSCRIBER_BUNDLED_FEATTARIFF_LOCATION_CODE" class="ControlsIN" readonly maxlength="32" size="25" value="{TARIFF_LOCATION_CODE}" name="{TARIFF_LOCATION_CODE_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBSCRIBER_BUNDLED_FEATACTIVE_DATE">ACTIVE DATE</label></td> 
+                  <td><input id="V_SUBSCRIBER_BUNDLED_FEATACTIVE_DATE" class="ControlsIN" maxlength="100" size="12" value="{ACTIVE_DATE}" name="{ACTIVE_DATE_Name}">&nbsp; 
+                    <!-- BEGIN DatePicker DatePicker_ACTIVE_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBSCRIBER_BUNDLED_FEATDatePicker_ACTIVE_DATE"><img id="V_SUBSCRIBER_BUNDLED_FEATDatePicker_ACTIVE_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_ACTIVE_DATE --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBSCRIBER_BUNDLED_FEATTERMINATION_DATE">TERMINATION DATE</label></td> 
+                  <td><input id="V_SUBSCRIBER_BUNDLED_FEATTERMINATION_DATE" class="ControlsIN" maxlength="100" size="12" value="{TERMINATION_DATE}" name="{TERMINATION_DATE_Name}">
+                    <!-- BEGIN DatePicker DatePicker_TERMINATION_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBSCRIBER_BUNDLED_FEATDatePicker_TERMINATION_DATE"><img id="V_SUBSCRIBER_BUNDLED_FEATDatePicker_TERMINATION_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_TERMINATION_DATE --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBSCRIBER_BUNDLED_FEATDESCRIPTION">DESCRIPTION</label></td> 
+                  <td><textarea id="V_SUBSCRIBER_BUNDLED_FEATDESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_SUBSCRIBER_BUNDLED_FEATUPDATE_DATE">UPDATE BY</label></td> 
+                  <td><input id="V_SUBSCRIBER_BUNDLED_FEATUPDATE_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}">&nbsp;<input id="V_SUBSCRIBER_BUNDLED_FEATUPDATE_DATE" class="ControlsRO" readonly maxlength="100" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}">&nbsp;<input id="V_SUBSCRIBER_BUNDLED_FEATP_SERVICE_TYPE_ID" style="DISPLAY: none" value="{P_SERVICE_TYPE_ID}" name="{P_SERVICE_TYPE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="V_SUBSCRIBER_BUNDLED_FEATButton_Insert" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="V_SUBSCRIBER_BUNDLED_FEATButton_Update" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="V_SUBSCRIBER_BUNDLED_FEATButton_Delete" class="Button" type="submit" value="Delete" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="V_SUBSCRIBER_BUNDLED_FEATButton_Cancel" class="Button" type="submit" value="Cancel" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record V_SUBSCRIBER_BUNDLED_FEAT --><br>
+    </td>
+  </tr>
+  <br>
+</table>
+<script language="javascript">
+                function toSubscription()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toPromotion()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_promo.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toFeature()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_feature.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toTariff()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_tariff_override.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toCPE()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_cpe.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toStatus()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_status_historyRO.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+        function toSubInfo()
+        {
+            var idelement;
+            var sub_id = QueryString("SUBSCRIBER_ID");
+                        var scid = QueryString("P_SERVICE_TYPE_ID");
+                        var stid = QueryString("P_TARIFF_SCENARIO_ID");
+            var skw = QueryString("s_keyword");
+            var hlm = QueryString("V_SUBSCRIBERPage");
+            if (hlm == null)
+                hlm = 1;
+            if (sub_id != "" && sub_id != 0 && sub_id != false && sub_id != undefined && sub_id != null)
+            {
+                location.href = "subscriber_info.php?SUBSCRIBER_ID=" + sub_id + "&P_SERVICE_TYPE_ID="+ scid+ "&P_TARIFF_SCENARIO_ID="+ stid+ "&s_keyword=" + skw + "&V_SUBSCRIBERPage=" + hlm;
+            }
+
+        }
+                function getFrom_LOV(FormName, FieldList, FileName) {
+            arrLOV = FileName.split('?');
+
+            var width = 500;
+            var height = 400;
+            ///var left = parseInt((screen.availWidth/2) - (width/2));
+            //var top = parseInt((screen.availHeight/2) - (height/2)); 
+            window.open('../bil_lov/' + arrLOV[0] + '?FORM=' + FormName + '&OBJ=' + FieldList + '&' + arrLOV[1], width, height, "auto");
+        }
+                function lov_sub_bundledfeature() 
+                {
+                        var P_SERVICE_TYPE_ID = document.getElementById("V_SUBSCRIBER_BUNDLED_FEATP_SERVICE_TYPE_ID").value;
+                        getFrom_LOV('V_SUBSCRIBER_BUNDLED_FEAT', 'P_BUNDLED_FEATURE_ID,BUNDLED_FEATURE_CODE,SERVICE_TYPE_CODE,TARIFF_LOCATION_CODE', 'lov_sub_bundledfeature.php?P_SERVICE_TYPE_ID='+P_SERVICE_TYPE_ID);
+                }
+</script>
+</body>
+</html>

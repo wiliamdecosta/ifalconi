@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>sub_promo_form</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-E5F4DE21
+
+var V_SUBS_OT_PROMO_SERVICE1_DatePicker_PROMOTION_DATE = new Object(); 
+V_SUBS_OT_PROMO_SERVICE1_DatePicker_PROMOTION_DATE.format           = "ShortDate";
+V_SUBS_OT_PROMO_SERVICE1_DatePicker_PROMOTION_DATE.style            = "Styles/pips/Style.css";
+V_SUBS_OT_PROMO_SERVICE1_DatePicker_PROMOTION_DATE.relativePathPart = "../";
+V_SUBS_OT_PROMO_SERVICE1_DatePicker_PROMOTION_DATE.themeVersion = "3.0";
+
+var V_SUBS_OT_PROMO_SERVICE1_DatePicker_UPDATE_DATE = new Object(); 
+V_SUBS_OT_PROMO_SERVICE1_DatePicker_UPDATE_DATE.format           = "ShortDate";
+V_SUBS_OT_PROMO_SERVICE1_DatePicker_UPDATE_DATE.style            = "Styles/pips/Style.css";
+V_SUBS_OT_PROMO_SERVICE1_DatePicker_UPDATE_DATE.relativePathPart = "../";
+V_SUBS_OT_PROMO_SERVICE1_DatePicker_UPDATE_DATE.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//V_SUBS_OT_PROMO_SERVICE1Button_Delete_OnClick @5-C4AEC72C
+function V_SUBS_OT_PROMO_SERVICE1Button_Delete_OnClick()
+{
+    var result = true;
+//End V_SUBS_OT_PROMO_SERVICE1Button_Delete_OnClick
+
+//Confirmation Message @6-95E112AE
+    return confirm('');
+//End Confirmation Message
+
+//Close V_SUBS_OT_PROMO_SERVICE1Button_Delete_OnClick @5-BC33A33A
+    return result;
+}
+//End Close V_SUBS_OT_PROMO_SERVICE1Button_Delete_OnClick
+
+//V_SUBS_OT_PROMO_SERVICE1Button_Cancel_OnClick @7-71537647
+function V_SUBS_OT_PROMO_SERVICE1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End V_SUBS_OT_PROMO_SERVICE1Button_Cancel_OnClick
+
+//bind_events @1-C6799E1D
+function bind_events() {
+    addEventHandler("V_SUBS_OT_PROMO_SERVICE1Button_Delete", "click", V_SUBS_OT_PROMO_SERVICE1Button_Delete_OnClick);
+    addEventHandler("V_SUBS_OT_PROMO_SERVICE1Button_Cancel", "click", V_SUBS_OT_PROMO_SERVICE1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body>
+<!-- BEGIN Record V_SUBS_OT_PROMO_SERVICE1 -->
+<form id="V_SUBS_OT_PROMO_SERVICE1" method="post" name="{HTMLFormName}" action="{Action}">
+  <table cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td valign="top">
+        <table class="Header" cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+            <td class="th"><strong>V SUBS OT PROMO SERVICE </strong></td> 
+            <td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+          </tr>
+        </table>
+ 
+        <table class="Record" cellspacing="0" cellpadding="0">
+          <!-- BEGIN Error -->
+          <tr class="Error">
+            <td colspan="2">{Error}</td>
+          </tr>
+          <!-- END Error -->
+          <tr class="Controls">
+            <td class="th"><label for="V_SUBS_OT_PROMO_SERVICE1SUBSCRIBER_ID">SUBSCRIBER ID</label></td> 
+            <td><input id="V_SUBS_OT_PROMO_SERVICE1SUBSCRIBER_ID" maxlength="12" size="12" value="{SUBSCRIBER_ID}" name="{SUBSCRIBER_ID_Name}"></td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th"><label for="V_SUBS_OT_PROMO_SERVICE1P_ONETIME_PROMOTION_ID">P ONETIME PROMOTION ID</label></td> 
+            <td><input id="V_SUBS_OT_PROMO_SERVICE1P_ONETIME_PROMOTION_ID" maxlength="12" size="12" value="{P_ONETIME_PROMOTION_ID}" name="{P_ONETIME_PROMOTION_ID_Name}"></td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th"><label for="V_SUBS_OT_PROMO_SERVICE1PROMOTION_DATE">PROMOTION DATE</label></td> 
+            <td><input id="V_SUBS_OT_PROMO_SERVICE1PROMOTION_DATE" maxlength="100" size="8" value="{PROMOTION_DATE}" name="{PROMOTION_DATE_Name}">
+              <!-- BEGIN DatePicker DatePicker_PROMOTION_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBS_OT_PROMO_SERVICE1DatePicker_PROMOTION_DATE"><img id="V_SUBS_OT_PROMO_SERVICE1DatePicker_PROMOTION_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/pips/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_PROMOTION_DATE --></td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th"><label for="V_SUBS_OT_PROMO_SERVICE1DESCRIPTION">DESCRIPTION</label></td> 
+            <td><input id="V_SUBS_OT_PROMO_SERVICE1DESCRIPTION" maxlength="128" size="50" value="{DESCRIPTION}" name="{DESCRIPTION_Name}"></td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th"><label for="V_SUBS_OT_PROMO_SERVICE1UPDATE_DATE">UPDATE DATE</label></td> 
+            <td><input id="V_SUBS_OT_PROMO_SERVICE1UPDATE_DATE" maxlength="100" size="8" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}">
+              <!-- BEGIN DatePicker DatePicker_UPDATE_DATE --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_SUBS_OT_PROMO_SERVICE1DatePicker_UPDATE_DATE"><img id="V_SUBS_OT_PROMO_SERVICE1DatePicker_UPDATE_DATE_Image" border="0" alt="Show Date Picker" src="../Styles/pips/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_UPDATE_DATE --></td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th"><label for="V_SUBS_OT_PROMO_SERVICE1UPDATE_BY">UPDATE BY</label></td> 
+            <td><input id="V_SUBS_OT_PROMO_SERVICE1UPDATE_BY" maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}"></td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th"><label for="V_SUBS_OT_PROMO_SERVICE1OT_PROMO_CODE">OT PROMO CODE</label></td> 
+            <td><input id="V_SUBS_OT_PROMO_SERVICE1OT_PROMO_CODE" maxlength="128" size="50" value="{OT_PROMO_CODE}" name="{OT_PROMO_CODE_Name}"></td>
+          </tr>
+ 
+          <tr class="Bottom">
+            <td colspan="2" align="right">
+              <!-- BEGIN Button Button_Insert --><input id="V_SUBS_OT_PROMO_SERVICE1Button_Insert" class="Button" alt="" type="submit" value="Submit Query" name="{Button_Name}"><!-- END Button Button_Insert -->
+              <!-- BEGIN Button Button_Update --><input id="V_SUBS_OT_PROMO_SERVICE1Button_Update" class="Button" alt="" type="submit" value="Submit Query" name="{Button_Name}"><!-- END Button Button_Update -->
+              <!-- BEGIN Button Button_Delete --><input id="V_SUBS_OT_PROMO_SERVICE1Button_Delete" class="Button" alt="" type="submit" value="Submit Query" name="{Button_Name}"><!-- END Button Button_Delete -->
+              <!-- BEGIN Button Button_Cancel --><input id="V_SUBS_OT_PROMO_SERVICE1Button_Cancel" class="Button" alt="" type="submit" value="Submit Query" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END Record V_SUBS_OT_PROMO_SERVICE1 -->
+</body>
+</html>

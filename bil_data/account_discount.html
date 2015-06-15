@@ -1,0 +1,561 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>p_subcription</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<style>
+        #scripted{ padding-top: 40px;}
+
+        .custom {
+                border-right: 0px solid white !important;
+                }
+</style>
+<script language="JavaScript" type="text/javascript">
+        function toCust(){
+                
+                                var queryCust = QueryString("CUST_ACCOUNT_DISCOUNT_ID");
+                                var queryCust2 = QueryString("CUST_ACCOUNT_COMP_DISCOUNT_ID");
+                                
+               
+                        location.href = "customer_account.php";
+               
+        }
+
+        function toSub(){
+                var customer = QueryString("CUSTOMER_ACCOUNT_ID");
+                                //alert(customer);
+                                var queryCust = QueryString("CUST_ACCOUNT_DISCOUNT_ID");
+                                var queryCust2 = QueryString("CUST_ACCOUNT_COMP_DISCOUNT_ID");
+                
+                        location.href = "subscription.php?CUSTOMER_ACCOUNT_ID="+customer;
+                
+                
+        }
+
+        function toPM(){
+                var customer = QueryString("CUSTOMER_ACCOUNT_ID");
+                                var queryCust = QueryString("CUST_ACCOUNT_DISCOUNT_ID");
+                                var queryCust2 = QueryString("CUST_ACCOUNT_COMP_DISCOUNT_ID");
+               
+                        location.href = "cust_acc_payment_method.php?CUSTOMER_ACCOUNT_ID="+customer;
+                
+        }
+
+        function confirmDel(obj){
+                return confirm('Are you sure delete this record?');
+        }
+        
+        function getFrom_LOV(formName,fieldList,LOV_NM)
+        {
+                arrLOV = LOV_NM.split("?");
+                window.open("../bil_lov/"+arrLOV[0]+"?FORM="+formName+"&OBJ="+fieldList+"&"+arrLOV[1],"LOV","width=600,height=500,toolbar=no,scrollbars=yes,resizable=yes");
+        }
+
+        function lovPeriod(){
+                classname = "V_CUST_ACCOUNT_DISCOUNT";
+                fieldname = "P_BILLING_PERIOD_UNIT_ID,BILL_PERIOD_UNIT_CODE";
+                filename = "lov_p_bill_period.php?";
+        
+                getFrom_LOV(classname,fieldname,filename)
+        }
+
+        function lovComp(){
+                classname = "V_CUST_ACCOUNT_DISCOUNT";
+                fieldname = "RESULT_BILL_COMP_ID,BILL_COMPONENT_CODE";
+                filename = "lov_p_bill_component.php?";
+        
+                getFrom_LOV(classname,fieldname,filename)
+        }
+
+        function lovBillComp(){
+                classname = "V_CUST_ACCOUNT_COMP_DISCO";
+                fieldname = "P_BILL_COMPONENT_ID,BILL_COMPONENT_CODE";
+                filename = "lov_p_bill_component.php?";
+        
+                getFrom_LOV(classname,fieldname,filename)
+        }
+
+        function lovResComp(){
+                classname = "V_CUST_ACCOUNT_COMP_DISCO";
+                fieldname = "RESULT_BILL_COMP_ID,RESULT_BILL_COMP_CODE";
+                filename = "lov_p_bill_component.php?";
+        
+                getFrom_LOV(classname,fieldname,filename)
+        }
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-9722A627
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//V_CUST_ACCOUNT_DISCOUNTButton_Insert_OnClick @154-00DC3DCE
+function V_CUST_ACCOUNT_DISCOUNTButton_Insert_OnClick()
+{
+    var result = true;
+//End V_CUST_ACCOUNT_DISCOUNTButton_Insert_OnClick
+
+//Confirmation Message @382-2BD3365F
+    return confirm('Save this record?');
+//End Confirmation Message
+
+//Close V_CUST_ACCOUNT_DISCOUNTButton_Insert_OnClick @154-BC33A33A
+    return result;
+}
+//End Close V_CUST_ACCOUNT_DISCOUNTButton_Insert_OnClick
+
+//V_CUST_ACCOUNT_DISCOUNTButton_Update_OnClick @155-97EE8D96
+function V_CUST_ACCOUNT_DISCOUNTButton_Update_OnClick()
+{
+    var result = true;
+//End V_CUST_ACCOUNT_DISCOUNTButton_Update_OnClick
+
+//Confirmation Message @383-ABAE6950
+    return confirm('Change this record?');
+//End Confirmation Message
+
+//Close V_CUST_ACCOUNT_DISCOUNTButton_Update_OnClick @155-BC33A33A
+    return result;
+}
+//End Close V_CUST_ACCOUNT_DISCOUNTButton_Update_OnClick
+
+//V_CUST_ACCOUNT_COMP_DISCOButton_Insert_OnClick @293-68281859
+function V_CUST_ACCOUNT_COMP_DISCOButton_Insert_OnClick()
+{
+    var result = true;
+//End V_CUST_ACCOUNT_COMP_DISCOButton_Insert_OnClick
+
+//Confirmation Message @365-2BD3365F
+    return confirm('Save this record?');
+//End Confirmation Message
+
+//Close V_CUST_ACCOUNT_COMP_DISCOButton_Insert_OnClick @293-BC33A33A
+    return result;
+}
+//End Close V_CUST_ACCOUNT_COMP_DISCOButton_Insert_OnClick
+
+//V_CUST_ACCOUNT_COMP_DISCOButton_Update_OnClick @294-FF1AA801
+function V_CUST_ACCOUNT_COMP_DISCOButton_Update_OnClick()
+{
+    var result = true;
+//End V_CUST_ACCOUNT_COMP_DISCOButton_Update_OnClick
+
+//Confirmation Message @366-ABAE6950
+    return confirm('Change this record?');
+//End Confirmation Message
+
+//Close V_CUST_ACCOUNT_COMP_DISCOButton_Update_OnClick @294-BC33A33A
+    return result;
+}
+//End Close V_CUST_ACCOUNT_COMP_DISCOButton_Update_OnClick
+
+//Confirmation Message @296//End Confirmation Message
+
+//V_CUST_ACCOUNT_DISCOUNTButton_Cancel_OnClick @158-A1FA3D5E
+function V_CUST_ACCOUNT_DISCOUNTButton_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End V_CUST_ACCOUNT_DISCOUNTButton_Cancel_OnClick
+
+//V_CUST_ACCOUNT_COMP_DISCOButton_Cancel_OnClick @297-CA0EED66
+function V_CUST_ACCOUNT_COMP_DISCOButton_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End V_CUST_ACCOUNT_COMP_DISCOButton_Cancel_OnClick
+
+//bind_events @1-6FF26241
+function bind_events() {
+    addEventHandler("V_CUST_ACCOUNT_DISCOUNTButton_Insert", "click", V_CUST_ACCOUNT_DISCOUNTButton_Insert_OnClick);
+    addEventHandler("V_CUST_ACCOUNT_DISCOUNTButton_Update", "click", V_CUST_ACCOUNT_DISCOUNTButton_Update_OnClick);
+    addEventHandler("V_CUST_ACCOUNT_COMP_DISCOButton_Insert", "click", V_CUST_ACCOUNT_COMP_DISCOButton_Insert_OnClick);
+    addEventHandler("V_CUST_ACCOUNT_COMP_DISCOButton_Update", "click", V_CUST_ACCOUNT_COMP_DISCOButton_Update_OnClick);
+    addEventHandler("V_CUST_ACCOUNT_DISCOUNTButton_Cancel", "click", V_CUST_ACCOUNT_DISCOUNTButton_Cancel_OnClick);
+    addEventHandler("V_CUST_ACCOUNT_COMP_DISCOButton_Cancel", "click", V_CUST_ACCOUNT_COMP_DISCOButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toCust()">CUSTOMER ACCOUNT</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toSub()">SUBSCRIPTION</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap align="center">ACCOUNT DISCOUNT</td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:toPM()">PAYMENT METHOD</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<table id="scripted" cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record p_customer_account -->
+      <form id="p_customer_account" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="2">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="4">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="p_customer_accountACCOUNT_NO"><strong>Account No / Name&nbsp;: </strong></label></td> 
+                  <td>{ACCOUNT_NO}</td> 
+                  <td>-</td> 
+                  <td>{LAST_NAME}</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th" style="TEXT-ALIGN: right"><label for="p_customer_accountACCOUNT_NO"><strong>Customer No / Name&nbsp;: </strong></label></td> 
+                  <td>{CUSTOMER_NUMBER}</td> 
+                  <td>-</td> 
+                  <td>{CUSTOMER_NAME}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record p_customer_account --><br>
+      <!-- BEGIN Grid V_ACCOUNT_DISC -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                <td class="th"><strong>LIST ACCOUNT DISCOUNT</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th scope="col">
+                <center>
+                # 
+                </center>
+                </th>
+ 
+                <th scope="col">ACTION</th>
+ 
+                <th scope="col">ID</th>
+ 
+                <th scope="col">VALID FROM / TO</th>
+ 
+                <th scope="col">BILL PERIOD UNIT</th>
+ 
+                <th scope="col">LOW / UP BILL UNIT</th>
+ 
+                <th scope="col">BILL COMPONENT /<br>
+                IS BASED ON TOTAL?</th>
+ 
+                <th scope="col">DISC. AMOUNT/ PCT</th>
+ 
+                <th scope="col">FINAL AMOUNT</th>
+ 
+                <th scope="col">DESCRIPTION / <br>
+                UPADATE DATE / BY</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {V_ACCOUNT_DISC:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="V_ACCOUNT_DISCDLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="V_ACCOUNT_DISCADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link skenarioEdit --><a href="{skenarioEdit_Src}" id="V_ACCOUNT_DISCskenarioEdit_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/edit.gif" width="16" height="16"></a><!-- END Link skenarioEdit -->
+                  <!-- BEGIN Link skenarioDel --><a href="{skenarioDel_Src}" onclick="return confirmDel(this);" id="V_ACCOUNT_DISCskenarioDel_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/delete.gif" width="16" height="16"></a><!-- END Link skenarioDel --></td> 
+                <td style="TEXT-ALIGN: right">{CUST_ACCOUNT_DISCOUNT_ID}&nbsp;</td> 
+                <td style="TEXT-ALIGN: left">{VALID_FROM}&nbsp;- {VALID_TO}&nbsp;<input id="V_ACCOUNT_DISCCUSTOMER_ACCOUNT_ID" type="hidden" value="{CUSTOMER_ACCOUNT_ID}" name="{CUSTOMER_ACCOUNT_ID_Name}">&nbsp;</td> 
+                <td>{BILL_PERIOD_UNIT_CODE}&nbsp;</td> 
+                <td>{LOW_BILLING_UNIT}&nbsp;- {UP_BILLING_UNIT}</td> 
+                <td>{BILL_COMPONENT_CODE}&nbsp;- {IS_BASED_ON_TOTAL}&nbsp;</td> 
+                <td>{ABSOLUTE_AMOUNT}&nbsp;- {PCT_MULTIPLIER}</td> 
+                <td>{RELATIVE_AMOUNT}&nbsp;</td> 
+                <td>{DESCRIPTION}<br>
+                  {UPDATE_DATE}&nbsp;- {UPDATE_BY}</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="10">Data not found</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="BORDER-RIGHT: 0px"><a href="{V_P_ACCOUNT_DISC_Insert_Src}" id="V_ACCOUNT_DISCV_P_ACCOUNT_DISC_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a> </td> 
+                <td colspan="13">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid V_ACCOUNT_DISC --><br>
+      <!-- BEGIN Record V_CUST_ACCOUNT_DISCOUNT -->
+      <form id="V_CUST_ACCOUNT_DISCOUNT" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>V CUST ACCOUNT DISCOUNT </strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="6">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTCUST_ACCOUNT_DISCOUNT_ID">CUSTOMER ACCOUNT DISCOUNT ID</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_DISCOUNTCUST_ACCOUNT_DISCOUNT_ID" class="ControlsRO" readonly maxlength="11" size="12" value="{CUST_ACCOUNT_DISCOUNT_ID}" name="{CUST_ACCOUNT_DISCOUNT_ID_Name}">&nbsp;<input id="V_CUST_ACCOUNT_DISCOUNTCUSTOMER_ACCOUNT_ID" type="hidden" value="{CUSTOMER_ACCOUNT_ID}" name="{CUSTOMER_ACCOUNT_ID_Name}"></td> 
+                  <td><label for="V_CUST_ACCOUNT_DISCOUNTIS_BASED_ON_TOTAL">IS BASED ON TOTAL</label></td> 
+                  <td colspan="3">
+                    <select id="V_CUST_ACCOUNT_DISCOUNTIS_BASED_ON_TOTAL" class="ControlsRQ" name="{IS_BASED_ON_TOTAL_Name}">
+                      {IS_BASED_ON_TOTAL_Options}
+                    </select>
+ &nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTP_BILLING_PERIOD_UNIT_ID">BILLING PERIOD UNIT CODE</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_DISCOUNTBILL_PERIOD_UNIT_CODE" class="ControlsRQ" maxlength="32" size="32" value="{BILL_PERIOD_UNIT_CODE}" name="{BILL_PERIOD_UNIT_CODE_Name}">&nbsp;<img onclick="lovPeriod()" src="../images/folder.gif">&nbsp;<input id="V_CUST_ACCOUNT_DISCOUNTP_BILLING_PERIOD_UNIT_ID" type="hidden" value="{P_BILLING_PERIOD_UNIT_ID}" name="{P_BILLING_PERIOD_UNIT_ID_Name}"></td> 
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTPCT_MULTIPLIER">PCT MULTIPLIER</label></td> 
+                  <td colspan="3"><input id="V_CUST_ACCOUNT_DISCOUNTPCT_MULTIPLIER" class="ControlsIN" maxlength="10" size="10" value="{PCT_MULTIPLIER}" name="{PCT_MULTIPLIER_Name}">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTLOW_BILLING_UNIT">LOW BILLING UNIT</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_DISCOUNTLOW_BILLING_UNIT" class="ControlsRQ" maxlength="3" size="8" value="{LOW_BILLING_UNIT}" name="{LOW_BILLING_UNIT_Name}"></td> 
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTABSOLUTE_AMOUNT">ABSOLUTE AMOUNT</label></td> 
+                  <td colspan="3"><input id="V_CUST_ACCOUNT_DISCOUNTABSOLUTE_AMOUNT" class="ControlsIN" maxlength="14" size="14" value="{ABSOLUTE_AMOUNT}" name="{ABSOLUTE_AMOUNT_Name}">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTUP_BILLING_UNIT">UP BILLING UNIT</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_DISCOUNTUP_BILLING_UNIT" class="ControlsIN" maxlength="4" size="8" value="{UP_BILLING_UNIT}" name="{UP_BILLING_UNIT_Name}"></td> 
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTRELATIVE_AMOUNT">RELATIVE AMOUNT</label></td> 
+                  <td colspan="3"><input id="V_CUST_ACCOUNT_DISCOUNTRELATIVE_AMOUNT" class="ControlsIN" maxlength="14" size="14" value="{RELATIVE_AMOUNT}" name="{RELATIVE_AMOUNT_Name}">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTVALID_FROM">VALID FROM</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_DISCOUNTVALID_FROM" class="ControlsRQ" readonly maxlength="100" size="12" value="{VALID_FROM}" name="{VALID_FROM_Name}">&nbsp;<img onclick="scwShow(document.getElementById('V_CUST_ACCOUNT_DISCOUNTVALID_FROM'),event);" id="imgCalendar" name="imgCalendar" alt="" src="../Styles/trb/Images/DatePicker.gif"></td> 
+                  <td rowspan="2"><label for="V_CUST_ACCOUNT_DISCOUNTDESCRIPTION">DESCRIPTION</label></td> 
+                  <td rowspan="2" colspan="3"><textarea id="V_CUST_ACCOUNT_DISCOUNTDESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea>&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTVALID_TO">VALID TO</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_DISCOUNTVALID_TO" class="ControlsIN" readonly maxlength="100" size="12" value="{VALID_TO}" name="{VALID_TO_Name}">&nbsp;<img onclick="scwShow(document.getElementById('V_CUST_ACCOUNT_DISCOUNTVALID_TO'),event);" id="imgCalendar" name="imgCalendar" alt="" src="../Styles/trb/Images/DatePicker.gif"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTRESULT_BILL_COMP_ID">RESULT BILL COMP</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_DISCOUNTBILL_COMPONENT_CODE" class="ControlsRQ" readonly maxlength="32" size="32" value="{BILL_COMPONENT_CODE}" name="{BILL_COMPONENT_CODE_Name}">&nbsp;<img onclick="lovComp()" src="../images/folder.gif">&nbsp;<input id="V_CUST_ACCOUNT_DISCOUNTRESULT_BILL_COMP_ID" type="hidden" value="{RESULT_BILL_COMP_ID}" name="{RESULT_BILL_COMP_ID_Name}"></td> 
+                  <td class="custom"><label for="V_CUST_ACCOUNT_DISCOUNTUPDATE_DATE">&nbsp;</label></td> 
+                  <td colspan="3">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTIS_BASED_ON_TOTAL"><label for="V_CUST_ACCOUNT_DISCOUNTUPDATE_DATE">UPDATE DATE</label></label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_DISCOUNTUPDATE_DATE" class="ControlsRO" readonly maxlength="100" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}">&nbsp;</td> 
+                  <td class="th"><label for="V_CUST_ACCOUNT_DISCOUNTUPDATE_BY">UPDATE BY</label></td> 
+                  <td colspan="3"><input id="V_CUST_ACCOUNT_DISCOUNTUPDATE_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="6" align="right">&nbsp; 
+                    <!-- BEGIN Button Button_Insert --><input id="V_CUST_ACCOUNT_DISCOUNTButton_Insert" class="Button" type="submit" value="SAVE" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="V_CUST_ACCOUNT_DISCOUNTButton_Update" class="Button" type="submit" value="SAVE" name="{Button_Name}"><!-- END Button Button_Update -->&nbsp; 
+                    <!-- BEGIN Button Button_Cancel --><input id="V_CUST_ACCOUNT_DISCOUNTButton_Cancel" class="Button" type="submit" value="CLOSE" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record V_CUST_ACCOUNT_DISCOUNT --><br>
+      <!-- BEGIN Grid V_CUST_ACCOUNT_COMP_DISCOUNT -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                <td class="th"><strong>LIST&nbsp;CUSTOMER ACCOUNT COMP DISCOUNT</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#&nbsp;</th>
+ 
+                <th scope="col">&nbsp;ACTION</th>
+ 
+                <th scope="col">ID</th>
+ 
+                <th scope="col">BILL COMPONENT </th>
+ 
+                <th scope="col">RESULT BILL COMPONONENT</th>
+ 
+                <th scope="col">ABSOLUTE AMOUNT</th>
+ 
+                <th scope="col">PCT MULTIPLIER</th>
+ 
+                <th scope="col">RELATIVE AMOUNT</th>
+ 
+                <th scope="col">DESCRIPTION</th>
+ 
+                <th scope="col">UPDATE DATE</th>
+ 
+                <th colspan="2" scope="col">UPDATE BY</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {V_CUST_ACCOUNT_COMP_DISCOUNT:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="V_CUST_ACCOUNT_COMP_DISCOUNTDLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio.gif"></a><!-- END Link DLink -->
+                  <!-- BEGIN Link ADLink --><a href="{ADLink_Src}" id="V_CUST_ACCOUNT_COMP_DISCOUNTADLink_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/radio_s.gif" width="16" height="16"></a><!-- END Link ADLink --></td> 
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link skenarioEdit --><a href="{skenarioEdit_Src}" id="V_CUST_ACCOUNT_COMP_DISCOUNTskenarioEdit_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/edit.gif" width="16" height="16"></a><!-- END Link skenarioEdit -->&nbsp; 
+                  <!-- BEGIN Link skenarioDel --><a href="{skenarioDel_Src}" onclick="return confirmDel(this);" id="V_CUST_ACCOUNT_COMP_DISCOUNTskenarioDel_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/delete.gif" width="16" height="16"></a><!-- END Link skenarioDel --></td> 
+                <td style="TEXT-ALIGN: right">{CUST_ACCOUNT_COMP_DISCOUNT_ID}<input id="V_CUST_ACCOUNT_COMP_DISCOUNTCUST_ACCOUNT_DISCOUNT_ID_{V_CUST_ACCOUNT_COMP_DISCOUNT:rowNumber}" type="hidden" value="{CUST_ACCOUNT_DISCOUNT_ID}" name="{CUST_ACCOUNT_DISCOUNT_ID_Name}">&nbsp;<input id="V_CUST_ACCOUNT_COMP_DISCOUNTCUSTOMER_ACCOUNT_ID_{V_CUST_ACCOUNT_COMP_DISCOUNT:rowNumber}" type="hidden" value="{CUSTOMER_ACCOUNT_ID}" name="{CUSTOMER_ACCOUNT_ID_Name}"></td> 
+                <td>{BILL_COMPONENT_CODE}&nbsp;</td> 
+                <td>{RESULT_BILL_COMP_CODE}&nbsp;</td> 
+                <td>{ABSOLUTE_AMOUNT}&nbsp;</td> 
+                <td>{PCT_MULTIPLIER}&nbsp;</td> 
+                <td>{RELATIVE_AMOUNT}&nbsp;</td> 
+                <td>{DESCRIPTION}&nbsp;</td> 
+                <td>{UPDATE_DATE}&nbsp;</td> 
+                <td colspan="2">{UPDATE_BY}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="12">Data not found</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="BORDER-RIGHT: 0px" colspan="2"><a href="{V_P_ACC_DISC_COMP_Insert_Src}" id="V_CUST_ACCOUNT_COMP_DISCOUNTV_P_ACC_DISC_COMP_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="10">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->&nbsp;{Total_Pages}&nbsp; 
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On --><!-- END Navigator Navigator --></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid V_CUST_ACCOUNT_COMP_DISCOUNT --><br>
+      <!-- BEGIN Record V_CUST_ACCOUNT_COMP_DISCO -->
+      <form id="V_CUST_ACCOUNT_COMP_DISCO" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>V CUSTOMER ACCOUNT COMP DISCOUNT</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/Basic/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="6">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_COMP_DISCOCUST_ACCOUNT_COMP_DISCOUNT_ID">ID</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_COMP_DISCOCUST_ACCOUNT_COMP_DISCOUNT_ID" class="ControlsRO" readonly maxlength="12" size="12" value="{CUST_ACCOUNT_COMP_DISCOUNT_ID}" name="{CUST_ACCOUNT_COMP_DISCOUNT_ID_Name}">&nbsp;<input id="V_CUST_ACCOUNT_COMP_DISCOCUST_ACCOUNT_DISCOUNT_ID" type="hidden" value="{CUST_ACCOUNT_DISCOUNT_ID}" name="{CUST_ACCOUNT_DISCOUNT_ID_Name}"><input id="V_CUST_ACCOUNT_COMP_DISCOCUSTOMER_ACCOUNT_ID" type="hidden" value="{CUSTOMER_ACCOUNT_ID}" name="{CUSTOMER_ACCOUNT_ID_Name}"></td> 
+                  <td class="th"><label for="V_CUST_ACCOUNT_COMP_DISCOPCT_MULTIPLIER">PCT MULTIPLIER</label></td> 
+                  <td colspan="3"><input id="V_CUST_ACCOUNT_COMP_DISCOPCT_MULTIPLIER" class="ControlsIN" maxlength="10" size="10" value="{PCT_MULTIPLIER}" name="{PCT_MULTIPLIER_Name}">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_COMP_DISCOP_BILL_COMPONENT_ID">BILL COMPONENT</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_COMP_DISCOBILL_COMPONENT_CODE" class="ControlsRQ" readonly maxlength="32" size="32" value="{BILL_COMPONENT_CODE}" name="{BILL_COMPONENT_CODE_Name}">&nbsp;<img onclick="lovBillComp()" src="../images/folder.gif">&nbsp;<input id="V_CUST_ACCOUNT_COMP_DISCOP_BILL_COMPONENT_ID" type="hidden" value="{P_BILL_COMPONENT_ID}" name="{P_BILL_COMPONENT_ID_Name}"></td> 
+                  <td class="th"><label for="V_CUST_ACCOUNT_COMP_DISCOABSOLUTE_AMOUNT">ABSOLUTE AMOUNT</label></td> 
+                  <td colspan="3"><input id="V_CUST_ACCOUNT_COMP_DISCOABSOLUTE_AMOUNT" class="ControlsIN" maxlength="14" size="14" value="{ABSOLUTE_AMOUNT}" name="{ABSOLUTE_AMOUNT_Name}">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_COMP_DISCORESULT_BILL_COMP_ID">RESULT BILL COMP ID</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_COMP_DISCORESULT_BILL_COMP_CODE" class="ControlsIN" readonly maxlength="32" size="32" value="{RESULT_BILL_COMP_CODE}" name="{RESULT_BILL_COMP_CODE_Name}">&nbsp;<img onclick="lovResComp()" src="../images/folder.gif">&nbsp;<input id="V_CUST_ACCOUNT_COMP_DISCORESULT_BILL_COMP_ID" type="hidden" value="{RESULT_BILL_COMP_ID}" name="{RESULT_BILL_COMP_ID_Name}"></td> 
+                  <td class="th" rowspan="2"><label for="V_CUST_ACCOUNT_COMP_DISCODESCRIPTION">DESCRIPTION</label></td> 
+                  <td rowspan="2" colspan="3"><textarea id="V_CUST_ACCOUNT_COMP_DISCODESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea>&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_COMP_DISCORELATIVE_AMOUNT">RELATIVE AMOUNT</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_COMP_DISCORELATIVE_AMOUNT" class="ControlsIN" maxlength="14" size="14" value="{RELATIVE_AMOUNT}" name="{RELATIVE_AMOUNT_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_CUST_ACCOUNT_COMP_DISCOUPDATE_DATE">UPDATE DATE</label></td> 
+                  <td class="custom"><input id="V_CUST_ACCOUNT_COMP_DISCOUPDATE_DATE" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}"></td> 
+                  <td class="th"><label for="V_CUST_ACCOUNT_COMP_DISCOUPDATE_BY">UPDATE BY</label></td> 
+                  <td colspan="3"><input id="V_CUST_ACCOUNT_COMP_DISCOUPDATE_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="6" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="V_CUST_ACCOUNT_COMP_DISCOButton_Insert" class="Button" type="submit" value="SAVE" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="V_CUST_ACCOUNT_COMP_DISCOButton_Update" class="Button" type="submit" value="SAVE" name="{Button_Name}"><!-- END Button Button_Update -->&nbsp; 
+                    <!-- BEGIN Button Button_Cancel --><input id="V_CUST_ACCOUNT_COMP_DISCOButton_Cancel" class="Button" type="submit" value="CLOSE" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record V_CUST_ACCOUNT_COMP_DISCO --></td>
+  </tr>
+</table>
+<br>
+</body>
+</html>

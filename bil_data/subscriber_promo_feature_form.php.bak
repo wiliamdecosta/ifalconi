@@ -1,0 +1,700 @@
+<?php
+//Include Common Files @1-8E0E3A46
+define("RelativePath", "..");
+define("PathToCurrentPage", "/bil_data/");
+define("FileName", "subscriber_promo_feature_form.php");
+include_once(RelativePath . "/Common.php");
+include_once(RelativePath . "/Template.php");
+include_once(RelativePath . "/Sorter.php");
+include_once(RelativePath . "/Navigator.php");
+//End Include Common Files
+
+class clsRecordV_SUBS_OT_PROMO_FEATURE { //V_SUBS_OT_PROMO_FEATURE Class @2-47E5CFAB
+
+//Variables @2-D6FF3E86
+
+    // Public variables
+    var $ComponentType = "Record";
+    var $ComponentName;
+    var $Parent;
+    var $HTMLFormAction;
+    var $PressedButton;
+    var $Errors;
+    var $ErrorBlock;
+    var $FormSubmitted;
+    var $FormEnctype;
+    var $Visible;
+    var $IsEmpty;
+
+    var $CCSEvents = "";
+    var $CCSEventResult;
+
+    var $RelativePath = "";
+
+    var $InsertAllowed = false;
+    var $UpdateAllowed = false;
+    var $DeleteAllowed = false;
+    var $ReadAllowed   = false;
+    var $EditMode      = false;
+    var $ds;
+    var $DataSource;
+    var $ValidatingControls;
+    var $Controls;
+    var $Attributes;
+
+    // Class variables
+//End Variables
+
+//Class_Initialize Event @2-45392A9D
+    function clsRecordV_SUBS_OT_PROMO_FEATURE($RelativePath, & $Parent)
+    {
+
+        global $FileName;
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->Visible = true;
+        $this->Parent = & $Parent;
+        $this->RelativePath = $RelativePath;
+        $this->Errors = new clsErrors();
+        $this->ErrorBlock = "Record V_SUBS_OT_PROMO_FEATURE/Error";
+        $this->DataSource = new clsV_SUBS_OT_PROMO_FEATUREDataSource($this);
+        $this->ds = & $this->DataSource;
+        $this->InsertAllowed = true;
+        $this->UpdateAllowed = true;
+        $this->DeleteAllowed = true;
+        $this->ReadAllowed = true;
+        if($this->Visible)
+        {
+            $this->ComponentName = "V_SUBS_OT_PROMO_FEATURE";
+            $this->Attributes = new clsAttributes($this->ComponentName . ":");
+            $CCSForm = explode(":", CCGetFromGet("ccsForm", ""), 2);
+            if(sizeof($CCSForm) == 1)
+                $CCSForm[1] = "";
+            list($FormName, $FormMethod) = $CCSForm;
+            $this->EditMode = ($FormMethod == "Edit");
+            $this->FormEnctype = "application/x-www-form-urlencoded";
+            $this->FormSubmitted = ($FormName == $this->ComponentName);
+            $Method = $this->FormSubmitted ? ccsPost : ccsGet;
+            $this->Button_Insert = & new clsButton("Button_Insert", $Method, $this);
+            $this->Button_Update = & new clsButton("Button_Update", $Method, $this);
+            $this->Button_Delete = & new clsButton("Button_Delete", $Method, $this);
+            $this->Button_Cancel = & new clsButton("Button_Cancel", $Method, $this);
+            $this->SUBSCRIBER_ID = & new clsControl(ccsTextBox, "SUBSCRIBER_ID", "SUBSCRIBER ID", ccsFloat, "", CCGetRequestParam("SUBSCRIBER_ID", $Method, NULL), $this);
+            $this->SUBSCRIBER_ID->Required = true;
+            $this->P_FEATURE_PROMOTION_ID = & new clsControl(ccsHidden, "P_FEATURE_PROMOTION_ID", "P FEATURE PROMOTION ID", ccsFloat, "", CCGetRequestParam("P_FEATURE_PROMOTION_ID", $Method, NULL), $this);
+            $this->P_FEATURE_PROMOTION_ID->Required = true;
+            $this->PROMOTION_DATE = & new clsControl(ccsTextBox, "PROMOTION_DATE", "PROMOTION_DATE", ccsDate, array("dd", "-", "mmm", "-", "yyyy"), CCGetRequestParam("PROMOTION_DATE", $Method, NULL), $this);
+            $this->PROMOTION_DATE->Required = true;
+            $this->DESCRIPTION = & new clsControl(ccsTextArea, "DESCRIPTION", "DESCRIPTION", ccsText, "", CCGetRequestParam("DESCRIPTION", $Method, NULL), $this);
+            $this->SUBS_OT_PROMO_FEATURE_ID = & new clsControl(ccsHidden, "SUBS_OT_PROMO_FEATURE_ID", "SUBS_OT_PROMO_FEATURE_ID", ccsFloat, "", CCGetRequestParam("SUBS_OT_PROMO_FEATURE_ID", $Method, NULL), $this);
+            $this->OT_FEATURE_PROMO_CODE = & new clsControl(ccsTextBox, "OT_FEATURE_PROMO_CODE", "OT FEATURE PROMO CODE", ccsText, "", CCGetRequestParam("OT_FEATURE_PROMO_CODE", $Method, NULL), $this);
+            $this->OT_FEATURE_PROMO_CODE->Required = true;
+            $this->UPDATE_BY = & new clsControl(ccsTextBox, "UPDATE_BY", "UPDATE BY", ccsText, "", CCGetRequestParam("UPDATE_BY", $Method, NULL), $this);
+            $this->UPDATE_BY->Required = true;
+            $this->UPDATE_DATE = & new clsControl(ccsTextBox, "UPDATE_DATE", "UPDATE DATE", ccsDate, array("dd", "-", "mmm", "-", "yyyy"), CCGetRequestParam("UPDATE_DATE", $Method, NULL), $this);
+            $this->UPDATE_DATE->Required = true;
+            $this->P_TARIFF_SCENARIO_ID = & new clsControl(ccsHidden, "P_TARIFF_SCENARIO_ID", "P_TARIFF_SCENARIO_ID", ccsText, "", CCGetRequestParam("P_TARIFF_SCENARIO_ID", $Method, NULL), $this);
+            $this->DatePicker_PROMOTION_DATE = & new clsDatePicker("DatePicker_PROMOTION_DATE", "V_SUBS_OT_PROMO_FEATURE", "PROMOTION_DATE", $this);
+            if(!$this->FormSubmitted) {
+                if(!is_array($this->UPDATE_BY->Value) && !strlen($this->UPDATE_BY->Value) && $this->UPDATE_BY->Value !== false)
+                    $this->UPDATE_BY->SetText(CCGetUserLogin());
+                if(!is_array($this->UPDATE_DATE->Value) && !strlen($this->UPDATE_DATE->Value) && $this->UPDATE_DATE->Value !== false)
+                    $this->UPDATE_DATE->SetValue(time());
+            }
+        }
+    }
+//End Class_Initialize Event
+
+//Initialize Method @2-BEAFE27B
+    function Initialize()
+    {
+
+        if(!$this->Visible)
+            return;
+
+        $this->DataSource->Parameters["urlSUBS_OT_PROMO_FEATURE_ID"] = CCGetFromGet("SUBS_OT_PROMO_FEATURE_ID", NULL);
+    }
+//End Initialize Method
+
+//Validate Method @2-359D486C
+    function Validate()
+    {
+        global $CCSLocales;
+        $Validation = true;
+        $Where = "";
+        $Validation = ($this->SUBSCRIBER_ID->Validate() && $Validation);
+        $Validation = ($this->P_FEATURE_PROMOTION_ID->Validate() && $Validation);
+        $Validation = ($this->PROMOTION_DATE->Validate() && $Validation);
+        $Validation = ($this->DESCRIPTION->Validate() && $Validation);
+        $Validation = ($this->SUBS_OT_PROMO_FEATURE_ID->Validate() && $Validation);
+        $Validation = ($this->OT_FEATURE_PROMO_CODE->Validate() && $Validation);
+        $Validation = ($this->UPDATE_BY->Validate() && $Validation);
+        $Validation = ($this->UPDATE_DATE->Validate() && $Validation);
+        $Validation = ($this->P_TARIFF_SCENARIO_ID->Validate() && $Validation);
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "OnValidate", $this);
+        $Validation =  $Validation && ($this->SUBSCRIBER_ID->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->P_FEATURE_PROMOTION_ID->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->PROMOTION_DATE->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->DESCRIPTION->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->SUBS_OT_PROMO_FEATURE_ID->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->OT_FEATURE_PROMO_CODE->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->UPDATE_BY->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->UPDATE_DATE->Errors->Count() == 0);
+        $Validation =  $Validation && ($this->P_TARIFF_SCENARIO_ID->Errors->Count() == 0);
+        return (($this->Errors->Count() == 0) && $Validation);
+    }
+//End Validate Method
+
+//CheckErrors Method @2-3141542A
+    function CheckErrors()
+    {
+        $errors = false;
+        $errors = ($errors || $this->SUBSCRIBER_ID->Errors->Count());
+        $errors = ($errors || $this->P_FEATURE_PROMOTION_ID->Errors->Count());
+        $errors = ($errors || $this->PROMOTION_DATE->Errors->Count());
+        $errors = ($errors || $this->DESCRIPTION->Errors->Count());
+        $errors = ($errors || $this->SUBS_OT_PROMO_FEATURE_ID->Errors->Count());
+        $errors = ($errors || $this->OT_FEATURE_PROMO_CODE->Errors->Count());
+        $errors = ($errors || $this->UPDATE_BY->Errors->Count());
+        $errors = ($errors || $this->UPDATE_DATE->Errors->Count());
+        $errors = ($errors || $this->P_TARIFF_SCENARIO_ID->Errors->Count());
+        $errors = ($errors || $this->DatePicker_PROMOTION_DATE->Errors->Count());
+        $errors = ($errors || $this->Errors->Count());
+        $errors = ($errors || $this->DataSource->Errors->Count());
+        return $errors;
+    }
+//End CheckErrors Method
+
+//MasterDetail @2-ED598703
+function SetPrimaryKeys($keyArray)
+{
+    $this->PrimaryKeys = $keyArray;
+}
+function GetPrimaryKeys()
+{
+    return $this->PrimaryKeys;
+}
+function GetPrimaryKey($keyName)
+{
+    return $this->PrimaryKeys[$keyName];
+}
+//End MasterDetail
+
+//Operation Method @2-7E601E2F
+    function Operation()
+    {
+        if(!$this->Visible)
+            return;
+
+        global $Redirect;
+        global $FileName;
+
+        $this->DataSource->Prepare();
+        if(!$this->FormSubmitted) {
+            $this->EditMode = $this->DataSource->AllParametersSet;
+            return;
+        }
+
+        if($this->FormSubmitted) {
+            $this->PressedButton = $this->EditMode ? "Button_Update" : "Button_Insert";
+            if($this->Button_Insert->Pressed) {
+                $this->PressedButton = "Button_Insert";
+            } else if($this->Button_Update->Pressed) {
+                $this->PressedButton = "Button_Update";
+            } else if($this->Button_Delete->Pressed) {
+                $this->PressedButton = "Button_Delete";
+            } else if($this->Button_Cancel->Pressed) {
+                $this->PressedButton = "Button_Cancel";
+            }
+        }
+        $Redirect = $FileName . "?" . CCGetQueryString("QueryString", array("ccsForm"));
+        if($this->PressedButton == "Button_Delete") {
+            $Redirect = "subscriber_promo.php" . "?" . CCGetQueryString("QueryString", array("ccsForm", "TAMBAH", "SUBS_OT_PROMO_SERVICE_ID"));
+            if(!CCGetEvent($this->Button_Delete->CCSEvents, "OnClick", $this->Button_Delete) || !$this->DeleteRow()) {
+                $Redirect = "";
+            }
+        } else if($this->PressedButton == "Button_Cancel") {
+            $Redirect = "subscriber_promo.php" . "?" . CCGetQueryString("QueryString", array("ccsForm", "SUBS_OT_PROMO_FEATURE_ID"));
+            if(!CCGetEvent($this->Button_Cancel->CCSEvents, "OnClick", $this->Button_Cancel)) {
+                $Redirect = "";
+            }
+        } else if($this->Validate()) {
+            if($this->PressedButton == "Button_Insert") {
+                $Redirect = "subscriber_promo.php" . "?" . CCGetQueryString("QueryString", array("ccsForm", "TAMBAH"));
+                if(!CCGetEvent($this->Button_Insert->CCSEvents, "OnClick", $this->Button_Insert) || !$this->InsertRow()) {
+                    $Redirect = "";
+                }
+            } else if($this->PressedButton == "Button_Update") {
+                $Redirect = "subscriber_promo.php" . "?" . CCGetQueryString("QueryString", array("ccsForm", "TAMBAH"));
+                if(!CCGetEvent($this->Button_Update->CCSEvents, "OnClick", $this->Button_Update) || !$this->UpdateRow()) {
+                    $Redirect = "";
+                }
+            }
+        } else {
+            $Redirect = "";
+        }
+        if ($Redirect)
+            $this->DataSource->close();
+    }
+//End Operation Method
+
+//InsertRow Method @2-BCDB6DED
+    function InsertRow()
+    {
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeInsert", $this);
+        if(!$this->InsertAllowed) return false;
+        $this->DataSource->SUBSCRIBER_ID->SetValue($this->SUBSCRIBER_ID->GetValue(true));
+        $this->DataSource->P_FEATURE_PROMOTION_ID->SetValue($this->P_FEATURE_PROMOTION_ID->GetValue(true));
+        $this->DataSource->PROMOTION_DATE->SetValue($this->PROMOTION_DATE->GetValue(true));
+        $this->DataSource->DESCRIPTION->SetValue($this->DESCRIPTION->GetValue(true));
+        $this->DataSource->SUBS_OT_PROMO_FEATURE_ID->SetValue($this->SUBS_OT_PROMO_FEATURE_ID->GetValue(true));
+        $this->DataSource->OT_FEATURE_PROMO_CODE->SetValue($this->OT_FEATURE_PROMO_CODE->GetValue(true));
+        $this->DataSource->Insert();
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterInsert", $this);
+        return (!$this->CheckErrors());
+    }
+//End InsertRow Method
+
+//UpdateRow Method @2-723298E0
+    function UpdateRow()
+    {
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeUpdate", $this);
+        if(!$this->UpdateAllowed) return false;
+        $this->DataSource->SUBSCRIBER_ID->SetValue($this->SUBSCRIBER_ID->GetValue(true));
+        $this->DataSource->P_ONETIME_PROMOTION_ID->SetValue($this->P_ONETIME_PROMOTION_ID->GetValue(true));
+        $this->DataSource->PROMOTION_DATE->SetValue($this->PROMOTION_DATE->GetValue(true));
+        $this->DataSource->DESCRIPTION->SetValue($this->DESCRIPTION->GetValue(true));
+        $this->DataSource->SUBS_OT_PROMO_SERVICE_ID->SetValue($this->SUBS_OT_PROMO_SERVICE_ID->GetValue(true));
+        $this->DataSource->OT_PROMO_CODE->SetValue($this->OT_PROMO_CODE->GetValue(true));
+        $this->DataSource->Update();
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterUpdate", $this);
+        return (!$this->CheckErrors());
+    }
+//End UpdateRow Method
+
+//DeleteRow Method @2-968C346F
+    function DeleteRow()
+    {
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeDelete", $this);
+        if(!$this->DeleteAllowed) return false;
+        $this->DataSource->SUBS_OT_PROMO_SERVICE_ID->SetValue($this->SUBS_OT_PROMO_SERVICE_ID->GetValue(true));
+        $this->DataSource->Delete();
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterDelete", $this);
+        return (!$this->CheckErrors());
+    }
+//End DeleteRow Method
+
+//Show Method @2-EF1D9F78
+    function Show()
+    {
+        global $CCSUseAmp;
+        global $Tpl;
+        global $FileName;
+        global $CCSLocales;
+        $Error = "";
+
+        if(!$this->Visible)
+            return;
+
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeSelect", $this);
+
+
+        $RecordBlock = "Record " . $this->ComponentName;
+        $ParentPath = $Tpl->block_path;
+        $Tpl->block_path = $ParentPath . "/" . $RecordBlock;
+        $this->EditMode = $this->EditMode && $this->ReadAllowed;
+        if($this->EditMode) {
+            if($this->DataSource->Errors->Count()){
+                $this->Errors->AddErrors($this->DataSource->Errors);
+                $this->DataSource->Errors->clear();
+            }
+            $this->DataSource->Open();
+            if($this->DataSource->Errors->Count() == 0 && $this->DataSource->next_record()) {
+                $this->DataSource->SetValues();
+                if(!$this->FormSubmitted){
+                    $this->SUBSCRIBER_ID->SetValue($this->DataSource->SUBSCRIBER_ID->GetValue());
+                    $this->P_FEATURE_PROMOTION_ID->SetValue($this->DataSource->P_FEATURE_PROMOTION_ID->GetValue());
+                    $this->PROMOTION_DATE->SetValue($this->DataSource->PROMOTION_DATE->GetValue());
+                    $this->DESCRIPTION->SetValue($this->DataSource->DESCRIPTION->GetValue());
+                    $this->SUBS_OT_PROMO_FEATURE_ID->SetValue($this->DataSource->SUBS_OT_PROMO_FEATURE_ID->GetValue());
+                    $this->OT_FEATURE_PROMO_CODE->SetValue($this->DataSource->OT_FEATURE_PROMO_CODE->GetValue());
+                    $this->UPDATE_BY->SetValue($this->DataSource->UPDATE_BY->GetValue());
+                    $this->UPDATE_DATE->SetValue($this->DataSource->UPDATE_DATE->GetValue());
+                }
+            } else {
+                $this->EditMode = false;
+            }
+        }
+        if (!$this->FormSubmitted) {
+        }
+
+        if($this->FormSubmitted || $this->CheckErrors()) {
+            $Error = "";
+            $Error = ComposeStrings($Error, $this->SUBSCRIBER_ID->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->P_FEATURE_PROMOTION_ID->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->PROMOTION_DATE->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->DESCRIPTION->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->SUBS_OT_PROMO_FEATURE_ID->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->OT_FEATURE_PROMO_CODE->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->UPDATE_BY->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->UPDATE_DATE->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->P_TARIFF_SCENARIO_ID->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->DatePicker_PROMOTION_DATE->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->Errors->ToString());
+            $Error = ComposeStrings($Error, $this->DataSource->Errors->ToString());
+            $Tpl->SetVar("Error", $Error);
+            $Tpl->Parse("Error", false);
+        }
+        $CCSForm = $this->EditMode ? $this->ComponentName . ":" . "Edit" : $this->ComponentName;
+        $this->HTMLFormAction = $FileName . "?" . CCAddParam(CCGetQueryString("QueryString", ""), "ccsForm", $CCSForm);
+        $Tpl->SetVar("Action", !$CCSUseAmp ? $this->HTMLFormAction : str_replace("&", "&amp;", $this->HTMLFormAction));
+        $Tpl->SetVar("HTMLFormName", $this->ComponentName);
+        $Tpl->SetVar("HTMLFormEnctype", $this->FormEnctype);
+        $this->Button_Insert->Visible = !$this->EditMode && $this->InsertAllowed;
+        $this->Button_Update->Visible = $this->EditMode && $this->UpdateAllowed;
+        $this->Button_Delete->Visible = $this->EditMode && $this->DeleteAllowed;
+
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeShow", $this);
+        $this->Attributes->Show();
+        if(!$this->Visible) {
+            $Tpl->block_path = $ParentPath;
+            return;
+        }
+
+        $this->Button_Insert->Show();
+        $this->Button_Update->Show();
+        $this->Button_Delete->Show();
+        $this->Button_Cancel->Show();
+        $this->SUBSCRIBER_ID->Show();
+        $this->P_FEATURE_PROMOTION_ID->Show();
+        $this->PROMOTION_DATE->Show();
+        $this->DESCRIPTION->Show();
+        $this->SUBS_OT_PROMO_FEATURE_ID->Show();
+        $this->OT_FEATURE_PROMO_CODE->Show();
+        $this->UPDATE_BY->Show();
+        $this->UPDATE_DATE->Show();
+        $this->P_TARIFF_SCENARIO_ID->Show();
+        $this->DatePicker_PROMOTION_DATE->Show();
+        $Tpl->parse();
+        $Tpl->block_path = $ParentPath;
+        $this->DataSource->close();
+    }
+//End Show Method
+
+} //End V_SUBS_OT_PROMO_FEATURE Class @2-FCB6E20C
+
+class clsV_SUBS_OT_PROMO_FEATUREDataSource extends clsDBConn {  //V_SUBS_OT_PROMO_FEATUREDataSource Class @2-682E7C2B
+
+//DataSource Variables @2-69CEE610
+    var $Parent = "";
+    var $CCSEvents = "";
+    var $CCSEventResult;
+    var $ErrorBlock;
+    var $CmdExecution;
+
+    var $InsertParameters;
+    var $UpdateParameters;
+    var $DeleteParameters;
+    var $wp;
+    var $AllParametersSet;
+
+
+    // Datasource fields
+    var $SUBSCRIBER_ID;
+    var $P_FEATURE_PROMOTION_ID;
+    var $PROMOTION_DATE;
+    var $DESCRIPTION;
+    var $SUBS_OT_PROMO_FEATURE_ID;
+    var $OT_FEATURE_PROMO_CODE;
+    var $UPDATE_BY;
+    var $UPDATE_DATE;
+    var $P_TARIFF_SCENARIO_ID;
+//End DataSource Variables
+
+//DataSourceClass_Initialize Event @2-346FD8C2
+    function clsV_SUBS_OT_PROMO_FEATUREDataSource(& $Parent)
+    {
+        $this->Parent = & $Parent;
+        $this->ErrorBlock = "Record V_SUBS_OT_PROMO_FEATURE/Error";
+        $this->Initialize();
+        $this->SUBSCRIBER_ID = new clsField("SUBSCRIBER_ID", ccsFloat, "");
+        
+        $this->P_FEATURE_PROMOTION_ID = new clsField("P_FEATURE_PROMOTION_ID", ccsFloat, "");
+        
+        $this->PROMOTION_DATE = new clsField("PROMOTION_DATE", ccsDate, $this->DateFormat);
+        
+        $this->DESCRIPTION = new clsField("DESCRIPTION", ccsText, "");
+        
+        $this->SUBS_OT_PROMO_FEATURE_ID = new clsField("SUBS_OT_PROMO_FEATURE_ID", ccsFloat, "");
+        
+        $this->OT_FEATURE_PROMO_CODE = new clsField("OT_FEATURE_PROMO_CODE", ccsText, "");
+        
+        $this->UPDATE_BY = new clsField("UPDATE_BY", ccsText, "");
+        
+        $this->UPDATE_DATE = new clsField("UPDATE_DATE", ccsDate, $this->DateFormat);
+        
+        $this->P_TARIFF_SCENARIO_ID = new clsField("P_TARIFF_SCENARIO_ID", ccsText, "");
+        
+
+    }
+//End DataSourceClass_Initialize Event
+
+//Prepare Method @2-1B470559
+    function Prepare()
+    {
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->wp = new clsSQLParameters($this->ErrorBlock);
+        $this->wp->AddParameter("1", "urlSUBS_OT_PROMO_FEATURE_ID", ccsFloat, "", "", $this->Parameters["urlSUBS_OT_PROMO_FEATURE_ID"], 0, false);
+        $this->AllParametersSet = $this->wp->AllParamsSet();
+    }
+//End Prepare Method
+
+//Open Method @2-CD8F4BED
+    function Open()
+    {
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildSelect", $this->Parent);
+        $this->SQL = "SELECT * \n" .
+        "FROM V_SUBS_OT_PROMO_FEATURE\n" .
+        "WHERE SUBS_OT_PROMO_FEATURE_ID = " . $this->SQLValue($this->wp->GetDBValue("1"), ccsFloat) . " ";
+        $this->Order = "";
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteSelect", $this->Parent);
+        $this->query(CCBuildSQL($this->SQL, $this->Where, $this->Order));
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteSelect", $this->Parent);
+    }
+//End Open Method
+
+//SetValues Method @2-58296C6A
+    function SetValues()
+    {
+        $this->SUBSCRIBER_ID->SetDBValue(trim($this->f("SUBSCRIBER_ID")));
+        $this->P_FEATURE_PROMOTION_ID->SetDBValue(trim($this->f("P_FEATURE_PROMOTION_ID")));
+        $this->PROMOTION_DATE->SetDBValue(trim($this->f("PROMOTION_DATE")));
+        $this->DESCRIPTION->SetDBValue($this->f("DESCRIPTION"));
+        $this->SUBS_OT_PROMO_FEATURE_ID->SetDBValue(trim($this->f("SUBS_OT_PROMO_FEATURE_ID")));
+        $this->OT_FEATURE_PROMO_CODE->SetDBValue($this->f("OT_FEATURE_PROMO_CODE"));
+        $this->UPDATE_BY->SetDBValue($this->f("UPDATE_BY"));
+        $this->UPDATE_DATE->SetDBValue(trim($this->f("UPDATE_DATE")));
+    }
+//End SetValues Method
+
+//Insert Method @2-EC2D43F5
+    function Insert()
+    {
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->CmdExecution = true;
+        $this->cp["SUBSCRIBER_ID"] = new clsSQLParameter("ctrlSUBSCRIBER_ID", ccsFloat, "", "", $this->SUBSCRIBER_ID->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["P_FEATURE_PROMOTION_ID"] = new clsSQLParameter("ctrlP_FEATURE_PROMOTION_ID", ccsFloat, "", "", $this->P_FEATURE_PROMOTION_ID->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["PROMOTION_DATE"] = new clsSQLParameter("ctrlPROMOTION_DATE", ccsDate, array("dd", "-", "mmm", "-", "yyyy"), $this->DateFormat, $this->PROMOTION_DATE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["DESCRIPTION"] = new clsSQLParameter("ctrlDESCRIPTION", ccsText, "", "", $this->DESCRIPTION->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["SUBS_OT_PROMO_FEATURE_ID"] = new clsSQLParameter("ctrlSUBS_OT_PROMO_FEATURE_ID", ccsFloat, "", "", $this->SUBS_OT_PROMO_FEATURE_ID->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["OT_FEATURE_PROMO_CODE"] = new clsSQLParameter("ctrlOT_FEATURE_PROMO_CODE", ccsText, "", "", $this->OT_FEATURE_PROMO_CODE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["UPDATE_BY"] = new clsSQLParameter("sesUserName", ccsText, "", "", CCGetSession("UserName", NULL), "", false, $this->ErrorBlock);
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildInsert", $this->Parent);
+        if (!is_null($this->cp["SUBSCRIBER_ID"]->GetValue()) and !strlen($this->cp["SUBSCRIBER_ID"]->GetText()) and !is_bool($this->cp["SUBSCRIBER_ID"]->GetValue())) 
+            $this->cp["SUBSCRIBER_ID"]->SetValue($this->SUBSCRIBER_ID->GetValue(true));
+        if (!is_null($this->cp["P_FEATURE_PROMOTION_ID"]->GetValue()) and !strlen($this->cp["P_FEATURE_PROMOTION_ID"]->GetText()) and !is_bool($this->cp["P_FEATURE_PROMOTION_ID"]->GetValue())) 
+            $this->cp["P_FEATURE_PROMOTION_ID"]->SetValue($this->P_FEATURE_PROMOTION_ID->GetValue(true));
+        if (!is_null($this->cp["PROMOTION_DATE"]->GetValue()) and !strlen($this->cp["PROMOTION_DATE"]->GetText()) and !is_bool($this->cp["PROMOTION_DATE"]->GetValue())) 
+            $this->cp["PROMOTION_DATE"]->SetValue($this->PROMOTION_DATE->GetValue(true));
+        if (!is_null($this->cp["DESCRIPTION"]->GetValue()) and !strlen($this->cp["DESCRIPTION"]->GetText()) and !is_bool($this->cp["DESCRIPTION"]->GetValue())) 
+            $this->cp["DESCRIPTION"]->SetValue($this->DESCRIPTION->GetValue(true));
+        if (!is_null($this->cp["SUBS_OT_PROMO_FEATURE_ID"]->GetValue()) and !strlen($this->cp["SUBS_OT_PROMO_FEATURE_ID"]->GetText()) and !is_bool($this->cp["SUBS_OT_PROMO_FEATURE_ID"]->GetValue())) 
+            $this->cp["SUBS_OT_PROMO_FEATURE_ID"]->SetValue($this->SUBS_OT_PROMO_FEATURE_ID->GetValue(true));
+        if (!is_null($this->cp["OT_FEATURE_PROMO_CODE"]->GetValue()) and !strlen($this->cp["OT_FEATURE_PROMO_CODE"]->GetText()) and !is_bool($this->cp["OT_FEATURE_PROMO_CODE"]->GetValue())) 
+            $this->cp["OT_FEATURE_PROMO_CODE"]->SetValue($this->OT_FEATURE_PROMO_CODE->GetValue(true));
+        if (!is_null($this->cp["UPDATE_BY"]->GetValue()) and !strlen($this->cp["UPDATE_BY"]->GetText()) and !is_bool($this->cp["UPDATE_BY"]->GetValue())) 
+            $this->cp["UPDATE_BY"]->SetValue(CCGetSession("UserName", NULL));
+        $this->SQL = "INSERT INTO SUBS_OT_PROMO_FEATURE(\n" .
+        "SUBS_OT_PROMO_FEATURE_ID, \n" .
+        "SUBSCRIBER_ID, \n" .
+        "P_FEATURE_PROMOTION_ID, \n" .
+        "PROMOTION_DATE, \n" .
+        "DESCRIPTION, \n" .
+        "UPDATE_DATE,\n" .
+        "UPDATE_BY\n" .
+        ") VALUES(\n" .
+        "GENERATE_ID('BILLDB','SUBS_OT_PROMO_FEATURE','SUBS_OT_PROMO_FEATURE_ID'),\n" .
+        "" . $this->SQLValue($this->cp["SUBSCRIBER_ID"]->GetDBValue(), ccsFloat) . ", \n" .
+        "" . $this->SQLValue($this->cp["P_FEATURE_PROMOTION_ID"]->GetDBValue(), ccsFloat) . ", \n" .
+        "'" . $this->SQLValue($this->cp["PROMOTION_DATE"]->GetDBValue(), ccsDate) . "', \n" .
+        "INITCAP(TRIM('" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "')), \n" .
+        "SYSDATE,\n" .
+        " '" . $this->SQLValue($this->cp["UPDATE_BY"]->GetDBValue(), ccsText) . "'\n" .
+        " )";
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteInsert", $this->Parent);
+        if($this->Errors->Count() == 0 && $this->CmdExecution) {
+            $this->query($this->SQL);
+            $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteInsert", $this->Parent);
+        }
+    }
+//End Insert Method
+
+//Update Method @2-054C092F
+    function Update()
+    {
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->CmdExecution = true;
+        $this->cp["SUBSCRIBER_ID"] = new clsSQLParameter("ctrlSUBSCRIBER_ID", ccsFloat, "", "", $this->SUBSCRIBER_ID->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["P_ONETIME_PROMOTION_ID"] = new clsSQLParameter("ctrlP_ONETIME_PROMOTION_ID", ccsFloat, "", "", $this->P_ONETIME_PROMOTION_ID->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["PROMOTION_DATE"] = new clsSQLParameter("ctrlPROMOTION_DATE", ccsDate, array("dd", "-", "mmm", "-", "yyyy"), $this->DateFormat, $this->PROMOTION_DATE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["DESCRIPTION"] = new clsSQLParameter("ctrlDESCRIPTION", ccsText, "", "", $this->DESCRIPTION->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["SUBS_OT_PROMO_SERVICE_ID"] = new clsSQLParameter("ctrlSUBS_OT_PROMO_SERVICE_ID", ccsFloat, "", "", $this->SUBS_OT_PROMO_SERVICE_ID->GetValue(true), 0, false, $this->ErrorBlock);
+        $this->cp["OT_PROMO_CODE"] = new clsSQLParameter("ctrlOT_PROMO_CODE", ccsText, "", "", $this->OT_PROMO_CODE->GetValue(true), "", false, $this->ErrorBlock);
+        $this->cp["UPDATE_BY"] = new clsSQLParameter("sesUserName", ccsText, "", "", CCGetSession("UserName", NULL), "", false, $this->ErrorBlock);
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildUpdate", $this->Parent);
+        if (!is_null($this->cp["SUBSCRIBER_ID"]->GetValue()) and !strlen($this->cp["SUBSCRIBER_ID"]->GetText()) and !is_bool($this->cp["SUBSCRIBER_ID"]->GetValue())) 
+            $this->cp["SUBSCRIBER_ID"]->SetValue($this->SUBSCRIBER_ID->GetValue(true));
+        if (!is_null($this->cp["P_ONETIME_PROMOTION_ID"]->GetValue()) and !strlen($this->cp["P_ONETIME_PROMOTION_ID"]->GetText()) and !is_bool($this->cp["P_ONETIME_PROMOTION_ID"]->GetValue())) 
+            $this->cp["P_ONETIME_PROMOTION_ID"]->SetValue($this->P_ONETIME_PROMOTION_ID->GetValue(true));
+        if (!is_null($this->cp["PROMOTION_DATE"]->GetValue()) and !strlen($this->cp["PROMOTION_DATE"]->GetText()) and !is_bool($this->cp["PROMOTION_DATE"]->GetValue())) 
+            $this->cp["PROMOTION_DATE"]->SetValue($this->PROMOTION_DATE->GetValue(true));
+        if (!is_null($this->cp["DESCRIPTION"]->GetValue()) and !strlen($this->cp["DESCRIPTION"]->GetText()) and !is_bool($this->cp["DESCRIPTION"]->GetValue())) 
+            $this->cp["DESCRIPTION"]->SetValue($this->DESCRIPTION->GetValue(true));
+        if (!is_null($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetValue()) and !strlen($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetText()) and !is_bool($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetValue())) 
+            $this->cp["SUBS_OT_PROMO_SERVICE_ID"]->SetValue($this->SUBS_OT_PROMO_SERVICE_ID->GetValue(true));
+        if (!strlen($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetText()) and !is_bool($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetValue(true))) 
+            $this->cp["SUBS_OT_PROMO_SERVICE_ID"]->SetText(0);
+        if (!is_null($this->cp["OT_PROMO_CODE"]->GetValue()) and !strlen($this->cp["OT_PROMO_CODE"]->GetText()) and !is_bool($this->cp["OT_PROMO_CODE"]->GetValue())) 
+            $this->cp["OT_PROMO_CODE"]->SetValue($this->OT_PROMO_CODE->GetValue(true));
+        if (!is_null($this->cp["UPDATE_BY"]->GetValue()) and !strlen($this->cp["UPDATE_BY"]->GetText()) and !is_bool($this->cp["UPDATE_BY"]->GetValue())) 
+            $this->cp["UPDATE_BY"]->SetValue(CCGetSession("UserName", NULL));
+        $this->SQL = "UPDATE SUBS_OT_PROMO_SERVICE SET \n" .
+        "P_ONETIME_PROMOTION_ID=" . $this->SQLValue($this->cp["P_ONETIME_PROMOTION_ID"]->GetDBValue(), ccsFloat) . ", \n" .
+        "PROMOTION_DATE='" . $this->SQLValue($this->cp["PROMOTION_DATE"]->GetDBValue(), ccsDate) . "', \n" .
+        "DESCRIPTION=INITCAP(TRIM('" . $this->SQLValue($this->cp["DESCRIPTION"]->GetDBValue(), ccsText) . "')),\n" .
+        "UPDATE_BY='" . $this->SQLValue($this->cp["UPDATE_BY"]->GetDBValue(), ccsText) . "', \n" .
+        "UPDATE_DATE=SYSDATE\n" .
+        "WHERE  \n" .
+        "SUBS_OT_PROMO_SERVICE_ID = " . $this->SQLValue($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetDBValue(), ccsFloat) . "";
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteUpdate", $this->Parent);
+        if($this->Errors->Count() == 0 && $this->CmdExecution) {
+            $this->query($this->SQL);
+            $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteUpdate", $this->Parent);
+        }
+    }
+//End Update Method
+
+//Delete Method @2-E8AE5067
+    function Delete()
+    {
+        global $CCSLocales;
+        global $DefaultDateFormat;
+        $this->CmdExecution = true;
+        $this->cp["SUBS_OT_PROMO_SERVICE_ID"] = new clsSQLParameter("ctrlSUBS_OT_PROMO_SERVICE_ID", ccsFloat, "", "", $this->SUBS_OT_PROMO_SERVICE_ID->GetValue(true), 0, false, $this->ErrorBlock);
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeBuildDelete", $this->Parent);
+        if (!is_null($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetValue()) and !strlen($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetText()) and !is_bool($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetValue())) 
+            $this->cp["SUBS_OT_PROMO_SERVICE_ID"]->SetValue($this->SUBS_OT_PROMO_SERVICE_ID->GetValue(true));
+        if (!strlen($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetText()) and !is_bool($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetValue(true))) 
+            $this->cp["SUBS_OT_PROMO_SERVICE_ID"]->SetText(0);
+        $this->SQL = "DELETE FROM SUBS_OT_PROMO_SERVICE WHERE  SUBS_OT_PROMO_SERVICE_ID = " . $this->SQLValue($this->cp["SUBS_OT_PROMO_SERVICE_ID"]->GetDBValue(), ccsFloat) . "";
+        $this->CCSEventResult = CCGetEvent($this->CCSEvents, "BeforeExecuteDelete", $this->Parent);
+        if($this->Errors->Count() == 0 && $this->CmdExecution) {
+            $this->query($this->SQL);
+            $this->CCSEventResult = CCGetEvent($this->CCSEvents, "AfterExecuteDelete", $this->Parent);
+        }
+    }
+//End Delete Method
+
+} //End V_SUBS_OT_PROMO_FEATUREDataSource Class @2-FCB6E20C
+
+//Initialize Page @1-ABF5E350
+// Variables
+$FileName = "";
+$Redirect = "";
+$Tpl = "";
+$TemplateFileName = "";
+$BlockToParse = "";
+$ComponentName = "";
+$Attributes = "";
+
+// Events;
+$CCSEvents = "";
+$CCSEventResult = "";
+
+$FileName = FileName;
+$Redirect = "";
+$TemplateFileName = "subscriber_promo_feature_form.html";
+$BlockToParse = "main";
+$TemplateEncoding = "CP1252";
+$ContentType = "text/html";
+$PathToRoot = "../";
+$Charset = $Charset ? $Charset : "windows-1252";
+//End Initialize Page
+
+//Include events file @1-3F0120F2
+include_once("./subscriber_promo_feature_form_events.php");
+//End Include events file
+
+//Before Initialize @1-E870CEBC
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
+//End Before Initialize
+
+//Initialize Objects @1-90E75E21
+$DBConn = new clsDBConn();
+$MainPage->Connections["Conn"] = & $DBConn;
+$Attributes = new clsAttributes("page:");
+$MainPage->Attributes = & $Attributes;
+
+// Controls
+$V_SUBS_OT_PROMO_FEATURE = & new clsRecordV_SUBS_OT_PROMO_FEATURE("", $MainPage);
+$MainPage->V_SUBS_OT_PROMO_FEATURE = & $V_SUBS_OT_PROMO_FEATURE;
+$V_SUBS_OT_PROMO_FEATURE->Initialize();
+
+BindEvents();
+
+$CCSEventResult = CCGetEvent($CCSEvents, "AfterInitialize", $MainPage);
+
+if ($Charset) {
+    header("Content-Type: " . $ContentType . "; charset=" . $Charset);
+} else {
+    header("Content-Type: " . $ContentType);
+}
+//End Initialize Objects
+
+//Initialize HTML Template @1-52F9C312
+$CCSEventResult = CCGetEvent($CCSEvents, "OnInitializeView", $MainPage);
+$Tpl = new clsTemplate($FileEncoding, $TemplateEncoding);
+$Tpl->LoadTemplate(PathToCurrentPage . $TemplateFileName, $BlockToParse, "CP1252");
+$Tpl->block_path = "/$BlockToParse";
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeShow", $MainPage);
+$Attributes->SetValue("pathToRoot", "../");
+$Attributes->Show();
+//End Initialize HTML Template
+
+//Execute Components @1-26FF0E31
+$V_SUBS_OT_PROMO_FEATURE->Operation();
+//End Execute Components
+
+//Go to destination page @1-D0CEDDB5
+if($Redirect)
+{
+    $CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
+    $DBConn->close();
+    header("Location: " . $Redirect);
+    unset($V_SUBS_OT_PROMO_FEATURE);
+    unset($Tpl);
+    exit;
+}
+//End Go to destination page
+
+//Show Page @1-53D0FE41
+$V_SUBS_OT_PROMO_FEATURE->Show();
+$Tpl->block_path = "";
+$Tpl->Parse($BlockToParse, false);
+if (!isset($main_block)) $main_block = $Tpl->GetVar($BlockToParse);
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeOutput", $MainPage);
+if ($CCSEventResult) echo $main_block;
+//End Show Page
+
+//Unload Page @1-9DEA065C
+$CCSEventResult = CCGetEvent($CCSEvents, "BeforeUnload", $MainPage);
+$DBConn->close();
+unset($V_SUBS_OT_PROMO_FEATURE);
+unset($Tpl);
+//End Unload Page
+
+
+?>
