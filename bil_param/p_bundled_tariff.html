@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title></title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:to_Bundled()">Bundled Feature</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap><label onclick="javascript:to_Detail()">Detail Feature&nbsp;</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap><label >Tariff</label></td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+&nbsp; 
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td><br>
+      <!-- BEGIN Grid P_DETAIL_FEATURE -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+                <td class="th"><strong>BUNDLED FEATURE TARIFF</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">&nbsp;ACTION</th>
+ 
+                <th scope="col">TARIFF SCENARIO CODE</th>
+ 
+                <th scope="col">BILLING PERIOD CODE</th>
+ 
+                <th scope="col">VALID FROM</th>
+ 
+                <th scope="col">VALID TO</th>
+ 
+                <th scope="col">&nbsp;BILLING UNIT</th>
+ 
+                <th colspan="4" scope="col">DESCRIPTION</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {P_DETAIL_FEATURE:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_DETAIL_FEATUREDLink_{P_APPLGrid:rowNumber}">{DLink}</a><!-- END Link DLink -->&nbsp;</td> 
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link skenarioEdit --><a href="{skenarioEdit_Src}" id="P_DETAIL_FEATUREskenarioEdit_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/edit.gif" width="16" height="16"></a><!-- END Link skenarioEdit -->
+                  <!-- BEGIN Link skenarioDel --><a href="{skenarioDel_Src}" onclick="return confirmDel(this);" id="P_DETAIL_FEATUREskenarioDel_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/delete.gif" width="16" height="16"></a><!-- END Link skenarioDel --></td> 
+                <td>{RECU_TARIFF_SCEN_CODE}<input id="P_DETAIL_FEATUREP_RECU_TARIFF_BUNDLED_FEAT_ID" type="hidden" value="{P_RECU_TARIFF_BUNDLED_FEAT_ID}" name="{P_RECU_TARIFF_BUNDLED_FEAT_ID_Name}">&nbsp;</td> 
+                <td>{BILL_PERIOD_UNIT_CODE}&nbsp;</td> 
+                <td>{VALID_FROM}&nbsp;</td> 
+                <td>{VALID_TO}&nbsp;</td> 
+                <td>&nbsp;{BILLING_UNIT}</td> 
+                <td colspan="4">{DESCRIPTION}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="11">No Record</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: left">&nbsp;<a href="{ST_NEW_Src}" id="P_DETAIL_FEATUREST_NEW_{P_APPLGrid:rowNumber}"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="10">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+                  <!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+                  <!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator --></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_DETAIL_FEATURE --><br>
+      <!-- BEGIN Grid P_BILL_COMP -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+                <td class="th"><strong>BILL COMPONENT</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center; DISPLAY: none" scope="col">#</th>
+ 
+                <th scope="col">&nbsp;ACTION</th>
+ 
+                <th scope="col">BILL COMPONENT CODE</th>
+ 
+                <th scope="col">CURRENCY CODE</th>
+ 
+                <th scope="col">&nbsp;CHARGE AMOUNT</th>
+ 
+                <th colspan="4" scope="col">DESCRIPTION</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {P_BILL_COMP:rowStyle}>
+                <td style="TEXT-ALIGN: center; DISPLAY: none">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="P_BILL_COMPDLink_{P_APPLGrid:rowNumber}">{DLink}</a><!-- END Link DLink -->&nbsp;</td> 
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link skenarioEdit --><a href="{skenarioEdit_Src}" id="P_BILL_COMPskenarioEdit_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/edit.gif" width="16" height="16"></a><!-- END Link skenarioEdit -->
+                  <!-- BEGIN Link skenarioDel --><a href="{skenarioDel_Src}" onclick="return confirmDel(this);" id="P_BILL_COMPskenarioDel_{P_APP_ROLE:rowNumber}"><img border="0" src="../images/delete.gif" width="16" height="16"></a><!-- END Link skenarioDel --></td> 
+                <td>{BILL_COMPONENT_CODE}<input id="P_BILL_COMPP_RT_BUND_FEAT_BILL_COMP_ID" class="ControlsIN" type="hidden" value="{P_RT_BUND_FEAT_BILL_COMP_ID}" name="{P_RT_BUND_FEAT_BILL_COMP_ID_Name}">&nbsp;<input id="P_BILL_COMPP_RECU_TARIFF_BUNDLED_FEAT_ID" style="DISPLAY: none" size="2" value="{P_RECU_TARIFF_BUNDLED_FEAT_ID}" name="{P_RECU_TARIFF_BUNDLED_FEAT_ID_Name}"></td> 
+                <td>{CURRENCY_CODE}&nbsp;</td> 
+                <td>&nbsp;{CHARGE_AMOUNT}</td> 
+                <td colspan="4">{DESCRIPTION}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="9">No Record</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: left">&nbsp;<a href="{ST_NEW_Src}" id="P_BILL_COMPST_NEW_{P_APPLGrid:rowNumber}"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="8"><label style="display: none;" for="P_BILL_COMPP_RECU_TARIFF_BUNDLED_FEAT_ID2">&nbsp;</label>&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+                  <!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+                  <!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator --></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid P_BILL_COMP --></td>
+  </tr>
+</table>
+<script language="javascript">
+        function getFrom_LOV(FormName, FieldList, FileName) {
+                    arrLOV = FileName.split('?');
+
+                    var width = 500;
+                    var height = 400;
+                    ///var left = parseInt((screen.availWidth/2) - (width/2));
+                    //var top = parseInt((screen.availHeight/2) - (height/2)); 
+                    window.open('../bil_lov/' + arrLOV[0] + '?FORM=' + FormName + '&OBJ=' + FieldList + '&' + arrLOV[1], width, height, "auto");
+        }
+
+        function lov_p_feature_type_bundled() {
+                        var ftid = document.getElementById("P_DETAIL_FEATURE1P_SERVICE_TYPE_ID").value;
+                        
+                getFrom_LOV('P_DETAIL_FEATURE1', 'P_FEATURE_TYPE_ID,FEATURE_TYPE_CODE,FEATURE_GROUP_CODE', 'lov_p_feature_type_bundled.php?P_SERVICE_TYPE_ID='+ftid);
+        }
+
+        function to_Bundled() {
+                var cid = QueryString("P_BUNDLED_FEATURE_ID");
+                var hlm = QueryString("SERVICETYPE_GRIDPage");
+                if (hlm == null)
+                hlm = 1;
+            if (cid != "" && cid != 0 && cid != false && cid != undefined && cid != null)
+            {
+                location.href = "p_bundled_feature.php?P_BUNDLED_FEATURE_ID=" + cid +"&SERVICETYPE_GRIDPage=" + hlm;
+            }
+
+        }
+                function confirmDel(obj){
+                //alert(obj);
+                return confirm('Are you sure delete this record?');
+        }
+		function to_Detail() {
+       	 	var cid = QueryString("P_BUNDLED_FEATURE_ID");
+			var sid	= QueryString("P_SERVICE_TYPE_ID");	
+        	var hlm = QueryString("V_P_BUNDLED_FEATUREPage");
+         	if (hlm == null)
+                hlm = 1;
+            if (cid != "" && cid != 0 && cid != false && cid != undefined && cid != null)
+            {
+                location.href = "p_detail_feature.php?P_BUNDLED_FEATURE_ID=" + cid +"&P_SERVICE_TYPE_ID="+sid+"&V_P_BUNDLED_FEATUREPage=" + hlm;
+            }
+
+        }
+
+</script>
+</body>
+</html>

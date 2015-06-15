@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title></title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-0F66216C
+
+var V_P_SERVICE_CATEGORY1_DatePicker_UPDATE_DATE1 = new Object(); 
+V_P_SERVICE_CATEGORY1_DatePicker_UPDATE_DATE1.format           = "dd-mmm-yyyy";
+V_P_SERVICE_CATEGORY1_DatePicker_UPDATE_DATE1.style            = "Styles/trb/Style.css";
+V_P_SERVICE_CATEGORY1_DatePicker_UPDATE_DATE1.relativePathPart = "../";
+V_P_SERVICE_CATEGORY1_DatePicker_UPDATE_DATE1.themeVersion = "3.0";
+
+var V_P_SERVICE_CATEGORY1_DatePicker_UPDATE_DATE2 = new Object(); 
+V_P_SERVICE_CATEGORY1_DatePicker_UPDATE_DATE2.format           = "dd-mmm-yyyy";
+V_P_SERVICE_CATEGORY1_DatePicker_UPDATE_DATE2.style            = "Styles/trb/Style.css";
+V_P_SERVICE_CATEGORY1_DatePicker_UPDATE_DATE2.relativePathPart = "../";
+V_P_SERVICE_CATEGORY1_DatePicker_UPDATE_DATE2.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//V_P_SERVICE_CATEGORY1Button_Delete_OnClick @42-7BB6C033
+function V_P_SERVICE_CATEGORY1Button_Delete_OnClick()
+{
+    var result = true;
+//End V_P_SERVICE_CATEGORY1Button_Delete_OnClick
+
+//Confirmation Message @43-CD1EB1A4
+    return confirm('Delete Record ?');
+//End Confirmation Message
+
+//Close V_P_SERVICE_CATEGORY1Button_Delete_OnClick @42-BC33A33A
+    return result;
+}
+//End Close V_P_SERVICE_CATEGORY1Button_Delete_OnClick
+
+//V_P_SERVICE_CATEGORY1Button_Cancel_OnClick @44-B74281F7
+function V_P_SERVICE_CATEGORY1Button_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End V_P_SERVICE_CATEGORY1Button_Cancel_OnClick
+
+//bind_events @1-A4E7FE88
+function bind_events() {
+    addEventHandler("V_P_SERVICE_CATEGORY1Button_Delete", "click", V_P_SERVICE_CATEGORY1Button_Delete_OnClick);
+    addEventHandler("V_P_SERVICE_CATEGORY1Button_Cancel", "click", V_P_SERVICE_CATEGORY1Button_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:to_ServiceType()">Service Type</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap><label>Service&nbsp;Category&nbsp;</label></td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+&nbsp; 
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record V_P_SERVICE_CATEGORYSearch -->
+      <form id="V_P_SERVICE_CATEGORYSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="V_P_SERVICE_CATEGORYSearchs_keyword" class="ControlsIN" maxlength="128" size="32" value="{s_keyword}" name="{s_keyword_Name}">
+                    <!-- BEGIN Button Button_DoSearch --><input id="V_P_SERVICE_CATEGORYSearchButton_DoSearch" class="Button" type="submit" value="Search" name="{Button_Name}"><!-- END Button Button_DoSearch -->&nbsp;<input id="V_P_SERVICE_CATEGORYSearchP_SERVICE_TYPE_ID" type="hidden" value="{P_SERVICE_TYPE_ID}" name="{P_SERVICE_TYPE_ID_Name}"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record V_P_SERVICE_CATEGORYSearch --><br>
+      <!-- BEGIN Grid V_P_SERVICE_CATEGORY -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+                <td class="th"><strong>SERVICE CATEGORY LIST</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">&nbsp;#</th>
+ 
+                <th scope="col">CODE</th>
+ 
+                <th scope="col">VALID FROM</th>
+ 
+                <th scope="col">VALID TO</th>
+ 
+                <th scope="col">FEATURE TYPE CODE</th>
+ 
+                <th scope="col">SERVICE TYPE CODE</th>
+ 
+                <th scope="col">FEATURE CATEGORY CODE</th>
+ 
+                <th colspan="2" scope="col">IS RATED</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {V_P_SERVICE_CATEGORY:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="V_P_SERVICE_CATEGORYDLink_{P_APPLGrid:rowNumber}">{DLink}</a><!-- END Link DLink -->&nbsp;</td> 
+                <td>{CODE}<input id="V_P_SERVICE_CATEGORYP_SERVICE_CATEGORY_ID" type="hidden" value="{P_SERVICE_CATEGORY_ID}" name="{P_SERVICE_CATEGORY_ID_Name}">&nbsp;</td> 
+                <td>{VALID_FROM}&nbsp;</td> 
+                <td>{VALID_TO}&nbsp;</td> 
+                <td>{FEATURE_TYPE_CODE}&nbsp;</td> 
+                <td>{SERVICE_TYPE_CODE}&nbsp;</td> 
+                <td>{FEATURE_CATEGORY_CODE}&nbsp;</td> 
+                <td colspan="2">{IS_RATED}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="9">No Record</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: left">&nbsp;<a href="{ST_NEW_Src}" id="V_P_SERVICE_CATEGORYST_NEW_{P_APPLGrid:rowNumber}"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="8">
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+                  <!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+                  <!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator --></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid V_P_SERVICE_CATEGORY --><br>
+      <!-- BEGIN Record V_P_SERVICE_CATEGORY1 -->
+      <form id="V_P_SERVICE_CATEGORY1" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>SERVICE CATEGORY </strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="8">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="V_P_SERVICE_CATEGORY1CODE">Code</label></td> 
+                  <td colspan="7"><input id="V_P_SERVICE_CATEGORY1CODE" class="ControlsRQ" maxlength="128" size="32" value="{CODE}" name="{CODE_Name}">&nbsp;<input id="V_P_SERVICE_CATEGORY1P_SERVICE_CATEGORY_ID" type="hidden" value="{P_SERVICE_CATEGORY_ID}" name="{P_SERVICE_CATEGORY_ID_Name}">&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_P_SERVICE_CATEGORY1P_FEATURE_TYPE_ID">Feature Name</label></td> 
+                  <td colspan="7"><input id="V_P_SERVICE_CATEGORY1FEATURE_TYPE_CODE" class="ControlsRQ" readonly maxlength="64" size="32" value="{FEATURE_TYPE_CODE}" name="{FEATURE_TYPE_CODE_Name}">&nbsp;<img onclick="lov_p_feature_type()" border="0" src="../images/folder.gif">&nbsp;<input id="V_P_SERVICE_CATEGORY1P_FEATURE_TYPE_ID" class="ControlsIN" style="DISPLAY: none" maxlength="12" size="17" value="{P_FEATURE_TYPE_ID}" name="{P_FEATURE_TYPE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_P_SERVICE_CATEGORY1P_FEATURE_CATEGORY_ID">Feature Category</label></td> 
+                  <td colspan="7"><input id="V_P_SERVICE_CATEGORY1FEATURE_CATEGORY_CODE" class="ControlsRQ" readonly maxlength="64" size="32" value="{FEATURE_CATEGORY_CODE}" name="{FEATURE_CATEGORY_CODE_Name}">&nbsp;<img onclick="lov_p_feature_category()" border="0" src="../images/folder.gif">&nbsp;<input id="V_P_SERVICE_CATEGORY1P_FEATURE_CATEGORY_ID" class="ControlsIN" style="DISPLAY: none" maxlength="12" size="12" value="{P_FEATURE_CATEGORY_ID}" name="{P_FEATURE_CATEGORY_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_P_SERVICE_CATEGORY1VALID_FROM">Valid From</label></td> 
+                  <td><input id="V_P_SERVICE_CATEGORY1VALID_FROM" class="ControlsRQ" maxlength="100" size="12" value="{VALID_FROM}" name="{VALID_FROM_Name}">
+                    <!-- BEGIN DatePicker DatePicker_UPDATE_DATE1 --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_P_SERVICE_CATEGORY1DatePicker_UPDATE_DATE1"><img id="V_P_SERVICE_CATEGORY1DatePicker_UPDATE_DATE1_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_UPDATE_DATE1 --></td> 
+                  <td>&nbsp;Valid To</td> 
+                  <td colspan="5">&nbsp;<input id="V_P_SERVICE_CATEGORY1VALID_TO" class="ControlsIN" maxlength="100" size="12" value="{VALID_TO}" name="{VALID_TO_Name}">&nbsp; 
+                    <!-- BEGIN DatePicker DatePicker_UPDATE_DATE2 --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="V_P_SERVICE_CATEGORY1DatePicker_UPDATE_DATE2"><img id="V_P_SERVICE_CATEGORY1DatePicker_UPDATE_DATE2_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_UPDATE_DATE2 --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Min Duration</td> 
+                  <td><input id="V_P_SERVICE_CATEGORY1MINIMUM_DURATION" class="ControlsIN" maxlength="12" size="12" value="{MINIMUM_DURATION}" name="{MINIMUM_DURATION_Name}">&nbsp;</td> 
+                  <td>&nbsp;Max Duration</td> 
+                  <td colspan="5">&nbsp;<input id="V_P_SERVICE_CATEGORY1MAXIMUM_DURATION" class="ControlsIN" size="12" value="{MAXIMUM_DURATION}" name="{MAXIMUM_DURATION_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Is Rated?</td> 
+                  <td colspan="7">
+                    <select id="V_P_SERVICE_CATEGORY1IS_RATED" class="ControlsIN" name="{IS_RATED_Name}">
+                      {IS_RATED_Options}
+                    </select>
+ </td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_P_SERVICE_CATEGORY1DESCRIPTION">Description</label></td> 
+                  <td colspan="7"><textarea id="V_P_SERVICE_CATEGORY1DESCRIPTION" class="ControlsIN" style="HEIGHT: 44px; WIDTH: 269px" rows="3" cols="40" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea>&nbsp;&nbsp; <input id="V_P_SERVICE_CATEGORY1P_SERVICE_TYPE_ID" style="DISPLAY: none" value="{P_SERVICE_TYPE_ID}" name="{P_SERVICE_TYPE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="V_P_SERVICE_CATEGORY1UPDATE_DATE">Update Date</label></td> 
+                  <td colspan="7"><input id="V_P_SERVICE_CATEGORY1UPDATE_DATE" class="ControlsRO" readonly maxlength="100" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}">&nbsp;<input id="V_P_SERVICE_CATEGORY1UPDATE_BY" class="ControlsRO" maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="8" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="V_P_SERVICE_CATEGORY1Button_Insert" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="V_P_SERVICE_CATEGORY1Button_Update" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="V_P_SERVICE_CATEGORY1Button_Delete" class="Button" type="submit" value="Delete" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="V_P_SERVICE_CATEGORY1Button_Cancel" class="Button" type="submit" value="Cancel" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record V_P_SERVICE_CATEGORY1 --><br>
+    </td>
+  </tr>
+</table>
+<script language="javascript">
+        function getFrom_LOV(FormName, FieldList, FileName) {
+                    arrLOV = FileName.split('?');
+
+                    var width = 500;
+                    var height = 400;
+                    ///var left = parseInt((screen.availWidth/2) - (width/2));
+                    //var top = parseInt((screen.availHeight/2) - (height/2)); 
+                    window.open('../bil_lov/' + arrLOV[0] + '?FORM=' + FormName + '&OBJ=' + FieldList + '&' + arrLOV[1], width, height, "auto");
+        }
+
+        function lov_p_feature_type() {
+                getFrom_LOV('V_P_SERVICE_CATEGORY1', 'P_FEATURE_TYPE_ID,FEATURE_TYPE_CODE', 'lov_p_feature_type.php?');
+        }
+                function lov_p_feature_category() {
+                getFrom_LOV('V_P_SERVICE_CATEGORY1', 'P_FEATURE_CATEGORY_ID,FEATURE_CATEGORY_CODE', 'lov_p_feature_category.php?');
+        }
+
+                function to_ServiceType() {
+            var cid = QueryString("P_SERVICE_TYPE_ID");
+            var hlm = QueryString("SERVICETYPE_GRIDPage");
+            if (hlm == null)
+                hlm = 1;
+            if (cid != "" && cid != 0 && cid != false && cid != undefined && cid != null)
+            {
+                location.href = "p_service_type.php?P_SERVICE_TYPE_ID=" + cid +"&SERVICETYPE_GRIDPage=" + hlm;
+            }
+
+        }
+</script>
+</body>
+</html>

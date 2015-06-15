@@ -1,0 +1,440 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Customer</title>
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="javascript" src="../js/lov.js"></script>
+<script language="JavaScript" src="../js/calendarWidget.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-E1D65208
+
+var CustomerForm_DatePicker_UPDATE_DATE1 = new Object(); 
+CustomerForm_DatePicker_UPDATE_DATE1.format           = "dd-mmm-yyyy";
+CustomerForm_DatePicker_UPDATE_DATE1.style            = "Styles/trb/Style.css";
+CustomerForm_DatePicker_UPDATE_DATE1.relativePathPart = "../";
+CustomerForm_DatePicker_UPDATE_DATE1.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//CustomerFormButton_Delete_OnClick @100-29895579
+function CustomerFormButton_Delete_OnClick()
+{
+    var result = true;
+//End CustomerFormButton_Delete_OnClick
+
+//Confirmation Message @147-CD1EB1A4
+    return confirm('Delete Record?');
+//End Confirmation Message
+
+//Close CustomerFormButton_Delete_OnClick @100-BC33A33A
+    return result;
+}
+//End Close CustomerFormButton_Delete_OnClick
+
+//CustomerFormButton_Cancel_OnClick @102-84F3CEBC
+function CustomerFormButton_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End CustomerFormButton_Cancel_OnClick
+
+//bind_events @1-1C34BABA
+function bind_events() {
+    addEventHandler("CustomerFormButton_Delete", "click", CustomerFormButton_Delete_OnClick);
+    addEventHandler("CustomerFormButton_Cancel", "click", CustomerFormButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+<script language="javascript" type="text/javascript">
+$(document).ready(function()
+{
+    $(window).scroll(function()
+    {
+            $('#tabtsop').css('top', $(window).scrollTop());
+    });
+});
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap><label onclick="javascript:toRole()">Customer Master</label></td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap><label onclick="javascript:customer_info()">Customer Info</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap><label onclick="javascript:account_rep()">Account Representative</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap><label onclick="javascript:customer_contract()">Contract</label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+&nbsp; 
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record V_CUSTOMERSearch -->
+      <form id="V_CUSTOMERSearch" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td>{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="V_CUSTOMERSearchs_keyword" class="ControlsIN" maxlength="32" size="32" value="{s_keyword}" name="{s_keyword_Name}">
+                    <!-- BEGIN Button Button_DoSearch --><input id="V_CUSTOMERSearchButton_DoSearch" class="Button" type="submit" value="Search" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record V_CUSTOMERSearch -->
+      <!-- BEGIN Grid V_CUSTOMER -->&nbsp; 
+      <table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+                <td class="th"><strong>CUSTOMER LIST</strong></td> 
+                <td class="th"><img onclick="javascript:close_page()" border="0" alt="close" src="../images/to_close_red.gif"></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center">#</th>
+ 
+                <th scope="col">CUSTOMER ID</th>
+ 
+                <th scope="col">NAME</th>
+ 
+                <th scope="col">ADDRESS</th>
+ 
+                <th scope="col">ZIP CODE</th>
+ 
+                <th scope="col">TITLE</th>
+ 
+                <th scope="col">REGION</th>
+ 
+                <th scope="col">CLASS</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {V_CUSTOMER:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="V_CUSTOMERDLink_{P_APPLGrid:rowNumber}">{DLink}</a><!-- END Link DLink --></td> 
+                <td>{CUSTOMER_NUMBER}&nbsp;<input id="V_CUSTOMERCUSTOMER_ID" type="hidden" value="{CUSTOMER_ID}" name="{CUSTOMER_ID_Name}"></td> 
+                <td>{LAST_NAME}&nbsp;</td> 
+                <td>{ADDRESS_1}&nbsp;{ADDRESS_2}&nbsp;{ADDRESS_3} </td> 
+                <td style="TEXT-ALIGN: right">{ZIP_CODE}&nbsp;</td> 
+                <td>{CUSTOMER_TITLE_CODE}&nbsp;</td> 
+                <td>{REGION_NAME}&nbsp;</td> 
+                <td>{CUSTOMER_CLASS_CODE}&nbsp;</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="8">Data tidak ditemukan.</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="TEXT-ALIGN: center"><a href="{P_CUSTOMER_Insert_Src}" id="V_CUSTOMERP_CUSTOMER_Insert"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="8">&nbsp;&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+                  <!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+                  <!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END Grid V_CUSTOMER --><br>
+      <!-- BEGIN Record CustomerForm -->
+      <form id="CustomerForm" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>CUSTOMER INFORMATION</strong></td> 
+                  <td class="th"><img border="0" src="../images/spaceheader.gif"></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="4">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th">Customer ID</td> 
+                  <td colspan="3"><input id="CustomerFormCUSTOMER_ID" class="ControlsRO" readonly size="12" value="{CUSTOMER_ID}" name="{CUSTOMER_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CustomerFormCUSTOMER_NUMBER">Customer No</label></td> 
+                  <td colspan="3"><input id="CustomerFormCUSTOMER_NUMBER" class="ControlsRQ" maxlength="12" size="12" value="{CUSTOMER_NUMBER}" name="{CUSTOMER_NUMBER_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CustomerFormLAST_NAME">Customer Name</label></td> 
+                  <td colspan="3"><input id="CustomerFormLAST_NAME" class="ControlsRQ" maxlength="64" size="50" value="{LAST_NAME}" name="{LAST_NAME_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Customer Class</td> 
+                  <td colspan="3"><label for="v_customer1TextBox1" style="display: none;">&nbsp;</label><input id="CustomerFormCustomerClass" class="ControlsRQ" readonly value="{CustomerClass}" name="{CustomerClass_Name}"><input id="CustomerFormCUSTOMER_CLASS_ID" type="hidden" value="{CUSTOMER_CLASS_ID}" name="{CUSTOMER_CLASS_ID_Name}">&nbsp;<img onclick="lov_p_customer_class()" border="0" src="../images/folder.gif"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="v_customer1CUST_QQ_NAME">Debtor Segment</label></td> 
+                  <td><input id="CustomerFormDEBTOR_SEGMENT_CODE" class="ControlsRQ" readonly maxlength="64" size="40" value="{DEBTOR_SEGMENT_CODE}" name="{DEBTOR_SEGMENT_CODE_Name}">&nbsp;<img onclick="lov_p_debtor_segment()" border="0" src="../images/folder.gif">&nbsp;<input id="CustomerFormP_DEBTOR_SEGMENT_ID" type="hidden" value="{P_DEBTOR_SEGMENT_ID}" name="{P_DEBTOR_SEGMENT_ID_Name}"></td> 
+                  <td>&nbsp;Sub Debtor Segment</td> 
+                  <td><input id="CustomerFormSUB_DEBTOR_SEGMENT_CODE" class="ControlsIN" readonly maxlength="48" value="{SUB_DEBTOR_SEGMENT_CODE}" name="{SUB_DEBTOR_SEGMENT_CODE_Name}">&nbsp;<img onclick="lov_p_sub_debtor_segment()" border="0" src="../images/folder.gif"><input id="CustomerFormP_SUB_DEBTOR_SEGMENT_ID" type="hidden" value="{P_SUB_DEBTOR_SEGMENT_ID}" name="{P_SUB_DEBTOR_SEGMENT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="v_customer1P_DEBTOR_SEGMENT_ID">Customer Segment</label></td> 
+                  <td><input id="CustomerFormCUSTOMER_SEGMENT_CODE" class="ControlsRQ" readonly maxlength="64" size="40" value="{CUSTOMER_SEGMENT_CODE}" name="{CUSTOMER_SEGMENT_CODE_Name}">&nbsp;<img onclick="lov_p_customer_segment()" border="0" src="../images/folder.gif">&nbsp;<input id="CustomerFormP_CUSTOMER_SEGMENT_ID" type="hidden" value="{P_CUSTOMER_SEGMENT_ID}" name="{P_CUSTOMER_SEGMENT_ID_Name}"></td> 
+                  <td>&nbsp;Business Segment</td> 
+                  <td><input id="CustomerFormBUSINESS_SEGMENT_CODE" class="ControlsIN" readonly maxlength="64" size="40" value="{BUSINESS_SEGMENT_CODE}" name="{BUSINESS_SEGMENT_CODE_Name}">&nbsp;<img onclick="lov_p_business_segment()" border="0" src="../images/folder.gif">&nbsp;<input id="CustomerFormP_BUSINESS_SEGMENT_ID" type="hidden" value="{P_BUSINESS_SEGMENT_ID}" name="{P_BUSINESS_SEGMENT_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="v_customer1P_CUSTOMER_SEGMENT_ID">Customer Title</label></td> 
+                  <td><input id="CustomerFormCUSTOMER_TITLE_CODE" class="ControlsRQ" readonly maxlength="64" size="10" value="{CUSTOMER_TITLE_CODE}" name="{CUSTOMER_TITLE_CODE_Name}">&nbsp;<img onclick="lov_p_customer_title()" border="0" src="../images/folder.gif">&nbsp;<input id="CustomerFormP_CUSTOMER_TITLE_ID" type="hidden" value="{P_CUSTOMER_TITLE_ID}" name="{P_CUSTOMER_TITLE_ID_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="v_customer1P_CUSTOMER_TITLE_ID">Gender</label></td> 
+                  <td><input id="CustomerFormGENDER_CODE" class="ControlsIN" readonly maxlength="32" size="10" value="{GENDER_CODE}" name="{GENDER_CODE_Name}">&nbsp;<img onclick="lov_p_customer_gender()" border="0" src="../images/folder.gif">&nbsp;<input id="CustomerFormGENDER_TYPE_ID" type="hidden" value="{GENDER_TYPE_ID}" name="{GENDER_TYPE_ID_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CustomerFormADDRESS_1">Address 1</label></td> 
+                  <td><input id="CustomerFormADDRESS_1" class="ControlsRQ" maxlength="64" size="50" value="{ADDRESS_1}" name="{ADDRESS_1_Name}"></td> 
+                  <td>&nbsp;Address 2</td> 
+                  <td><input id="CustomerFormADDRESS_2" class="ControlsIN" maxlength="64" size="50" value="{ADDRESS_2}" name="{ADDRESS_2_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CustomerFormADDRESS_3">Address 3</label></td> 
+                  <td><input id="CustomerFormADDRESS_3" class="ControlsIN" maxlength="64" size="50" value="{ADDRESS_3}" name="{ADDRESS_3_Name}"></td> 
+                  <td>&nbsp;Region Name</td> 
+                  <td><input id="CustomerFormREGION_NAME" class="ControlsIN" readonly maxlength="64" size="50" value="{REGION_NAME}" name="{REGION_NAME_Name}">&nbsp;<img onclick="lov_p_customer_region()" border="0" src="../images/folder.gif">&nbsp;<input id="CustomerFormP_REGION_ID" type="hidden" value="{P_REGION_ID}" name="{P_REGION_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CustomerFormZIP_CODE">Zip Code</label></td> 
+                  <td><input id="CustomerFormZIP_CODE" class="ControlsIN" maxlength="12" size="12" value="{ZIP_CODE}" name="{ZIP_CODE_Name}"></td> 
+                  <td></td> 
+                  <td>&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CustomerFormCCDB_CODE">Corporate Customer Code</label></td> 
+                  <td><input id="CustomerFormCCDB_CODE" class="ControlsIN" maxlength="12" size="12" value="{CCDB_CODE}" name="{CCDB_CODE_Name}"></td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CustomerFormFIRST_SUBSCRIPTION_DATE">First Subscription Date</label></td> 
+                  <td><input id="CustomerFormFIRST_SUBSCRIPTION_DATE" class="ControlsIN" maxlength="100" size="12" value="{FIRST_SUBSCRIPTION_DATE}" name="{FIRST_SUBSCRIPTION_DATE_Name}">&nbsp; 
+                    <!-- BEGIN DatePicker DatePicker_UPDATE_DATE1 --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="CustomerFormDatePicker_UPDATE_DATE1"><img id="CustomerFormDatePicker_UPDATE_DATE1_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_UPDATE_DATE1 --></td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CustomerFormDESCRIPTION">Description</label></td> 
+                  <td><textarea id="CustomerFormDESCRIPTION" style="HEIGHT: 51px; WIDTH: 277px" rows="1" cols="1" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="CustomerFormUPDATE_DATE">Update By</label></td> 
+                  <td><input id="CustomerFormUPDATE_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}">&nbsp;<input id="CustomerFormUPDATE_DATE" class="ControlsRO" readonly maxlength="100" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}">&nbsp;</td> 
+                  <td>&nbsp;</td> 
+                  <td>&nbsp;</td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="4" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="CustomerFormButton_Insert" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="CustomerFormButton_Update" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="CustomerFormButton_Delete" class="Button" type="submit" value="Delete" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="CustomerFormButton_Cancel" class="Button" type="submit" value="Cancel" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record CustomerForm --><br>
+    </td>
+  </tr>
+</table>
+<script language="javascript">
+        function close_page() {
+            location.href = "../main/blank.html";
+        }
+
+        function getFrom_LOV(FormName, FieldList, FileName) {
+            arrLOV = FileName.split('?');
+
+            var width = 500;
+            var height = 400;
+            ///var left = parseInt((screen.availWidth/2) - (width/2));
+            //var top = parseInt((screen.availHeight/2) - (height/2)); 
+            window.open('../bil_lov/' + arrLOV[0] + '?FORM=' + FormName + '&OBJ=' + FieldList + '&' + arrLOV[1], width, height, "auto");
+        }
+
+        function lov_p_customer_class() {
+            getFrom_LOV('CustomerForm', 'CustomerClass,CUSTOMER_CLASS_ID', 'lov_p_customer_class.php?');
+        }
+
+        function lov_p_debtor_segment() {
+            getFrom_LOV('CustomerForm', 'DEBTOR_SEGMENT_CODE,P_DEBTOR_SEGMENT_ID', 'lov_p_debtor_segment.php?');
+            document.getElementById("CustomerFormSUB_DEBTOR_SEGMENT_CODE").value = "";
+            document.getElementById("CustomerFormP_SUB_DEBTOR_SEGMENT_ID").value = "";
+
+        }
+
+        function lov_p_sub_debtor_segment() {
+            var debtor_segmenID = document.getElementById("CustomerFormP_DEBTOR_SEGMENT_ID").value;
+            if (!debtor_segmenID) {
+                alert('Please Fill "Debtor Segment" Field');
+                return;
+
+            }
+            getFrom_LOV('CustomerForm', 'SUB_DEBTOR_SEGMENT_CODE,P_SUB_DEBTOR_SEGMENT_ID', 'lov_p_sub_debtor_segment.php?P_DEBTOR_SEGMENT_ID=' + debtor_segmenID);
+        }
+
+        function lov_p_customer_segment() {
+            getFrom_LOV('CustomerForm', 'P_CUSTOMER_SEGMENT_ID,CUSTOMER_SEGMENT_CODE', 'lov_p_customer_segment.php?');
+            document.getElementById("CustomerFormBUSINESS_SEGMENT_CODE").value = "";
+            document.getElementById("CustomerFormP_BUSINESS_SEGMENT_ID").value = "";
+        }
+
+        function lov_p_business_segment() {
+            var customer_segment_ID = document.getElementById("CustomerFormP_CUSTOMER_SEGMENT_ID").value;
+            if (!customer_segment_ID) {
+                alert('Please Fill "Customer Segment" Field');
+                return;
+            }
+            getFrom_LOV('CustomerForm', 'P_BUSINESS_SEGMENT_ID,BUSINESS_SEGMENT_CODE', 'lov_p_business_segment.php?P_BUSINESS_SEGMENT_ID=' + customer_segment_ID);
+        }
+
+        function lov_p_customer_title() {
+            getFrom_LOV('CustomerForm', 'P_CUSTOMER_TITLE_ID,CUSTOMER_TITLE_CODE', 'lov_p_cust_title.php?');
+        }
+
+        function lov_p_customer_gender() {
+            getFrom_LOV('CustomerForm', 'GENDER_TYPE_ID,GENDER_CODE', 'lov_p_customer_gender.php?');
+        }
+
+        function lov_p_customer_region() {
+            getFrom_LOV('CustomerForm', 'P_REGION_ID,REGION_NAME', 'lov_p_customer_region.php?');
+        }
+
+        function customer_info()
+        {
+            var idelement;
+            if (idelement = document.getElementById('CustomerFormCUSTOMER_ID'))
+            {
+                var customer_id = idelement.value;
+                var skw = document.getElementById("V_CUSTOMERSearchs_keyword").value;
+                var hlm = QueryString("V_CUSTOMERPage");
+                if (hlm == null)
+                    hlm = 1;
+                if (customer_id != "" && customer_id != 0 && customer_id != false && customer_id != undefined && customer_id != null)
+                {
+                    location.href = "f_customer_info.php?CUSTOMER_ID=" + customer_id + "&V_CUSTOMERSearchs_keyword=" + skw + "&V_CUSTOMERPage=" + hlm;
+                }
+            }
+        }
+
+        function account_rep()
+        {
+            var idelement;
+            if (idelement = document.getElementById('CustomerFormCUSTOMER_ID'))
+            {
+                var customer_id = idelement.value;
+                var skw = document.getElementById("V_CUSTOMERSearchs_keyword").value;
+                var hlm = QueryString("V_CUSTOMERPage");
+                if (hlm == null)
+                    hlm = 1;
+                if (customer_id != "" && customer_id != 0 && customer_id != false && customer_id != undefined && customer_id != null)
+                {
+                    location.href = "f_account_rep.php?CUSTOMER_ID=" + customer_id + "&V_CUSTOMERSearchs_keyword=" + skw + "&V_CUSTOMERPage=" + hlm;
+                }
+            }
+        }
+                function customer_contract()
+        {
+            var idelement;
+            if (idelement = document.getElementById('CustomerFormCUSTOMER_ID'))
+            {
+                var customer_id = idelement.value;
+                var skw = document.getElementById("V_CUSTOMERSearchs_keyword").value;
+                var hlm = QueryString("V_CUSTOMERPage");
+                if (hlm == null)
+                    hlm = 1;
+                if (customer_id != "" && customer_id != 0 && customer_id != false && customer_id != undefined && customer_id != null)
+                {
+                    location.href = "f_customer_contract.php?CUSTOMER_ID=" + customer_id + "&V_CUSTOMERSearchs_keyword=" + skw + "&V_CUSTOMERPage=" + hlm;
+                }
+            }
+        }
+
+</script>
+</body>
+</html>

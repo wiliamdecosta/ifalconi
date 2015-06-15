@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>FEATURE TYPE</title>
+<meta name="GENERATOR" content="CodeCharge Studio 4.3.00.7676">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script language="JavaScript" src="../js/qs.js"></script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-86BEACD2
+</script>
+<script language="JavaScript" src="../ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="../ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-C57F32B1
+
+var FEATURETYPE_RECORD_DatePicker_UPDATE_DATE1 = new Object(); 
+FEATURETYPE_RECORD_DatePicker_UPDATE_DATE1.format           = "dd-mmm-yyyy";
+FEATURETYPE_RECORD_DatePicker_UPDATE_DATE1.style            = "Styles/trb/Style.css";
+FEATURETYPE_RECORD_DatePicker_UPDATE_DATE1.relativePathPart = "../";
+FEATURETYPE_RECORD_DatePicker_UPDATE_DATE1.themeVersion = "3.0";
+
+var FEATURETYPE_RECORD_DatePicker_UPDATE_DATE2 = new Object(); 
+FEATURETYPE_RECORD_DatePicker_UPDATE_DATE2.format           = "dd-mmm-yyyy";
+FEATURETYPE_RECORD_DatePicker_UPDATE_DATE2.style            = "Styles/trb/Style.css";
+FEATURETYPE_RECORD_DatePicker_UPDATE_DATE2.relativePathPart = "../";
+FEATURETYPE_RECORD_DatePicker_UPDATE_DATE2.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//FEATURETYPE_RECORDButton_Delete_OnClick @94-58E2DC5D
+function FEATURETYPE_RECORDButton_Delete_OnClick()
+{
+    var result = true;
+//End FEATURETYPE_RECORDButton_Delete_OnClick
+
+//Confirmation Message @95-CD1EB1A4
+    return confirm('Delete Record ?');
+//End Confirmation Message
+
+//Close FEATURETYPE_RECORDButton_Delete_OnClick @94-BC33A33A
+    return result;
+}
+//End Close FEATURETYPE_RECORDButton_Delete_OnClick
+
+//FEATURETYPE_RECORDButton_Cancel_OnClick @96-5E554599
+function FEATURETYPE_RECORDButton_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End FEATURETYPE_RECORDButton_Cancel_OnClick
+
+//bind_events @1-85D663F2
+function bind_events() {
+    addEventHandler("FEATURETYPE_RECORDButton_Delete", "click", FEATURETYPE_RECORDButton_Delete_OnClick);
+    addEventHandler("FEATURETYPE_RECORDButton_Cancel", "click", FEATURETYPE_RECORDButton_Cancel_OnClick);
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+<link rel="stylesheet" type="text/css" href="../Styles/trb/Style_doctype.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="tabtop" style="POSITION: absolute; WIDTH: 100%">
+  <table style="BACKGROUND-COLOR: #89a5f7" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+      <td><img border="0" src="../images/tab_s_off.gif"></td> 
+      <td class="th" background="../images/tab_off.gif" nowrap align="center"><label onclick="javascript:to_FeatureGroup()">Feature Group </label></td> 
+      <td><img border="0" src="../images/tab_e_off.gif"></td> 
+      <td><img border="0" src="../images/tab_s_on.gif"></td> 
+      <td class="th" background="../images/tab_on.gif" nowrap><label>Feature Type&nbsp;</label></td> 
+      <td><img border="0" src="../images/tab_e_on.gif"></td> 
+      <td background="../images/tab_back.gif" width="100%"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+&nbsp; 
+<table cellspacing="0" cellpadding="0" align="center" border="0">
+  <tr>
+    <td>
+      <!-- BEGIN Record FT_SEARCH -->
+      <form id="FT_SEARCH" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td><input id="FT_SEARCHs_keyword" class="ControlsIN" maxlength="32" size="32" value="{s_keyword}" name="{s_keyword_Name}"></td> 
+                  <td>
+                    <!-- BEGIN Button Button_DoSearch --><input id="FT_SEARCHButton_DoSearch" style="BORDER-TOP: 0px; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" alt="" src="../Styles/trb/Images/en/ButtonSearch.gif" type="image" value="" name="{Button_Name}"><!-- END Button Button_DoSearch --><input id="FT_SEARCHP_FEATURE_GROUP_ID" type="hidden" value="{P_FEATURE_GROUP_ID}" name="{P_FEATURE_GROUP_ID_Name}"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record FT_SEARCH -->&nbsp; 
+      <!-- BEGIN Grid FEATURETYPE_GRID -->
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+          <td valign="top">
+            <table class="Header" cellspacing="0" cellpadding="0" width="100%" border="0">
+              <tr>
+                <td class="HeaderLeft"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td> 
+                <td class="th"><strong>FEATURE TYPE LIST</strong></td> 
+                <td class="HeaderRight"><img border="0" alt="" src="../Styles/trb/Images/Spacer.gif"></td>
+              </tr>
+            </table>
+ 
+            <table class="Grid" cellspacing="0" cellpadding="0">
+              <tr class="Caption">
+                <th style="TEXT-ALIGN: center" scope="col">#</th>
+ 
+                <th scope="col">CODE</th>
+ 
+                <th scope="col">FEATURE NAME</th>
+ 
+                <th scope="col">&nbsp;VALID FROM / TO</th>
+ 
+                <th scope="col">&nbsp;DESCRIPTION</th>
+              </tr>
+ 
+              <!-- BEGIN Row -->
+              <tr {FEATURETYPE_GRID:rowStyle}>
+                <td style="TEXT-ALIGN: center">
+                  <!-- BEGIN Link DLink --><a href="{DLink_Src}" id="FEATURETYPE_GRIDDLink_{P_APPLGrid:rowNumber}">{DLink}</a><!-- END Link DLink --></td> 
+                <td style="TEXT-ALIGN: left">{CODE}&nbsp;<input id="FEATURETYPE_GRIDP_FEATURE_TYPE_ID_{FEATURETYPE_GRID:rowNumber}" style="HEIGHT: 17px; WIDTH: 122px" size="1" type="hidden" value="{P_FEATURE_TYPE_ID}" name="{P_FEATURE_TYPE_ID_Name}"></td> 
+                <td style="TEXT-ALIGN: left">{FEATURE_NAME}&nbsp;</td> 
+                <td style="TEXT-ALIGN: left">&nbsp;{VALID_FROM}&nbsp;/ {VALID_TO}</td> 
+                <td style="TEXT-ALIGN: left">&nbsp;{DESCRIPTION}</td>
+              </tr>
+ <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr class="NoRecords">
+                <td colspan="5">no record</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr class="Footer">
+                <td style="BORDER-RIGHT: 0px"><a href="{FT_NEW_Src}" id="FEATURETYPE_GRIDFT_NEW_{P_APPLGrid:rowNumber}"><img border="0" src="../Styles/trb/Images/en/ButtonTambah.gif"></a></td> 
+                <td colspan="4">&nbsp; 
+                  <!-- BEGIN Navigator Navigator -->
+                  <!-- BEGIN First_On --><a href="{First_URL}"><img border="0" alt="{First_URL}" src="../Styles/trb/Images/First.gif"></a> <!-- END First_On -->
+                  <!-- BEGIN First_Off --><img border="0" alt="{First_URL}" src="../Styles/trb/Images/FirstOff.gif"><!-- END First_Off -->
+                  <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/Prev.gif"></a> <!-- END Prev_On -->
+                  <!-- BEGIN Prev_Off --><img border="0" alt="{Prev_URL}" src="../Styles/trb/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp; 
+                  <!-- BEGIN Pages -->
+                  <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+                  <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->
+                  <!-- BEGIN Next_On --><a href="{Next_URL}"><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/Next.gif"></a> <!-- END Next_On -->
+                  <!-- BEGIN Next_Off --><img border="0" alt="{Next_URL}" src="../Styles/trb/Images/NextOff.gif"><!-- END Next_Off -->
+                  <!-- BEGIN Last_On --><a href="{Last_URL}"><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/Last.gif"></a> <!-- END Last_On -->
+                  <!-- BEGIN Last_Off --><img border="0" alt="{Last_URL}" src="../Styles/trb/Images/LastOff.gif"><!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      &nbsp; <!-- END Grid FEATURETYPE_GRID -->
+      <!-- BEGIN Record FEATURETYPE_RECORD -->
+      <form id="FEATURETYPE_RECORD" method="post" name="{HTMLFormName}" action="{Action}">
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+            <td valign="top">
+              <table class="Header" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="HeaderLeft"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td> 
+                  <td class="th"><strong>FEATURE TYPE</strong></td> 
+                  <td class="HeaderRight"><img border="0" alt="" src="../Styles/pips/Images/Spacer.gif"></td>
+                </tr>
+              </table>
+ 
+              <table class="Record" cellspacing="0" cellpadding="0">
+                <!-- BEGIN Error -->
+                <tr class="Error">
+                  <td colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr class="Controls">
+                  <td class="th"><label for="FEATURETYPE_RECORDCODE">Code</label></td> 
+                  <td><input id="FEATURETYPE_RECORDCODE" class="ControlsRQ" maxlength="32" value="{CODE}" name="{CODE_Name}">&nbsp;<input id="FEATURETYPE_RECORDP_FEATURE_TYPE_ID" type="hidden" value="{P_FEATURE_TYPE_ID}" name="{P_FEATURE_TYPE_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Feature Name</td> 
+                  <td><input id="FEATURETYPE_RECORDFEATURE_NAME" class="ControlsRQ" size="32" value="{FEATURE_NAME}" name="{FEATURE_NAME_Name}">&nbsp;<input id="FEATURETYPE_RECORDP_FEATURE_GROUP_ID" type="hidden" value="{P_FEATURE_GROUP_ID}" name="{P_FEATURE_GROUP_ID_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Listing No</td> 
+                  <td><label for="FEATURETYPE_RECORDLISTING_NO" style="display: none;">&nbsp;</label><input id="FEATURETYPE_RECORDLISTING_NO" class="ControlsRQ" size="12" value="{LISTING_NO}" name="{LISTING_NO_Name}"></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Valid From </td> 
+                  <td><input id="FEATURETYPE_RECORDVALID_FROM" class="ControlsIN" maxlength="64" size="12" value="{VALID_FROM}" name="{VALID_FROM_Name}">&nbsp; 
+                    <!-- BEGIN DatePicker DatePicker_UPDATE_DATE1 --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="FEATURETYPE_RECORDDatePicker_UPDATE_DATE1"><img id="FEATURETYPE_RECORDDatePicker_UPDATE_DATE1_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_UPDATE_DATE1 --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Valid To&nbsp;</td> 
+                  <td><input id="FEATURETYPE_RECORDVALID_TO" class="ControlsIN" maxlength="64" size="12" value="{VALID_TO}" name="{VALID_TO_Name}">&nbsp; 
+                    <!-- BEGIN DatePicker DatePicker_UPDATE_DATE2 --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');" id="FEATURETYPE_RECORDDatePicker_UPDATE_DATE2"><img id="FEATURETYPE_RECORDDatePicker_UPDATE_DATE2_Image" border="0" alt="Show Date Picker" src="../Styles/trb/Images/DatePicker.gif"></a><!-- END DatePicker DatePicker_UPDATE_DATE2 --></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th">Is Value Required ?</td> 
+                  <td>
+                    <select id="FEATURETYPE_RECORDIS_VALUE_REQUIRED" class="ControlsRQ" name="{IS_VALUE_REQUIRED_Name}">
+                      {IS_VALUE_REQUIRED_Options}
+                    </select>
+ </td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="FEATURETYPE_RECORDDESCRIPTION">Description</label></td> 
+                  <td><textarea id="FEATURETYPE_RECORDDESCRIPTION" class="ControlsIN" rows="3" cols="50" name="{DESCRIPTION_Name}">{DESCRIPTION}</textarea></td>
+                </tr>
+ 
+                <tr class="Controls">
+                  <td class="th"><label for="FEATURETYPE_RECORDUPDATE_DATE">Update Date</label></td> 
+                  <td><input id="FEATURETYPE_RECORDUPDATE_DATE" class="ControlsRO" readonly maxlength="100" size="12" value="{UPDATE_DATE}" name="{UPDATE_DATE_Name}">&nbsp;<input id="FEATURETYPE_RECORDUPDATE_BY" class="ControlsRO" readonly maxlength="12" size="12" value="{UPDATE_BY}" name="{UPDATE_BY_Name}"></td>
+                </tr>
+ 
+                <tr class="Bottom">
+                  <td colspan="2" align="right">
+                    <!-- BEGIN Button Button_Insert --><input id="FEATURETYPE_RECORDButton_Insert" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Insert -->
+                    <!-- BEGIN Button Button_Update --><input id="FEATURETYPE_RECORDButton_Update" class="Button" type="submit" value="Save" name="{Button_Name}"><!-- END Button Button_Update -->
+                    <!-- BEGIN Button Button_Delete --><input id="FEATURETYPE_RECORDButton_Delete" class="Button" type="submit" value="Delete" name="{Button_Name}"><!-- END Button Button_Delete -->
+                    <!-- BEGIN Button Button_Cancel --><input id="FEATURETYPE_RECORDButton_Cancel" class="Button" type="submit" value="Cancel" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <!-- END Record FEATURETYPE_RECORD --><br>
+    </td>
+  </tr>
+</table>
+<script language="javascript">
+        function to_FeatureGroup() {
+            var cid = QueryString("P_FEATURE_GROUP_ID");
+            var hlm = QueryString("FEATUREGROUP_GRIDPage");
+            if (hlm == null)
+                hlm = 1;
+            if (cid != "" && cid != 0 && cid != false && cid != undefined && cid != null)
+            {
+                location.href = "p_feature_group.php?P_FEATURE_GROUP_ID=" + cid +"&FEATUREGROUP_GRIDpage=" + hlm;
+            }
+
+        }
+
+</script>
+</body>
+</html>
